@@ -1,0 +1,24 @@
+{
+  "name": "hili-lipsum",
+  "version": "1.0.0",
+  "description": "Non-sensical hilichurlian sentence generator.",
+  "main": "index.js",
+  "scripts": {
+    "scrape": "node src/scripts/scrape.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weaponsforge/hili-lipsum.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weaponsforge/hili-lipsum/issues"
+  },
+  "homepage": "https://github.com/weaponsforge/hili-lipsum#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.0.1"
+  }
+}

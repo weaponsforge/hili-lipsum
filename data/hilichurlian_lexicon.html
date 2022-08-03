@@ -1,0 +1,3898 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hilichurlian/Lexicon | Genshin Impact Wiki | Fandom</title>
+</head>
+
+<!--
+  This is a lite-version of the original web page on https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon
+  minus miscellaneous scripts and images, for reference on data scraping using cheerio.
+  Its online version described on the HILICHURLIAN_TEXT_URL was used as the target for data scraping.
+-->
+
+<body
+  class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Hilichurlian_Lexicon rootpage-Hilichurlian skin-fandomdesktop action-view ooui-theme-fandomooui wiki-gensinimpact theme-fandomdesktop-dark">
+  <div class="notifications-placeholder">
+    <div class="banner-notifications-placeholder">
+      <div class="wds-banner-notification__container">
+
+      </div>
+    </div>
+  </div>
+  <div class="fandom-sticky-header">
+    <a href="//genshin-impact.fandom.com" class="fandom-sticky-header__logo">
+      <img
+        src="https://static.wikia.nocookie.net/gensin-impact/images/e/e6/Site-logo.png/revision/latest?cb=20210723101020"
+        width="500" height="180" alt="Genshin Impact Wiki">
+    </a>
+    <a href="//genshin-impact.fandom.com" class="fandom-sticky-header__sitename">Genshin Impact Wiki</a>
+
+    <nav class="fandom-community-header__local-navigation">
+      <ul class="wds-tabs">
+
+        <li class="wds-dropdown explore-menu">
+          <div class="wds-tabs__tab-label wds-dropdown__toggle first-level-item">
+            <a href="#" data-tracking="custom-level-1">
+              <svg class="wds-icon-tiny wds-icon">
+                <use xlink:href="#wds-icons-book-tiny"></use>
+              </svg> <span>Explore</span>
+            </a>
+            <svg class="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron">
+              <use xlink:href="#wds-icons-dropdown-tiny"></use>
+            </svg> </div>
+          <div class="wds-is-not-scrollable wds-dropdown__content">
+            <ul class="wds-list wds-is-linked">
+
+              <li>
+                <a href="https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki" data-tracking="explore-main-page">
+                  <svg class="wds-icon-tiny wds-icon navigation-item-icon">
+                    <use xlink:href="#wds-icons-home-tiny"></use>
+                  </svg> <span>Main Page</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="/f" data-tracking="explore-discuss">
+                  <svg class="wds-icon-tiny wds-icon navigation-item-icon">
+                    <use xlink:href="#wds-icons-discussions-tiny"></use>
+                  </svg> <span>Discuss</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://genshin-impact.fandom.com/wiki/Special:AllPages" data-tracking="explore-all-pages">
+                  <span>All Pages</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://genshin-impact.fandom.com/wiki/Special:Community" data-tracking="explore-community">
+                  <span>Community</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://genshin-impact.fandom.com/wiki/Special:AllMaps" data-tracking="interactive-maps">
+                  <span>Interactive Maps</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="/Blog:Recent_posts" data-tracking="explore-blogs">
+                  <span>Recent Blog Posts</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="wds-dropdown ">
+          <div class="wds-tabs__tab-label wds-dropdown__toggle first-level-item">
+            <a href="https://genshin-impact.fandom.com/wiki/Characters" data-tracking="custom-level-1">
+              <span>Characters</span>
+            </a>
+            <svg class="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron">
+              <use xlink:href="#wds-icons-dropdown-tiny"></use>
+            </svg> </div>
+          <div class="wds-is-not-scrollable wds-dropdown__content">
+            <ul class="wds-list wds-is-linked">
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Playable_Characters"
+                  class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                  <span>Playable Characters</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Traveler" data-tracking="custom-level-3">
+                        <span>Traveler</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Amber" data-tracking="custom-level-3">
+                        <span>Amber</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Lisa" data-tracking="custom-level-3">
+                        <span>Lisa</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Kaeya" data-tracking="custom-level-3">
+                        <span>Kaeya</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Character_List" data-tracking="custom-level-3">
+                        <span>Character List</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Featured_Characters"
+                  class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                  <span>Featured Characters</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Kaedehara_Kazuha" data-tracking="custom-level-3">
+                        <span>Kaedehara Kazuha</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Klee" data-tracking="custom-level-3">
+                        <span>Klee</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Shikanoin_Heizou" data-tracking="custom-level-3">
+                        <span>Shikanoin Heizou</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <a href="https://genshin-impact.fandom.com/wiki/Character_Comparison" data-tracking="custom-level-2">
+                  <span>Character Comparison</span>
+                </a>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/NPCs" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>NPCs</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Paimon" data-tracking="custom-level-3">
+                        <span>Paimon</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Katheryne" data-tracking="custom-level-3">
+                        <span>Katheryne</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Unknown_God" data-tracking="custom-level-3">
+                        <span>Unknown God</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Notable_NPCs" data-tracking="custom-level-3">
+                        <span>Notable NPCs</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Factions" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>Factions</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/The_Seven" data-tracking="custom-level-3">
+                        <span>The Seven</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Adventurers%27_Guild"
+                        data-tracking="custom-level-3">
+                        <span>Adventurers' Guild</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Knights_of_Favonius"
+                        data-tracking="custom-level-3">
+                        <span>Knights of Favonius</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Liyue_Qixing" data-tracking="custom-level-3">
+                        <span>Liyue Qixing</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Inazuma_Shogunate" data-tracking="custom-level-3">
+                        <span>Inazuma Shogunate</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Fatui" data-tracking="custom-level-3">
+                        <span>Fatui</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <a href="https://genshin-impact.fandom.com/wiki/Voice_Actors" data-tracking="custom-level-2">
+                  <span>Voice Actors</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://genshin-impact.fandom.com/wiki/Birthdays" data-tracking="custom-level-2">
+                  <span>Birthdays</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="wds-dropdown ">
+          <div class="wds-tabs__tab-label wds-dropdown__toggle first-level-item">
+            <a href="https://genshin-impact.fandom.com/wiki/The_World" data-tracking="custom-level-1">
+              <span>The World</span>
+            </a>
+            <svg class="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron">
+              <use xlink:href="#wds-icons-dropdown-tiny"></use>
+            </svg> </div>
+          <div class="wds-is-not-scrollable wds-dropdown__content">
+            <ul class="wds-list wds-is-linked">
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Teyvat" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>Teyvat</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Mondstadt" data-tracking="custom-level-3">
+                        <span>Mondstadt</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Liyue" data-tracking="custom-level-3">
+                        <span>Liyue</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Inazuma" data-tracking="custom-level-3">
+                        <span>Inazuma</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Sumeru" data-tracking="custom-level-3">
+                        <span>Sumeru</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Fontaine" data-tracking="custom-level-3">
+                        <span>Fontaine</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Natlan" data-tracking="custom-level-3">
+                        <span>Natlan</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Snezhnaya" data-tracking="custom-level-3">
+                        <span>Snezhnaya</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Khaenri%27ah" data-tracking="custom-level-3">
+                        <span>Khaenri'ah</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Lore" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>Lore</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Timeline" data-tracking="custom-level-3">
+                        <span>Timeline</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Manga" data-tracking="custom-level-3">
+                        <span>Manga</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Languages" data-tracking="custom-level-3">
+                        <span>Languages</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Books" data-tracking="custom-level-3">
+                        <span>Books</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Soundtrack" data-tracking="custom-level-3">
+                        <span>Soundtrack</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Comics" data-tracking="custom-level-3">
+                        <span>Comics</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Quests" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>Quests</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Archon_Quests" data-tracking="custom-level-3">
+                        <span>Archon Quests</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Story_Quests" data-tracking="custom-level-3">
+                        <span>Story Quests</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/World_Quests" data-tracking="custom-level-3">
+                        <span>World Quests</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Commissions" data-tracking="custom-level-3">
+                        <span>Commissions</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Hangout_Events" data-tracking="custom-level-3">
+                        <span>Hangout Events</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Event_Quests" data-tracking="custom-level-3">
+                        <span>Event Quests</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Events" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>Events</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Version" data-tracking="custom-level-3">
+                        <span>Version</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/In_Game_Events" data-tracking="custom-level-3">
+                        <span>In Game Events</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Login_Events" data-tracking="custom-level-3">
+                        <span>Login Events</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Web_Events" data-tracking="custom-level-3">
+                        <span>Web Events</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Event_History" data-tracking="custom-level-3">
+                        <span>Event History</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Activities" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>Activities</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Domains" data-tracking="custom-level-3">
+                        <span>Domains</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Ley_Line_Outcrops" data-tracking="custom-level-3">
+                        <span>Ley Line Outcrops</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Expeditions" data-tracking="custom-level-3">
+                        <span>Expeditions</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Spiral_Abyss" data-tracking="custom-level-3">
+                        <span>Spiral Abyss</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Enemies" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>Enemies</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Common_Enemies" data-tracking="custom-level-3">
+                        <span>Common Enemies</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Elite_Enemies" data-tracking="custom-level-3">
+                        <span>Elite Enemies</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Normal_Bosses" data-tracking="custom-level-3">
+                        <span>Normal Bosses</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Weekly_Bosses" data-tracking="custom-level-3">
+                        <span>Weekly Bosses</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Wildlife" data-tracking="custom-level-3">
+                        <span>Wildlife</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Shops" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>Shops</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Gift_Shop" data-tracking="custom-level-3">
+                        <span>Gift Shop</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Paimon%27s_Bargains"
+                        data-tracking="custom-level-3">
+                        <span>Paimon's Bargains</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Souvenir_Shop" data-tracking="custom-level-3">
+                        <span>Souvenir Shop</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="wds-dropdown ">
+          <div class="wds-tabs__tab-label wds-dropdown__toggle first-level-item">
+            <a href="https://genshin-impact.fandom.com/wiki/Items" data-tracking="custom-level-1">
+              <span>Items</span>
+            </a>
+            <svg class="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron">
+              <use xlink:href="#wds-icons-dropdown-tiny"></use>
+            </svg> </div>
+          <div class="wds-is-not-scrollable wds-dropdown__content">
+            <ul class="wds-list wds-is-linked">
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Weapons" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>Weapons</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Bows" data-tracking="custom-level-3">
+                        <span>Bows</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Catalysts" data-tracking="custom-level-3">
+                        <span>Catalysts</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Claymores" data-tracking="custom-level-3">
+                        <span>Claymores</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Polearms" data-tracking="custom-level-3">
+                        <span>Polearms</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Swords" data-tracking="custom-level-3">
+                        <span>Swords</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Weapon_Enhancement_Materials"
+                        data-tracking="custom-level-3">
+                        <span>Weapon Enhancement Materials</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Artifacts" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>Artifacts</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Artifact_Sets" data-tracking="custom-level-3">
+                        <span>Artifact Sets</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Artifact_EXP" data-tracking="custom-level-3">
+                        <span>Artifact EXP</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Character_Development_Items"
+                  class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                  <span>Character Development Items</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Character_EXP_Materials"
+                        data-tracking="custom-level-3">
+                        <span>Character EXP Materials</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Character_Ascension_Materials"
+                        data-tracking="custom-level-3">
+                        <span>Character Ascension Materials</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Common_Ascension_Materials"
+                        data-tracking="custom-level-3">
+                        <span>Common Ascension Materials</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Refinement_Materials"
+                        data-tracking="custom-level-3">
+                        <span>Refinement Materials</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Talent_Level-Up_Materials"
+                        data-tracking="custom-level-3">
+                        <span>Talent Level-Up Materials</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Weapon_Ascension_Materials"
+                        data-tracking="custom-level-3">
+                        <span>Weapon Ascension Materials</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Materials" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>Materials</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Local_Specialties" data-tracking="custom-level-3">
+                        <span>Local Specialties</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Cooking_Ingredients"
+                        data-tracking="custom-level-3">
+                        <span>Cooking Ingredients</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Forging_Materials" data-tracking="custom-level-3">
+                        <span>Forging Materials</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Furnishing_Materials"
+                        data-tracking="custom-level-3">
+                        <span>Furnishing Materials</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Gardening_Materials"
+                        data-tracking="custom-level-3">
+                        <span>Gardening Materials</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Consumables" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>Consumables</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Food" data-tracking="custom-level-3">
+                        <span>Food</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Potions" data-tracking="custom-level-3">
+                        <span>Potions</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <a href="https://genshin-impact.fandom.com/wiki/Gadgets" data-tracking="custom-level-2">
+                  <span>Gadgets </span>
+                </a>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="#" class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                  <span>Other</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Original_Resin" data-tracking="custom-level-3">
+                        <span>Original Resin</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Namecards" data-tracking="custom-level-3">
+                        <span>Namecards</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Bundles" data-tracking="custom-level-3">
+                        <span>Bundles</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Currencies" data-tracking="custom-level-3">
+                        <span>Currencies</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Quest_Items" data-tracking="custom-level-3">
+                        <span>Quest Items</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Event_Items" data-tracking="custom-level-3">
+                        <span>Event Items</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Precious_Items" data-tracking="custom-level-3">
+                        <span>Precious Items</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Furnishings" data-tracking="custom-level-3">
+                        <span>Furnishings</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="wds-dropdown ">
+          <div class="wds-tabs__tab-label wds-dropdown__toggle first-level-item">
+            <a href="#" data-tracking="custom-level-1">
+              <span>Other</span>
+            </a>
+            <svg class="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron">
+              <use xlink:href="#wds-icons-dropdown-tiny"></use>
+            </svg> </div>
+          <div class="wds-is-not-scrollable wds-dropdown__content">
+            <ul class="wds-list wds-is-linked">
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Combat" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>Combat</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Attributes" data-tracking="custom-level-3">
+                        <span>Attributes</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Elements" data-tracking="custom-level-3">
+                        <span>Elements</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Elemental_Reactions"
+                        data-tracking="custom-level-3">
+                        <span>Elemental Reactions</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Talents" data-tracking="custom-level-3">
+                        <span>Talents</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Constellations" data-tracking="custom-level-3">
+                        <span>Constellations</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Progression" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>Progression</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Adventure_Rank" data-tracking="custom-level-3">
+                        <span>Adventure Rank</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Character_Experience"
+                        data-tracking="custom-level-3">
+                        <span>Character Experience</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Adventurer_Handbook"
+                        data-tracking="custom-level-3">
+                        <span>Adventurer Handbook</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Achievements" data-tracking="custom-level-3">
+                        <span>Achievements</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Reputation" data-tracking="custom-level-3">
+                        <span>Reputation</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Frostbearing_Tree%27s_Gratitude"
+                        data-tracking="custom-level-3">
+                        <span>Frostbearing Tree's Gratitude</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Sacred_Sakura%27s_Favor"
+                        data-tracking="custom-level-3">
+                        <span>Sacred Sakura's Favor</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Serenitea_Pot" data-tracking="custom-level-3">
+                        <span>Serenitea Pot</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Exploration" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>Exploration</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Statue_of_The_Seven"
+                        data-tracking="custom-level-3">
+                        <span>Statue of The Seven</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Oculi" data-tracking="custom-level-3">
+                        <span>Oculi</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Shrines_of_Depths" data-tracking="custom-level-3">
+                        <span>Shrines of Depths</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Teleport_Waypoints"
+                        data-tracking="custom-level-3">
+                        <span>Teleport Waypoints</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Map" data-tracking="custom-level-3">
+                        <span>Map</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Fishing" data-tracking="custom-level-3">
+                        <span>Fishing</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Monetization" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>Monetization</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Wishes" data-tracking="custom-level-3">
+                        <span>Wishes</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Primogems" data-tracking="custom-level-3">
+                        <span>Primogems</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Genesis_Crystal" data-tracking="custom-level-3">
+                        <span>Genesis Crystal</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Battle_Pass" data-tracking="custom-level-3">
+                        <span>Battle Pass</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Blessing_of_the_Welkin_Moon"
+                        data-tracking="custom-level-3">
+                        <span>Blessing of the Welkin Moon</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Character_Outfits" data-tracking="custom-level-3">
+                        <span>Character Outfits</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="#" class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                  <span>Crafting</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Alchemy" data-tracking="custom-level-3">
+                        <span>Alchemy</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Creation" data-tracking="custom-level-3">
+                        <span>Creation</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Cooking" data-tracking="custom-level-3">
+                        <span>Cooking</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Forging" data-tracking="custom-level-3">
+                        <span>Forging</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Processing" data-tracking="custom-level-3">
+                        <span>Processing</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Game_Systems" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>Other Systems</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Account" data-tracking="custom-level-3">
+                        <span>Account</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Archive" data-tracking="custom-level-3">
+                        <span>Archive</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Co-Op_Mode" data-tracking="custom-level-3">
+                        <span>Co-Op Mode</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Controls" data-tracking="custom-level-3">
+                        <span>Controls</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Friends" data-tracking="custom-level-3">
+                        <span>Friends </span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Inventory" data-tracking="custom-level-3">
+                        <span>Inventory</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Profile" data-tracking="custom-level-3">
+                        <span>Profile</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Settings" data-tracking="custom-level-3">
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown-level-nested">
+                <a href="https://genshin-impact.fandom.com/wiki/Community" class="wds-dropdown-level-nested__toggle"
+                  data-tracking="custom-level-2">
+                  <span>Community</span>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                    <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                  </svg> </a>
+                <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Genshin_Impact" data-tracking="custom-level-3">
+                        <span>Genshin Impact</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/MiHoYo" data-tracking="custom-level-3">
+                        <span>miHoYo</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/HOYO-MiX" data-tracking="custom-level-3">
+                        <span>HOYO-MiX</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/HoYoLAB" data-tracking="custom-level-3">
+                        <span>HoYoLAB</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Glossary" data-tracking="custom-level-3">
+                        <span>Glossary</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="wiki-tools wds-button-group">
+      <a href="/wiki/Special:Search"
+        class="wds-button wds-is-secondary is-hidden-on-smaller-breakpoints wiki-tools__search" title="Search"
+        data-tracking="search">
+        <svg class="wds-icon wds-icon-small">
+          <use xlink:href="#wds-icons-magnifying-glass-small"></use>
+        </svg> </a>
+      <a href="/f" class="wds-button wds-is-secondary " title="Discuss" data-tracking="discussions">
+        <svg class="wds-icon wds-icon-small">
+          <use xlink:href="#wds-icons-discussions-small"></use>
+        </svg> </a>
+      <a href="#" class="wds-button wds-is-secondary wiki-tools__theme-switch" title="Light Theme"
+        data-tracking="theme-switch-light">
+        <svg class="wds-icon wds-icon-small">
+          <use xlink:href="#wds-icons-sun-small"></use>
+        </svg> </a>
+    </div>
+  </div>
+
+  <div class="global-navigation">
+    <div class="global-navigation__top">
+      <nav class="global-navigation__nav" aria-label="Fandom navigation">
+        <a href="https://www.fandom.com/" class="global-navigation__logo" data-tracking-label="logo"
+          aria-label="Fandom homepage">
+          <svg class="wds-icon">
+            <use xlink:href="#wds-brand-fandom-logomark"></use>
+          </svg> <span>FANDOM</span>
+        </a>
+
+        <a href="/wiki/Special:Search" class="global-navigation__search global-navigation__icon" accesskey="f"
+          title="Search" data-tracking-label="search" data-wds-tooltip="Search" data-wds-tooltip-position="right">
+          <svg class="wds-icon">
+            <use xlink:href="#wds-icons-magnifying-glass"></use>
+          </svg> </a>
+
+
+        <div class="global-navigation__links">
+          <a href="https://www.fandom.com/topics/games" class="global-navigation__link"
+            data-tracking-label="link.games">
+            <span class="global-navigation__icon has-background">
+              <svg class="wds-icon wds-is-stroke-icon">
+                <use xlink:href="#wds-verticals-games"></use>
+              </svg> </span>
+            <span class="global-navigation__label">
+              Games </span>
+          </a>
+          <a href="https://www.fandom.com/topics/anime" class="global-navigation__link"
+            data-tracking-label="link.anime">
+            <span class="global-navigation__icon has-background">
+              <svg class="wds-icon wds-is-stroke-icon">
+                <use xlink:href="#wds-verticals-anime"></use>
+              </svg> </span>
+            <span class="global-navigation__label">
+              Anime </span>
+          </a>
+          <a href="https://www.fandom.com/topics/movies" class="global-navigation__link"
+            data-tracking-label="link.movies">
+            <span class="global-navigation__icon has-background">
+              <svg class="wds-icon wds-is-stroke-icon">
+                <use xlink:href="#wds-verticals-movies"></use>
+              </svg> </span>
+            <span class="global-navigation__label">
+              Movies </span>
+          </a>
+          <a href="https://www.fandom.com/topics/tv" class="global-navigation__link" data-tracking-label="link.tv">
+            <span class="global-navigation__icon has-background">
+              <svg class="wds-icon wds-is-stroke-icon">
+                <use xlink:href="#wds-verticals-tv"></use>
+              </svg> </span>
+            <span class="global-navigation__label">
+              TV </span>
+          </a>
+          <a href="https://www.fandom.com/video" class="global-navigation__link" data-tracking-label="link.video">
+            <span class="global-navigation__icon has-background">
+              <svg class="wds-icon wds-is-stroke-icon">
+                <use xlink:href="#wds-verticals-video"></use>
+              </svg> </span>
+            <span class="global-navigation__label">
+              Video </span>
+          </a>
+
+          <div class="wds-dropdown wds-open-to-right">
+            <div class="wds-dropdown__toggle" data-tracking-label="link.wikis">
+              <div class="global-navigation__icon has-background">
+                <svg class="wds-icon wds-is-stroke-icon">
+                  <use xlink:href="#wds-verticals-wikis"></use>
+                </svg> </div>
+              <div class="global-navigation__label">
+                Wikis </div>
+            </div>
+            <div class="wds-dropdown__content">
+              <ul class="wds-list wds-is-linked">
+                <li>
+                  <a href="https://www.fandom.com/explore" data-tracking-label="link.explore">
+                    Explore Wikis </a>
+                </li>
+                <li>
+                  <a href="//community.fandom.com/wiki/Community_Central" data-tracking-label="link.community-central">
+                    Community Central </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <a href="//createnewwiki.fandom.com/Special:CreateNewWiki" class="global-navigation__link"
+            data-tracking-label="start-a-wiki">
+            <span class="global-navigation__icon has-border">
+              <svg class="wds-icon wds-icon-small">
+                <use xlink:href="#wds-icons-add-small"></use>
+              </svg> </span>
+            <span class="global-navigation__label">
+              Start a Wiki </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="global-navigation__bottom">
+
+      <div class="wds-dropdown wds-open-to-right is-attached-to-bottom is-anon-dropdown">
+        <div class="wds-dropdown__toggle">
+          <div class="global-navigation__icon">
+            <svg class="wds-icon">
+              <use xlink:href="#wds-icons-avatar"></use>
+            </svg> </div>
+        </div>
+        <div class="wds-dropdown__content">
+          <a class="wds-button wds-is-full-width wds-is-secondary"
+            href="https://auth.fandom.com/register?redirect=https%3A%2F%2Fgenshin-impact.fandom.com%2Fwiki%2FHilichurlian%2FLexicon"
+            rel="nofollow" data-tracking-label="account.register" id="global-navigation-register-link">
+            Register </a>
+          <div class="global-navigation__register-text">
+            Don&#039;t have an account? </div>
+          <hr>
+          <a class="wds-button wds-is-full-width"
+            href="https://auth.fandom.com/signin?redirect=https%3A%2F%2Fgenshin-impact.fandom.com%2Fwiki%2FHilichurlian%2FLexicon"
+            rel="nofollow" data-tracking-label="account.sign-in" id="global-navigation-sign-in-link">
+            Sign In </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-container">
+
+    <div class="top-ads-container">
+      <div class="ad-slot-placeholder top-leaderboard is-loading"></div>
+      <div class="ae-translatable-label" data-key="advertisement">Advertisement</div>
+    </div>
+    <div class="fandom-community-header__background cover header " style="--image-ratio:0.22777777777778"></div>
+    <div class="resizable-container">
+      <div class="community-header-wrapper">
+        <header class="fandom-community-header">
+          <a accesskey="z" href="//genshin-impact.fandom.com" class="fandom-community-header__image">
+            <img
+              src="https://static.wikia.nocookie.net/gensin-impact/images/e/e6/Site-logo.png/revision/latest?cb=20210723101020"
+              width="500" height="180" alt="Genshin Impact Wiki" data-test="fandom-community-header-community-logo">
+          </a>
+          <div class="fandom-community-header__top-container">
+            <div class="fandom-community-header__community-name-wrapper">
+              <a href="//genshin-impact.fandom.com" class="fandom-community-header__community-name"
+                data-test="fandom-community-header-cummunity-name">
+                Genshin Impact Wiki </a>
+            </div>
+            <div class="page-counter">
+              <div class="page-counter__value">11,665</div>
+              <div class="page-counter__label">pages</div>
+            </div>
+            <div class="wiki-tools wds-button-group">
+              <a href="/wiki/Special:Search"
+                class="wds-button wds-is-secondary is-hidden-on-smaller-breakpoints wiki-tools__search" title="Search"
+                data-tracking="search">
+                <svg class="wds-icon wds-icon-small">
+                  <use xlink:href="#wds-icons-magnifying-glass-small"></use>
+                </svg> </a>
+              <a href="/f" class="wds-button wds-is-secondary " title="Discuss" data-tracking="discussions">
+                <svg class="wds-icon wds-icon-small">
+                  <use xlink:href="#wds-icons-discussions-small"></use>
+                </svg> </a>
+              <a href="#" class="wds-button wds-is-secondary wiki-tools__theme-switch" title="Light Theme"
+                data-tracking="theme-switch-light">
+                <svg class="wds-icon wds-icon-small">
+                  <use xlink:href="#wds-icons-sun-small"></use>
+                </svg> </a>
+            </div>
+          </div>
+
+          <nav class="fandom-community-header__local-navigation">
+            <ul class="wds-tabs">
+
+              <li class="wds-dropdown explore-menu">
+                <div class="wds-tabs__tab-label wds-dropdown__toggle first-level-item">
+                  <a href="#" data-tracking="custom-level-1">
+                    <svg class="wds-icon-tiny wds-icon">
+                      <use xlink:href="#wds-icons-book-tiny"></use>
+                    </svg> <span>Explore</span>
+                  </a>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron">
+                    <use xlink:href="#wds-icons-dropdown-tiny"></use>
+                  </svg> </div>
+                <div class="wds-is-not-scrollable wds-dropdown__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Genshin_Impact_Wiki"
+                        data-tracking="explore-main-page">
+                        <svg class="wds-icon-tiny wds-icon navigation-item-icon">
+                          <use xlink:href="#wds-icons-home-tiny"></use>
+                        </svg> <span>Main Page</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="/f" data-tracking="explore-discuss">
+                        <svg class="wds-icon-tiny wds-icon navigation-item-icon">
+                          <use xlink:href="#wds-icons-discussions-tiny"></use>
+                        </svg> <span>Discuss</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Special:AllPages"
+                        data-tracking="explore-all-pages">
+                        <span>All Pages</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Special:Community"
+                        data-tracking="explore-community">
+                        <span>Community</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Special:AllMaps" data-tracking="interactive-maps">
+                        <span>Interactive Maps</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="/Blog:Recent_posts" data-tracking="explore-blogs">
+                        <span>Recent Blog Posts</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown ">
+                <div class="wds-tabs__tab-label wds-dropdown__toggle first-level-item">
+                  <a href="https://genshin-impact.fandom.com/wiki/Characters" data-tracking="custom-level-1">
+                    <span>Characters</span>
+                  </a>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron">
+                    <use xlink:href="#wds-icons-dropdown-tiny"></use>
+                  </svg> </div>
+                <div class="wds-is-not-scrollable wds-dropdown__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Playable_Characters"
+                        class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                        <span>Playable Characters</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Traveler" data-tracking="custom-level-3">
+                              <span>Traveler</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Amber" data-tracking="custom-level-3">
+                              <span>Amber</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Lisa" data-tracking="custom-level-3">
+                              <span>Lisa</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Kaeya" data-tracking="custom-level-3">
+                              <span>Kaeya</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Character_List"
+                              data-tracking="custom-level-3">
+                              <span>Character List</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Featured_Characters"
+                        class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                        <span>Featured Characters</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Kaedehara_Kazuha"
+                              data-tracking="custom-level-3">
+                              <span>Kaedehara Kazuha</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Klee" data-tracking="custom-level-3">
+                              <span>Klee</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Shikanoin_Heizou"
+                              data-tracking="custom-level-3">
+                              <span>Shikanoin Heizou</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Character_Comparison"
+                        data-tracking="custom-level-2">
+                        <span>Character Comparison</span>
+                      </a>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/NPCs" class="wds-dropdown-level-nested__toggle"
+                        data-tracking="custom-level-2">
+                        <span>NPCs</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Paimon" data-tracking="custom-level-3">
+                              <span>Paimon</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Katheryne" data-tracking="custom-level-3">
+                              <span>Katheryne</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Unknown_God" data-tracking="custom-level-3">
+                              <span>Unknown God</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Notable_NPCs"
+                              data-tracking="custom-level-3">
+                              <span>Notable NPCs</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Factions"
+                        class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                        <span>Factions</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/The_Seven" data-tracking="custom-level-3">
+                              <span>The Seven</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Adventurers%27_Guild"
+                              data-tracking="custom-level-3">
+                              <span>Adventurers' Guild</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Knights_of_Favonius"
+                              data-tracking="custom-level-3">
+                              <span>Knights of Favonius</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Liyue_Qixing"
+                              data-tracking="custom-level-3">
+                              <span>Liyue Qixing</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Inazuma_Shogunate"
+                              data-tracking="custom-level-3">
+                              <span>Inazuma Shogunate</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Fatui" data-tracking="custom-level-3">
+                              <span>Fatui</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Voice_Actors" data-tracking="custom-level-2">
+                        <span>Voice Actors</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Birthdays" data-tracking="custom-level-2">
+                        <span>Birthdays</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown ">
+                <div class="wds-tabs__tab-label wds-dropdown__toggle first-level-item">
+                  <a href="https://genshin-impact.fandom.com/wiki/The_World" data-tracking="custom-level-1">
+                    <span>The World</span>
+                  </a>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron">
+                    <use xlink:href="#wds-icons-dropdown-tiny"></use>
+                  </svg> </div>
+                <div class="wds-is-not-scrollable wds-dropdown__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Teyvat" class="wds-dropdown-level-nested__toggle"
+                        data-tracking="custom-level-2">
+                        <span>Teyvat</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Mondstadt" data-tracking="custom-level-3">
+                              <span>Mondstadt</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Liyue" data-tracking="custom-level-3">
+                              <span>Liyue</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Inazuma" data-tracking="custom-level-3">
+                              <span>Inazuma</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Sumeru" data-tracking="custom-level-3">
+                              <span>Sumeru</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Fontaine" data-tracking="custom-level-3">
+                              <span>Fontaine</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Natlan" data-tracking="custom-level-3">
+                              <span>Natlan</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Snezhnaya" data-tracking="custom-level-3">
+                              <span>Snezhnaya</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Khaenri%27ah"
+                              data-tracking="custom-level-3">
+                              <span>Khaenri'ah</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Lore" class="wds-dropdown-level-nested__toggle"
+                        data-tracking="custom-level-2">
+                        <span>Lore</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Timeline" data-tracking="custom-level-3">
+                              <span>Timeline</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Manga" data-tracking="custom-level-3">
+                              <span>Manga</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Languages" data-tracking="custom-level-3">
+                              <span>Languages</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Books" data-tracking="custom-level-3">
+                              <span>Books</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Soundtrack" data-tracking="custom-level-3">
+                              <span>Soundtrack</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Comics" data-tracking="custom-level-3">
+                              <span>Comics</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Quests" class="wds-dropdown-level-nested__toggle"
+                        data-tracking="custom-level-2">
+                        <span>Quests</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Archon_Quests"
+                              data-tracking="custom-level-3">
+                              <span>Archon Quests</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Story_Quests"
+                              data-tracking="custom-level-3">
+                              <span>Story Quests</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/World_Quests"
+                              data-tracking="custom-level-3">
+                              <span>World Quests</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Commissions" data-tracking="custom-level-3">
+                              <span>Commissions</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Hangout_Events"
+                              data-tracking="custom-level-3">
+                              <span>Hangout Events</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Event_Quests"
+                              data-tracking="custom-level-3">
+                              <span>Event Quests</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Events" class="wds-dropdown-level-nested__toggle"
+                        data-tracking="custom-level-2">
+                        <span>Events</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Version" data-tracking="custom-level-3">
+                              <span>Version</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/In_Game_Events"
+                              data-tracking="custom-level-3">
+                              <span>In Game Events</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Login_Events"
+                              data-tracking="custom-level-3">
+                              <span>Login Events</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Web_Events" data-tracking="custom-level-3">
+                              <span>Web Events</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Event_History"
+                              data-tracking="custom-level-3">
+                              <span>Event History</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Activities"
+                        class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                        <span>Activities</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Domains" data-tracking="custom-level-3">
+                              <span>Domains</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Ley_Line_Outcrops"
+                              data-tracking="custom-level-3">
+                              <span>Ley Line Outcrops</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Expeditions" data-tracking="custom-level-3">
+                              <span>Expeditions</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Spiral_Abyss"
+                              data-tracking="custom-level-3">
+                              <span>Spiral Abyss</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Enemies" class="wds-dropdown-level-nested__toggle"
+                        data-tracking="custom-level-2">
+                        <span>Enemies</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Common_Enemies"
+                              data-tracking="custom-level-3">
+                              <span>Common Enemies</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Elite_Enemies"
+                              data-tracking="custom-level-3">
+                              <span>Elite Enemies</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Normal_Bosses"
+                              data-tracking="custom-level-3">
+                              <span>Normal Bosses</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Weekly_Bosses"
+                              data-tracking="custom-level-3">
+                              <span>Weekly Bosses</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Wildlife" data-tracking="custom-level-3">
+                              <span>Wildlife</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Shops" class="wds-dropdown-level-nested__toggle"
+                        data-tracking="custom-level-2">
+                        <span>Shops</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Gift_Shop" data-tracking="custom-level-3">
+                              <span>Gift Shop</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Paimon%27s_Bargains"
+                              data-tracking="custom-level-3">
+                              <span>Paimon's Bargains</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Souvenir_Shop"
+                              data-tracking="custom-level-3">
+                              <span>Souvenir Shop</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown ">
+                <div class="wds-tabs__tab-label wds-dropdown__toggle first-level-item">
+                  <a href="https://genshin-impact.fandom.com/wiki/Items" data-tracking="custom-level-1">
+                    <span>Items</span>
+                  </a>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron">
+                    <use xlink:href="#wds-icons-dropdown-tiny"></use>
+                  </svg> </div>
+                <div class="wds-is-not-scrollable wds-dropdown__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Weapons" class="wds-dropdown-level-nested__toggle"
+                        data-tracking="custom-level-2">
+                        <span>Weapons</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Bows" data-tracking="custom-level-3">
+                              <span>Bows</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Catalysts" data-tracking="custom-level-3">
+                              <span>Catalysts</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Claymores" data-tracking="custom-level-3">
+                              <span>Claymores</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Polearms" data-tracking="custom-level-3">
+                              <span>Polearms</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Swords" data-tracking="custom-level-3">
+                              <span>Swords</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Weapon_Enhancement_Materials"
+                              data-tracking="custom-level-3">
+                              <span>Weapon Enhancement Materials</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Artifacts"
+                        class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                        <span>Artifacts</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Artifact_Sets"
+                              data-tracking="custom-level-3">
+                              <span>Artifact Sets</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Artifact_EXP"
+                              data-tracking="custom-level-3">
+                              <span>Artifact EXP</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Character_Development_Items"
+                        class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                        <span>Character Development Items</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Character_EXP_Materials"
+                              data-tracking="custom-level-3">
+                              <span>Character EXP Materials</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Character_Ascension_Materials"
+                              data-tracking="custom-level-3">
+                              <span>Character Ascension Materials</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Common_Ascension_Materials"
+                              data-tracking="custom-level-3">
+                              <span>Common Ascension Materials</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Refinement_Materials"
+                              data-tracking="custom-level-3">
+                              <span>Refinement Materials</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Talent_Level-Up_Materials"
+                              data-tracking="custom-level-3">
+                              <span>Talent Level-Up Materials</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Weapon_Ascension_Materials"
+                              data-tracking="custom-level-3">
+                              <span>Weapon Ascension Materials</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Materials"
+                        class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                        <span>Materials</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Local_Specialties"
+                              data-tracking="custom-level-3">
+                              <span>Local Specialties</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Cooking_Ingredients"
+                              data-tracking="custom-level-3">
+                              <span>Cooking Ingredients</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Forging_Materials"
+                              data-tracking="custom-level-3">
+                              <span>Forging Materials</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Furnishing_Materials"
+                              data-tracking="custom-level-3">
+                              <span>Furnishing Materials</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Gardening_Materials"
+                              data-tracking="custom-level-3">
+                              <span>Gardening Materials</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Consumables"
+                        class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                        <span>Consumables</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Food" data-tracking="custom-level-3">
+                              <span>Food</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Potions" data-tracking="custom-level-3">
+                              <span>Potions</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li>
+                      <a href="https://genshin-impact.fandom.com/wiki/Gadgets" data-tracking="custom-level-2">
+                        <span>Gadgets </span>
+                      </a>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="#" class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                        <span>Other</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Original_Resin"
+                              data-tracking="custom-level-3">
+                              <span>Original Resin</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Namecards" data-tracking="custom-level-3">
+                              <span>Namecards</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Bundles" data-tracking="custom-level-3">
+                              <span>Bundles</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Currencies" data-tracking="custom-level-3">
+                              <span>Currencies</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Quest_Items" data-tracking="custom-level-3">
+                              <span>Quest Items</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Event_Items" data-tracking="custom-level-3">
+                              <span>Event Items</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Precious_Items"
+                              data-tracking="custom-level-3">
+                              <span>Precious Items</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Furnishings" data-tracking="custom-level-3">
+                              <span>Furnishings</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="wds-dropdown ">
+                <div class="wds-tabs__tab-label wds-dropdown__toggle first-level-item">
+                  <a href="#" data-tracking="custom-level-1">
+                    <span>Other</span>
+                  </a>
+                  <svg class="wds-icon wds-icon-tiny wds-dropdown__toggle-chevron">
+                    <use xlink:href="#wds-icons-dropdown-tiny"></use>
+                  </svg> </div>
+                <div class="wds-is-not-scrollable wds-dropdown__content">
+                  <ul class="wds-list wds-is-linked">
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Combat" class="wds-dropdown-level-nested__toggle"
+                        data-tracking="custom-level-2">
+                        <span>Combat</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Attributes" data-tracking="custom-level-3">
+                              <span>Attributes</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Elements" data-tracking="custom-level-3">
+                              <span>Elements</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Elemental_Reactions"
+                              data-tracking="custom-level-3">
+                              <span>Elemental Reactions</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Talents" data-tracking="custom-level-3">
+                              <span>Talents</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Constellations"
+                              data-tracking="custom-level-3">
+                              <span>Constellations</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Progression"
+                        class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                        <span>Progression</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Adventure_Rank"
+                              data-tracking="custom-level-3">
+                              <span>Adventure Rank</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Character_Experience"
+                              data-tracking="custom-level-3">
+                              <span>Character Experience</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Adventurer_Handbook"
+                              data-tracking="custom-level-3">
+                              <span>Adventurer Handbook</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Achievements"
+                              data-tracking="custom-level-3">
+                              <span>Achievements</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Reputation" data-tracking="custom-level-3">
+                              <span>Reputation</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Frostbearing_Tree%27s_Gratitude"
+                              data-tracking="custom-level-3">
+                              <span>Frostbearing Tree's Gratitude</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Sacred_Sakura%27s_Favor"
+                              data-tracking="custom-level-3">
+                              <span>Sacred Sakura's Favor</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Serenitea_Pot"
+                              data-tracking="custom-level-3">
+                              <span>Serenitea Pot</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Exploration"
+                        class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                        <span>Exploration</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Statue_of_The_Seven"
+                              data-tracking="custom-level-3">
+                              <span>Statue of The Seven</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Oculi" data-tracking="custom-level-3">
+                              <span>Oculi</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Shrines_of_Depths"
+                              data-tracking="custom-level-3">
+                              <span>Shrines of Depths</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Teleport_Waypoints"
+                              data-tracking="custom-level-3">
+                              <span>Teleport Waypoints</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Map" data-tracking="custom-level-3">
+                              <span>Map</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Fishing" data-tracking="custom-level-3">
+                              <span>Fishing</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Monetization"
+                        class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                        <span>Monetization</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Wishes" data-tracking="custom-level-3">
+                              <span>Wishes</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Primogems" data-tracking="custom-level-3">
+                              <span>Primogems</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Genesis_Crystal"
+                              data-tracking="custom-level-3">
+                              <span>Genesis Crystal</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Battle_Pass" data-tracking="custom-level-3">
+                              <span>Battle Pass</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Blessing_of_the_Welkin_Moon"
+                              data-tracking="custom-level-3">
+                              <span>Blessing of the Welkin Moon</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Character_Outfits"
+                              data-tracking="custom-level-3">
+                              <span>Character Outfits</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="#" class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                        <span>Crafting</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Alchemy" data-tracking="custom-level-3">
+                              <span>Alchemy</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Creation" data-tracking="custom-level-3">
+                              <span>Creation</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Cooking" data-tracking="custom-level-3">
+                              <span>Cooking</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Forging" data-tracking="custom-level-3">
+                              <span>Forging</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Processing" data-tracking="custom-level-3">
+                              <span>Processing</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Game_Systems"
+                        class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                        <span>Other Systems</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Account" data-tracking="custom-level-3">
+                              <span>Account</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Archive" data-tracking="custom-level-3">
+                              <span>Archive</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Co-Op_Mode" data-tracking="custom-level-3">
+                              <span>Co-Op Mode</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Controls" data-tracking="custom-level-3">
+                              <span>Controls</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Friends" data-tracking="custom-level-3">
+                              <span>Friends </span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Inventory" data-tracking="custom-level-3">
+                              <span>Inventory</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Profile" data-tracking="custom-level-3">
+                              <span>Profile</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Settings" data-tracking="custom-level-3">
+                              <span>Settings</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+
+                    <li class="wds-dropdown-level-nested">
+                      <a href="https://genshin-impact.fandom.com/wiki/Community"
+                        class="wds-dropdown-level-nested__toggle" data-tracking="custom-level-2">
+                        <span>Community</span>
+                        <svg class="wds-icon wds-icon-tiny wds-dropdown-chevron">
+                          <use xlink:href="#wds-icons-menu-control-tiny"></use>
+                        </svg> </a>
+                      <div class="wds-is-not-scrollable wds-dropdown-level-nested__content">
+                        <ul class="wds-list wds-is-linked">
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Genshin_Impact"
+                              data-tracking="custom-level-3">
+                              <span>Genshin Impact</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/MiHoYo" data-tracking="custom-level-3">
+                              <span>miHoYo</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/HOYO-MiX" data-tracking="custom-level-3">
+                              <span>HOYO-MiX</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/HoYoLAB" data-tracking="custom-level-3">
+                              <span>HoYoLAB</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="https://genshin-impact.fandom.com/wiki/Glossary" data-tracking="custom-level-3">
+                              <span>Glossary</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+      <div class="page has-right-rail">
+        <main class="page__main" lang="en">
+          <div class="page-side-tools__wrapper">
+            <div class="page-side-tools">
+              <button class="page-side-tool content-size-toggle">
+                <svg class="wds-icon wds-icon-small">
+                  <use xlink:href="#wds-icons-zoom-in-small"></use>
+                </svg> </button>
+              <a class="page-side-tool page-side-edit" href="/wiki/Hilichurlian/Lexicon?action=edit"
+                id="ca-viewsource-side-tool" data-tracking-label="ca-viewsource" data-wds-tooltip="View source"
+                data-wds-tooltip-position="right">
+                <svg class="wds-icon wds-icon-small">
+                  <use xlink:href="#wds-icons-lock-small"></use>
+                </svg> </a>
+            </div>
+          </div>
+
+          <div class="page-header">
+            <div class="page-header__top">
+              <div class="page-header__meta">
+
+                <div class="page-header__categories">
+                  <span class="page-header__categories-in">in:</span>
+                  <a href="/wiki/Category:Lore" title="Category:Lore"
+                    data-tracking-label="categories-top-more-0">Lore</a> </div>
+
+              </div>
+            </div>
+            <div class="page-header__bottom">
+              <div class="page-header__title-wrapper">
+                <h1 class="page-header__title" id="firstHeading">
+                  Hilichurlian/Lexicon </h1>
+                <div class="page-header__page-subtitle"><span class="subpages">&lt; <a href="/wiki/Hilichurlian"
+                      title="Hilichurlian">Hilichurlian</a></span></div>
+              </div>
+              <div class="page-header__actions" id="p-views">
+
+                <a class="wds-button wds-is-text page-header__action-button" data-tracking-label="comments-button"
+                  href="#articleComments">
+                  <div id="article-comments-button" class="button-counter"></div>
+                  <svg class="wds-icon wds-icon-small">
+                    <use xlink:href="#wds-icons-comment-small"></use>
+                  </svg>
+                </a>
+
+                <a class="wds-button wds-is-text page-header__action-button has-label"
+                  href="/wiki/Hilichurlian/Lexicon?action=edit" id="ca-viewsource" data-tracking-label="ca-viewsource"
+                  accesskey="e">
+                  <svg class="wds-icon wds-icon-small">
+                    <use xlink:href="#wds-icons-lock-small"></use>
+                  </svg> View source </a>
+
+
+                <div class="wds-dropdown">
+                  <div class="wds-dropdown__toggle wds-button wds-is-text page-header__action-button">
+                    <svg class="wds-icon wds-icon-small">
+                      <use xlink:href="#wds-icons-more-small"></use>
+                    </svg> </div>
+                  <div id="p-cactions" class="wds-dropdown__content wds-is-right-aligned wds-is-not-scrollable">
+                    <ul class="wds-list wds-is-linked">
+                      <li>
+                        <a id="ca-history" href="/wiki/Hilichurlian/Lexicon?action=history"
+                          data-tracking-label="ca-history-dropdown" accesskey="h">
+                          History </a>
+                      </li>
+                      <li>
+                        <a id="ca-talk" href="/wiki/Talk:Hilichurlian/Lexicon?action=edit&amp;redlink=1" class="new"
+                          data-tracking-label="ca-talk-dropdown" accesskey="t">
+                          Talk (0) </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="content" class="page-content">
+            <div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr">
+              <!-- Google Tag Manager (noscript) -->
+              <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6XD44P" height="0" width="0"
+                  style="display:none;visibility:hidden"></iframe></noscript>
+              <!-- End Google Tag Manager (noscript) -->
+              <div class="mw-parser-output">
+                <p>A list of known common words of <a href="/wiki/Hilichurlian" title="Hilichurlian">Hilichurlian</a>.
+                  Please pay attention to the references.
+                </p>
+                <p><b>For a more extensive dictionary of Hilichurlian, please visit Hilichurlian Wiktionary at <a
+                      target="_blank" rel="nofollow noreferrer noopener" class="external text"
+                      href="http://www.hilichurl.org">hilichurl.org</a>, a partner project of Genshin Impact Wiki.</b>
+                </p>
+                <h2><span class="mw-headline" id="List">List</span></h2>
+                <table class="wikitable sortable" style="width:100%">
+                  <tbody>
+                    <tr>
+                      <th>Hilichurlian
+                      </th>
+                      <th>English
+                      </th>
+                      <th>Notes
+                      </th>
+                    </tr>
+                    <tr>
+                      <td>mosi
+                      </td>
+                      <td>to eat<sup id="cite_ref-mondstadt_tea_party_1-0" class="reference"><a
+                            href="#cite_note-mondstadt_tea_party-1">&#91;1&#93;</a></sup>
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>mita
+                      </td>
+                      <td>meat<sup id="cite_ref-mondstadt_tea_party_1-1" class="reference"><a
+                            href="#cite_note-mondstadt_tea_party-1">&#91;1&#93;</a></sup><sup id="cite_ref-HHH_2-0"
+                          class="reference"><a href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                      <td>Has positive connotations.<sup id="cite_ref-mondstadt_tea_party_1-2" class="reference"><a
+                            href="#cite_note-mondstadt_tea_party-1">&#91;1&#93;</a></sup>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>gusha
+                      </td>
+                      <td>vegetables<sup id="cite_ref-mondstadt_tea_party_1-3" class="reference"><a
+                            href="#cite_note-mondstadt_tea_party-1">&#91;1&#93;</a></sup><sup id="cite_ref-HHH_2-1"
+                          class="reference"><a href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                      <td>Has negative connotations.<sup id="cite_ref-mondstadt_tea_party_1-4" class="reference"><a
+                            href="#cite_note-mondstadt_tea_party-1">&#91;1&#93;</a></sup> The color of <i>gusha</i> is
+                        green.<sup id="cite_ref-HHH_2-2" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>mi (plural: mimi)
+                      </td>
+                      <td>I, me (plural: we, us)<sup id="cite_ref-CN_player_analysis_3-0" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>muhe
+                      </td>
+                      <td>triumph;<sup id="cite_ref-CN_player_analysis_3-1" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup> like, want<sup
+                          id="cite_ref-HHH_2-3" class="reference"><a href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>biat
+                      </td>
+                      <td>to hit, to curse<sup id="cite_ref-CN_player_analysis_3-2" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>May be used for emphasis (e.g. "very").
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>ye (plural: yeye)
+                      </td>
+                      <td>you, your (register unknown, possibly condescending<sup id="cite_ref-CN_player_analysis_3-3"
+                          class="reference"><a href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup> or informal)
+                      </td>
+                      <td>May be similar to Japanese <span><span lang="ja">お前</span></span> or Korean <span><span
+                            lang="ko">너</span></span> where it does not express pure condescension, but can imply
+                        closeness to the addressee. However, it still connotes condescension by implying that the
+                        addressee is of a lower social standing and socially impermissible usages of the pronoun should
+                        be understood as a sign of contempt.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>yo (plural: yoyo)
+                      </td>
+                      <td>you, your (register unknown, friendly<sup id="cite_ref-CN_player_analysis_3-4"
+                          class="reference"><a href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup> or formal)
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>da/dada
+                      </td>
+                      <td>good/very good, affirmation, very (emphasis)<sup id="cite_ref-HHH_2-4" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup><sup id="cite_ref-CN_player_analysis_3-5"
+                          class="reference"><a href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>Can be used as praise<sup id="cite_ref-good_poem_4-0" class="reference"><a
+                            href="#cite_note-good_poem-4">&#91;4&#93;</a></sup>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>domu
+                      </td>
+                      <td>to dance<sup id="cite_ref-CN_player_analysis_3-6" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>eleka
+                      </td>
+                      <td>now<sup id="cite_ref-CN_player_analysis_3-7" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>Meaning uncertain
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>sada
+                      </td>
+                      <td>to sing, singing, song;<sup id="cite_ref-CN_player_analysis_3-8" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup> solid, hard<sup
+                          id="cite_ref-HHH_2-5" class="reference"><a href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                      <td>The phrase <i>upa sada</i> means that you are prepared to do something.<sup
+                          id="cite_ref-HHH_2-6" class="reference"><a href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>nye
+                      </td>
+                      <td>not, un-<sup id="cite_ref-CN_player_analysis_3-9" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>Can be used for negation
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>nunu
+                      </td>
+                      <td>to sleep<sup id="cite_ref-HBS_2_5-0" class="reference"><a
+                            href="#cite_note-HBS_2-5">&#91;5&#93;</a></sup>
+                      </td>
+                      <td>The color of <i>nunu</i> is black.<sup id="cite_ref-HHH_2-7" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup> This may refer to nighttime.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>nini
+                      </td>
+                      <td>storm, wind, <a href="/wiki/Anemo" title="Anemo">Anemo</a><sup
+                          id="cite_ref-CN_player_analysis_3-10" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup><br />(as a verb) to disappear
+                      </td>
+                      <td>Meaning uncertain. The color of <i>nini</i> is white.<sup id="cite_ref-HHH_2-8"
+                          class="reference"><a href="#cite_note-HHH-2">&#91;2&#93;</a></sup><br />Conveys the concept of
+                        ephemerality.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>zido
+                      </td>
+                      <td>here, this <sup id="cite_ref-CN_player_analysis_3-11" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup><br />(as a verb) to go
+                      </td>
+                      <td>May also mean "nothing" in some contexts. May also mean "to mark" or be used to otherwise
+                        indicate a specific thing.<sup id="cite_ref-mutual_6-0" class="reference"><a
+                            href="#cite_note-mutual-6">&#91;6&#93;</a></sup> Possibly <a
+                          href="http://en.wikipedia.org/wiki/Deixis" class="extiw" title="wikipedia:Deixis">deictic</a>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>movo
+                      </td>
+                      <td>to move, to bring, to come<sup id="cite_ref-CN_player_analysis_3-12" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>Meaning uncertain. <i>Movo lata</i> is water.<sup id="cite_ref-HHH_2-9" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>kuzi
+                      </td>
+                      <td>mighty, strong<sup id="cite_ref-CN_player_analysis_3-13" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>celi
+                      </td>
+                      <td>heat; <a href="/wiki/Pyro" title="Pyro">Pyro</a>, fire; the sun (typically <i>celi
+                          upa</i>)<sup id="cite_ref-HHH_2-10" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                      <td>The color of <i>celi</i> is red.<sup id="cite_ref-HHH_2-11" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup> The phrase <i>celi lata</i> (literally "hot
+                        cold" or possibly "fire cold") refers to things that emit light, but not heat, such as <a
+                          href="/wiki/Small_Lamp_Grass" title="Small Lamp Grass">Small Lamp Grass</a>, fireflies, stars,
+                        and the moon.<sup id="cite_ref-HHH_2-12" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>upa
+                      </td>
+                      <td>to combine, to merge, to gather<sup id="cite_ref-CN_player_analysis_3-14" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td><i>Dada upa</i> means "very tall/large mountain."<sup id="cite_ref-HHH_2-13"
+                          class="reference"><a href="#cite_note-HHH-2">&#91;2&#93;</a></sup> <i>Celi upa</i> means "the
+                        sun."<sup id="cite_ref-HHH_2-14" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup> <i>Upa sada</i> means that you are prepared to
+                        do something.<sup id="cite_ref-HHH_2-15" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>shato
+                      </td>
+                      <td>like, alike, similar<sup id="cite_ref-CN_player_analysis_3-15" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>lata
+                      </td>
+                      <td><a href="/wiki/Cryo" title="Cryo">Cryo</a>, ice, cold<sup id="cite_ref-HHH_2-16"
+                          class="reference"><a href="#cite_note-HHH-2">&#91;2&#93;</a></sup><sup
+                          id="cite_ref-CN_player_analysis_3-16" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>The color of <i>lata</i> is blue.<sup id="cite_ref-HHH_2-17" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup> <i>Movo lata</i> is water.<sup
+                          id="cite_ref-HHH_2-18" class="reference"><a href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="/wiki/Unu" title="Unu">unu</a>
+                      </td>
+                      <td>god;<sup id="cite_ref-CN_player_analysis_3-17" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup> one <sup id="cite_ref-HHH_2-19"
+                          class="reference"><a href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                      <td>A holy word that embodies hilichurls' concept of gods and the origin of life.<sup
+                          id="cite_ref-HHH_2-20" class="reference"><a href="#cite_note-HHH-2">&#91;2&#93;</a></sup> The
+                        color of <i>unu</i> is yellow.<sup id="cite_ref-HHH_2-21" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>du
+                      </td>
+                      <td>two<sup id="cite_ref-HHH_2-22" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>unu du
+                      </td>
+                      <td>three<sup id="cite_ref-HHH_2-23" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                      <td>Literally "one two."
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>dudu
+                      </td>
+                      <td>four<sup id="cite_ref-HHH_2-24" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                      <td>Literally "two-two."
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>ya (plural: yaya)
+                      </td>
+                      <td>human<sup id="cite_ref-CN_player_analysis_3-18" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>Can also mean "person" or "people" [5]
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>ika
+                      </td>
+                      <td>enemy, bad people<sup id="cite_ref-HHH_2-25" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup><sup id="cite_ref-CN_player_analysis_3-19"
+                          class="reference"><a href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>kundala
+                      </td>
+                      <td>to kill, to fight<sup id="cite_ref-CN_player_analysis_3-20" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>May also mean "enemy" as a noun
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>dala
+                      </td>
+                      <td>what?<sup id="cite_ref-CN_player_analysis_3-21" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>si
+                      </td>
+                      <td>thing<sup id="cite_ref-CN_player_analysis_3-22" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>valo
+                      </td>
+                      <td>thank you<sup id="cite_ref-CN_player_analysis_3-23" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>buka
+                      </td>
+                      <td>stomach<sup id="cite_ref-CN_player_analysis_3-24" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>May possibly indicate hunger.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>guru-guru
+                      </td>
+                      <td>hungry<sup id="cite_ref-CN_player_analysis_3-25" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>kucha
+                      </td>
+                      <td>weak;<sup id="cite_ref-CN_player_analysis_3-26" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup> small<sup
+                          id="cite_ref-HHH_2-26" class="reference"><a href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                      <td><i>Kucha gusha</i> (lit. "small grass") means seed.<sup id="cite_ref-HHH_2-27"
+                          class="reference"><a href="#cite_note-HHH-2">&#91;2&#93;</a></sup> Slightly contemptuous
+                        connotation.<sup id="cite_ref-HHH_2-28" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>odomu
+                      </td>
+                      <td>friend<sup id="cite_ref-CN_player_analysis_3-27" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>Meaning currently under review.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>tiga
+                      </td>
+                      <td>stone, <a href="/wiki/Geo" title="Geo">Geo</a><sup id="cite_ref-CN_player_analysis_3-28"
+                          class="reference"><a href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>plata
+                      </td>
+                      <td>shield<sup id="cite_ref-CN_player_analysis_3-29" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>vin
+                      </td>
+                      <td>wine<sup id="cite_ref-CN_player_analysis_3-30" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>pupu
+                      </td>
+                      <td>grass<sup id="cite_ref-CN_player_analysis_3-31" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>Meaning uncertain, may be used insultingly
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>beru si
+                      </td>
+                      <td>what are you doing?<sup id="cite_ref-CN_player_analysis_3-32" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup>
+                      </td>
+                      <td>Meaning of individual words uncertain
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>beru nye / beru nya
+                      </td>
+                      <td>stop talking or be quiet
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>mani
+                      </td>
+                      <td>to give;<sup id="cite_ref-CN_player_analysis_3-33" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup> hands, physical labor; five<sup
+                          id="cite_ref-HHH_2-29" class="reference"><a href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                      <td>The meaning of "five" possibly comes from the number of fingers on a hand.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>olah
+                      </td>
+                      <td>hello<sup id="cite_ref-Venti_7-0" class="reference"><a
+                            href="#cite_note-Venti-7">&#91;7&#93;</a></sup>
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>tomo
+                      </td>
+                      <td>unique, unusual;<sup id="cite_ref-mutual_6-1" class="reference"><a
+                            href="#cite_note-mutual-6">&#91;6&#93;</a></sup> help;<sup id="cite_ref-8"
+                          class="reference"><a href="#cite_note-8">&#91;8&#93;</a></sup> ally<sup
+                          id="cite_ref-CN_player_analysis_3-34" class="reference"><a
+                            href="#cite_note-CN_player_analysis-3">&#91;3&#93;</a></sup><sup id="cite_ref-9"
+                          class="reference"><a href="#cite_note-9">&#91;Note 1&#93;</a></sup>
+                      </td>
+                      <td>Mentioned many times in the <a href="/wiki/Mutual_Exchange" title="Mutual Exchange">Mutual
+                          Exchange</a> and <a href="/wiki/Hilichurl_Justice" title="Hilichurl Justice">Hilichurl
+                          Justice</a> quests in the <a href="/wiki/Mimi_Tomo" title="Mimi Tomo">Mimi Tomo</a> event. No
+                        direct translation given. Meaning currently under review.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>aba
+                      </td>
+                      <td>before
+                      </td>
+                      <td>Used by <a href="/wiki/Ella_Musk" title="Ella Musk">Ella Musk</a> in <a
+                          href="/wiki/Language_Exchange" title="Language Exchange">Language Exchange</a>, and by
+                        hilichurl in <a href="/wiki/Poetry_Exchange" title="Poetry Exchange">Poetry Exchange</a>.
+                        Possibly means "before."<sup id="cite_ref-HHH_2-30" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup> Possibly means "want."
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>ka
+                      </td>
+                      <td><i>unknown</i>
+                      </td>
+                      <td>Used by <a href="/wiki/Ella_Musk" title="Ella Musk">Ella Musk</a> in <a
+                          href="/wiki/Language_Exchange" title="Language Exchange">Language Exchange</a>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>todo
+                      </td>
+                      <td><i>unknown</i>
+                      </td>
+                      <td>Used by Hilichurl in <a href="/wiki/Language_Exchange" title="Language Exchange">Language
+                          Exchange</a>. May mean "give."
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>biadam
+                      </td>
+                      <td>bad
+                      </td>
+                      <td>Exact meaning unknown, always strong negative. May be rude.<sup
+                          id="cite_ref-negotiation_in_venti_quest_10-0" class="reference"><a
+                            href="#cite_note-negotiation_in_venti_quest-10">&#91;9&#93;</a></sup>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>boya
+                      </td>
+                      <td>color<sup id="cite_ref-HHH_2-31" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                      <td>Used as a suffix for colors. <i>Celi boya</i> (lit. "fire color") is red, <i>gusha boya</i>
+                        (lit. "grass color") is green, <i>lata boya</i> (lit. "ice color") is blue, <i>nini boya</i> is
+                        white, <i>nunu boya</i> (lit. "sleep color") and <i>sama boya</i> are black, and <i>unu boya
+                          (lit. "God's color/one color")</i> is yellow.<sup id="cite_ref-HHH_2-32" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>mito
+                      </td>
+                      <td>know<sup id="cite_ref-mutual_6-2" class="reference"><a
+                            href="#cite_note-mutual-6">&#91;6&#93;</a></sup>
+                      </td>
+                      <td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>lawa
+                      </td>
+                      <td>king or chief<sup id="cite_ref-11" class="reference"><a
+                            href="#cite_note-11">&#91;10&#93;</a></sup>
+                      </td>
+                      <td>As in <a href="/wiki/Lawachurl" class="mw-redirect" title="Lawachurl">Lawachurl</a>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>sama
+                      </td>
+                      <td><i>unknown</i>
+                      </td>
+                      <td>As in <a href="/wiki/Samachurl" class="mw-redirect" title="Samachurl">Samachurl</a>. The color
+                        of <i>sama</i> is black.<sup id="cite_ref-HHH_2-33" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>hili
+                      </td>
+                      <td><i>unknown</i>
+                      </td>
+                      <td>As in <a href="/wiki/Hilichurl" title="Hilichurl">Hilichurl</a>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>in
+                      </td>
+                      <td>in<sup id="cite_ref-HHH_2-34" class="reference"><a
+                            href="#cite_note-HHH-2">&#91;2&#93;</a></sup>
+                      </td>
+                      <td>Meaning uncertain.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>unta
+                      </td>
+                      <td><i>unknown</i>
+                      </td>
+                      <td>Mentioned in <a href="/wiki/Handy_Handbook_of_Hilichurlian"
+                          title="Handy Handbook of Hilichurlian">Handy Handbook of Hilichurlian</a>. Possibly means
+                        "after."
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Du ya zido dala?
+                      </td>
+                      <td>Where did this thing go?
+                      </td>
+                      <td>Mentioned in <a href="/wiki/Handy_Handbook_of_Hilichurlian"
+                          title="Handy Handbook of Hilichurlian">Handy Handbook of Hilichurlian</a>. Meaning of
+                        <i>du</i> uncertain. Inconsistent with other translations. Possibly idiomatic.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h2><span class="mw-headline" id="Notes">Notes</span></h2>
+                <div class="references-small"
+                  style="-moz-column-count: 1; -webkit-column-count: 1; column-count: 1;font-size: inherit;">
+                  <div class="mw-references-wrap">
+                    <ol class="references">
+                      <li id="cite_note-9"><span class="mw-cite-backlink"><a href="#cite_ref-9">↑</a></span> <span
+                          class="reference-text">The event <a href="/wiki/Mimi_Tomo" title="Mimi Tomo">Mimi Tomo</a> is
+                          not named with the Hilichurlian <i>Mimi Tomo</i> in all languages. The event name in Chinese
+                          includes a term (<span><span lang="zh">折箭</span></span>) that can mean <i>alliance</i> (lit.
+                          to break an arrow [to seal a promise]), and the event names in both Japanese and Korean use
+                          the word for <i>alliance</i> (<span><span lang="ja">結盟</span></span> and <span><span
+                              lang="ko"><ruby>同<rt>동</rt>盟<rt>맹</rt></ruby></span></span>, respectively). Discussed in a
+                          comment on <a href="/wiki/Hilichurlian" title="Hilichurlian">Hilichurlian</a> and the wiki's
+                          Discord server's #wiki-suggestions and #genshin-languages channels at the beginning of June
+                          2021.</span>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+                <h2><span class="mw-headline" id="References">References</span></h2>
+                <div class="references-small"
+                  style="-moz-column-count: 2; -webkit-column-count: 2; column-count: 2;font-size: smaller;">
+                  <div class="mw-references-wrap">
+                    <ol class="references">
+                      <li id="cite_note-mondstadt_tea_party-1"><span class="mw-cite-backlink">↑ <sup><a
+                              href="#cite_ref-mondstadt_tea_party_1-0">1.0</a></sup> <sup><a
+                              href="#cite_ref-mondstadt_tea_party_1-1">1.1</a></sup> <sup><a
+                              href="#cite_ref-mondstadt_tea_party_1-2">1.2</a></sup> <sup><a
+                              href="#cite_ref-mondstadt_tea_party_1-3">1.3</a></sup> <sup><a
+                              href="#cite_ref-mondstadt_tea_party_1-4">1.4</a></sup></span> <span
+                          class="reference-text">Bilibili: <a target="_blank" rel="nofollow noreferrer noopener"
+                            class="external text"
+                            href="https://www.bilibili.com/video/BV1o5411j7hR">《原神》声优小剧场&#8212;&#8212;「蒙德茶会」第二期</a>
+                          (Timestamp: 6m 30s - 8m 30s)</span>
+                      </li>
+                      <li id="cite_note-HHH-2"><span class="mw-cite-backlink">↑ <sup><a
+                              href="#cite_ref-HHH_2-0">2.00</a></sup> <sup><a href="#cite_ref-HHH_2-1">2.01</a></sup>
+                          <sup><a href="#cite_ref-HHH_2-2">2.02</a></sup> <sup><a
+                              href="#cite_ref-HHH_2-3">2.03</a></sup> <sup><a href="#cite_ref-HHH_2-4">2.04</a></sup>
+                          <sup><a href="#cite_ref-HHH_2-5">2.05</a></sup> <sup><a
+                              href="#cite_ref-HHH_2-6">2.06</a></sup> <sup><a href="#cite_ref-HHH_2-7">2.07</a></sup>
+                          <sup><a href="#cite_ref-HHH_2-8">2.08</a></sup> <sup><a
+                              href="#cite_ref-HHH_2-9">2.09</a></sup> <sup><a href="#cite_ref-HHH_2-10">2.10</a></sup>
+                          <sup><a href="#cite_ref-HHH_2-11">2.11</a></sup> <sup><a
+                              href="#cite_ref-HHH_2-12">2.12</a></sup> <sup><a href="#cite_ref-HHH_2-13">2.13</a></sup>
+                          <sup><a href="#cite_ref-HHH_2-14">2.14</a></sup> <sup><a
+                              href="#cite_ref-HHH_2-15">2.15</a></sup> <sup><a href="#cite_ref-HHH_2-16">2.16</a></sup>
+                          <sup><a href="#cite_ref-HHH_2-17">2.17</a></sup> <sup><a
+                              href="#cite_ref-HHH_2-18">2.18</a></sup> <sup><a href="#cite_ref-HHH_2-19">2.19</a></sup>
+                          <sup><a href="#cite_ref-HHH_2-20">2.20</a></sup> <sup><a
+                              href="#cite_ref-HHH_2-21">2.21</a></sup> <sup><a href="#cite_ref-HHH_2-22">2.22</a></sup>
+                          <sup><a href="#cite_ref-HHH_2-23">2.23</a></sup> <sup><a
+                              href="#cite_ref-HHH_2-24">2.24</a></sup> <sup><a href="#cite_ref-HHH_2-25">2.25</a></sup>
+                          <sup><a href="#cite_ref-HHH_2-26">2.26</a></sup> <sup><a
+                              href="#cite_ref-HHH_2-27">2.27</a></sup> <sup><a href="#cite_ref-HHH_2-28">2.28</a></sup>
+                          <sup><a href="#cite_ref-HHH_2-29">2.29</a></sup> <sup><a
+                              href="#cite_ref-HHH_2-30">2.30</a></sup> <sup><a href="#cite_ref-HHH_2-31">2.31</a></sup>
+                          <sup><a href="#cite_ref-HHH_2-32">2.32</a></sup> <sup><a
+                              href="#cite_ref-HHH_2-33">2.33</a></sup> <sup><a
+                              href="#cite_ref-HHH_2-34">2.34</a></sup></span> <span class="reference-text">Book: <a
+                            href="/wiki/Handy_Handbook_of_Hilichurlian" title="Handy Handbook of Hilichurlian">Handy
+                            Handbook of Hilichurlian</a></span>
+                      </li>
+                      <li id="cite_note-CN_player_analysis-3"><span class="mw-cite-backlink">↑ <sup><a
+                              href="#cite_ref-CN_player_analysis_3-0">3.00</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-1">3.01</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-2">3.02</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-3">3.03</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-4">3.04</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-5">3.05</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-6">3.06</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-7">3.07</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-8">3.08</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-9">3.09</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-10">3.10</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-11">3.11</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-12">3.12</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-13">3.13</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-14">3.14</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-15">3.15</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-16">3.16</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-17">3.17</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-18">3.18</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-19">3.19</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-20">3.20</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-21">3.21</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-22">3.22</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-23">3.23</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-24">3.24</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-25">3.25</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-26">3.26</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-27">3.27</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-28">3.28</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-29">3.29</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-30">3.30</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-31">3.31</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-32">3.32</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-33">3.33</a></sup> <sup><a
+                              href="#cite_ref-CN_player_analysis_3-34">3.34</a></sup></span> <span
+                          class="reference-text">NGA: <a target="_blank" rel="nofollow noreferrer noopener"
+                            class="external text"
+                            href="https://ngabbs.com/read.php?tid=23771103">本丘学家宣布已经基本破译了丘丘人语，并发现了丘丘人的神灵乌努</a></span>
+                      </li>
+                      <li id="cite_note-good_poem-4"><span class="mw-cite-backlink"><a
+                            href="#cite_ref-good_poem_4-0">↑</a></span> <span class="reference-text">Book: <a
+                            href="/wiki/Draft_Lines_of_Hilichurlian_Poetry"
+                            title="Draft Lines of Hilichurlian Poetry">Draft Lines of Hilichurlian Poetry</a></span>
+                      </li>
+                      <li id="cite_note-HBS_2-5"><span class="mw-cite-backlink"><a
+                            href="#cite_ref-HBS_2_5-0">↑</a></span> <span class="reference-text">Book: Hilichurl Ballad
+                          Selection, <a href="/wiki/Hilichurl_Ballad_Selection#Vol._2"
+                            title="Hilichurl Ballad Selection">Vol. 2</a></span>
+                      </li>
+                      <li id="cite_note-mutual-6"><span class="mw-cite-backlink">↑ <sup><a
+                              href="#cite_ref-mutual_6-0">6.0</a></sup> <sup><a
+                              href="#cite_ref-mutual_6-1">6.1</a></sup> <sup><a
+                              href="#cite_ref-mutual_6-2">6.2</a></sup></span> <span class="reference-text">Event <a
+                            href="/wiki/Mimi_Tomo" title="Mimi Tomo">Mimi Tomo</a>&#32;World Quest: <a
+                            href="/wiki/Mutual_Exchange" title="Mutual Exchange">Mutual Exchange</a></span>
+                      </li>
+                      <li id="cite_note-Venti-7"><span class="mw-cite-backlink"><a
+                            href="#cite_ref-Venti_7-0">↑</a></span> <span
+                          class="reference-text">Venti's&#160;Voice-Over: <a
+                            href="/wiki/Venti/Voice-Overs#Something_to_Share" title="Venti/Voice-Overs">Something to
+                            Share</a></span>
+                      </li>
+                      <li id="cite_note-8"><span class="mw-cite-backlink"><a href="#cite_ref-8">↑</a></span> <span
+                          class="reference-text">Event <a href="/wiki/Mimi_Tomo" title="Mimi Tomo">Mimi
+                            Tomo</a>&#32;World Quest: <a href="/wiki/Hilichurl_Justice"
+                            title="Hilichurl Justice">Hilichurl Justice</a></span>
+                      </li>
+                      <li id="cite_note-negotiation_in_venti_quest-10"><span class="mw-cite-backlink"><a
+                            href="#cite_ref-negotiation_in_venti_quest_10-0">↑</a></span> <span
+                          class="reference-text">Story Quest, Carmen Dei Chapter,&#32;Act I, Part 3: <a
+                            href="/wiki/Lionfang%27s_Legacy" title="Lionfang&#39;s Legacy">Lionfang's Legacy</a></span>
+                      </li>
+                      <li id="cite_note-11"><span class="mw-cite-backlink"><a href="#cite_ref-11">↑</a></span> <span
+                          class="reference-text">Book: <a href="/wiki/Hilichurl_Cultural_Customs"
+                            title="Hilichurl Cultural Customs">Hilichurl Cultural Customs</a></span>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+                <!--
+NewPP limit report
+Cached time: 20220802180513
+Cache expiry: 3600
+Reduced expiry: true
+Complications: []
+CPU time usage: 0.242 seconds
+Real time usage: 0.307 seconds
+Preprocessor visited node count: 919/1000000
+Post‐expand include size: 2204/2097152 bytes
+Template argument size: 414/2097152 bytes
+Highest expansion depth: 8/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 16723/5000000 bytes
+Lua time usage: 0.024/7.000 seconds
+Lua memory usage: 1310288/52428800 bytes
+-->
+                <!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  249.909      1 -total
+ 58.90%  147.194      2 Template:Reflist
+ 37.87%   94.643      3 Template:Ref/Quest
+ 28.89%   72.211      5 Template:Lang
+  3.28%    8.185      1 Template:Rubi
+  2.71%    6.767      4 Template:Ref/Book
+  1.63%    4.066      1 Template:Ref/VO
+  1.28%    3.188      1 Template:W
+  1.01%    2.512      3 Template:Extension_DPL
+-->
+
+                <!-- Saved in parser cache with key prod_gensinimpact:pcache:idhash:40328-0!canonical!FandomDesktop!LegacyGalleries and timestamp 20220802180512 and revision id 716249. Serialized with JSON.
+ -->
+              </div>
+            </div>
+          </div>
+          <div class="page-footer">
+
+            <div class="wds-collapsible-panel wds-is-collapsed page-footer__categories">
+              <header class="wds-collapsible-panel__header">
+                Categories <svg class="wds-icon wds-icon-small">
+                  <use xlink:href="#wds-icons-menu-control-small"></use>
+                </svg> </header>
+              <div class="wds-collapsible-panel__content">
+                <nav class="article-categories CategorySelect articlePage" id="articleCategories">
+                  <div class="container">
+                    <ul class="categories">
+                      <li class="special-categories-label"><a href="/wiki/Special:Categories" class="categoriesLink"
+                          title="Special:Categories">Categories</a><span>: </span></li>
+                      <li class="category normal" data-name="Lore" data-namespace="" data-outertag="" data-sortkey=""
+                        data-type="normal">
+                        <span class="name"><a href="/wiki/Category:Lore" title="Category:Lore">Lore</a></span>
+                        <span class="tool removeCategory"></span>
+                      </li>
+
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            </div>
+
+            <div class="license-description">
+              Community content is available under <a href="https://www.fandom.com/licensing">CC-BY-SA</a> unless
+              otherwise noted. </div>
+
+            <div id='mw-data-after-content'>
+              <div id="articleComments"></div>
+            </div>
+          </div>
+        </main>
+
+        <aside class="page__right-rail">
+
+          <div class="right-rail-wrapper WikiaRail">
+            <div id="rail-boxad-wrapper"></div>
+            <div id="WikiaRail"></div>
+          </div>
+        </aside>
+
+      </div>
+
+      <div class="bottom-ads-container">
+        <div class="ad-slot-placeholder bottom-leaderboard is-loading"></div>
+        <div class="ae-translatable-label" data-key="advertisement">Advertisement</div>
+      </div>
+
+      <div id="mixed-content-footer" class="mcf-en" data-number-of-wiki-articles="8" data-number-of-ns-articles="9">
+        <div class="mcf-wrapper">
+          <div class="mcf-content">
+            <h1 class="mcf-header">Fan Feed </h1>
+            <div class="mcf-mosaic">
+              <div class="mcf-column">
+                <div class="mcf-card mcf-card-wiki-articles">
+                  <header class="mcf-card-wiki-articles__header">
+                    <span class="mcf-card-wiki-articles__header-text">More Genshin Impact Wiki</span>
+                  </header>
+                  <ul class="mcf-card-wiki-articles__list">
+                    <li class="mcf-card-wiki-articles__item">
+                      <a href="/wiki/Characters" class="mcf-card-wiki-articles__item-link" data-tracking="more-wiki-0"
+                        title="Characters">
+                        <span class="mcf-card-wiki-articles__circle">1</span>
+                        <span class="mcf-card-wiki-articles__title">Characters</span>
+                      </a>
+                    </li>
+                    <li class="mcf-card-wiki-articles__item">
+                      <a href="/wiki/Eleven_Fatui_Harbingers" class="mcf-card-wiki-articles__item-link"
+                        data-tracking="more-wiki-1" title="Eleven Fatui Harbingers">
+                        <span class="mcf-card-wiki-articles__circle">2</span>
+                        <span class="mcf-card-wiki-articles__title">Eleven Fatui Harbingers</span>
+                      </a>
+                    </li>
+                    <li class="mcf-card-wiki-articles__item">
+                      <a href="/wiki/Kaedehara_Kazuha" class="mcf-card-wiki-articles__item-link"
+                        data-tracking="more-wiki-2" title="Kaedehara Kazuha">
+                        <span class="mcf-card-wiki-articles__circle">3</span>
+                        <span class="mcf-card-wiki-articles__title">Kaedehara Kazuha</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="mcf-discussions-placeholder"></div>
+                <div class="mcf-card-ns-placeholder mcf-card-tall" data-tracking="footer-card-10"></div>
+                <div class="mcf-card-wiki-placeholder" data-tracking="footer-card-13"></div>
+                <div class="mcf-card-ns-placeholder" data-tracking="footer-card-16"></div>
+                <div class="mcf-card-wiki-placeholder mcf-card-tall" data-tracking="footer-card-19"></div>
+              </div>
+
+              <div class="mcf-column">
+                <div class="mcf-card-ns-placeholder mcf-card-sponsored-content" data-tracking="footer-card-2"></div>
+                <div class="mcf-card-ns-placeholder" data-tracking="footer-card-5"></div>
+                <div class="mcf-card-ns-placeholder" data-tracking="footer-card-8"></div>
+                <div class="mcf-card-wiki-placeholder" data-tracking="footer-card-11"></div>
+                <div class="mcf-card-ns-placeholder" data-tracking="footer-card-14"></div>
+                <div class="mcf-card-wiki-placeholder" data-tracking="footer-card-17"></div>
+              </div>
+
+              <div class="mcf-column">
+                <div class="mcf-card-wiki-placeholder" data-tracking="footer-card-3"></div>
+                <div class="mcf-card-wiki-placeholder mcf-card-tall" data-tracking="footer-card-6"></div>
+                <div class="mcf-card-wiki-placeholder" data-tracking="footer-card-9"></div>
+                <div class="mcf-card-ns-placeholder" data-tracking="footer-card-12"></div>
+                <div class="mcf-card-wiki-placeholder mcf-card-tall" data-tracking="footer-card-15"></div>
+                <div class="mcf-card-ns-placeholder" data-tracking="footer-card-18"></div>
+                <div class="mcf-card-ns-placeholder" data-tracking="footer-card-21"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="global-footer">
+      <div class="global-footer__content">
+        <div>
+          <h2 class="global-footer__header">
+            <a href="https://www.fandom.com/" data-tracking-label="logo" title="Fandom" aria-label="Fandom homepage">
+              <svg class="global-footer__header-logo">
+                <use xlink:href="#wds-brand-fandom-logo-light"></use>
+              </svg> </a>
+          </h2>
+          <section class="global-footer__section global-footer__section-fandom-overview">
+            <h3 class="global-footer__section-header">Explore properties</h3>
+
+
+
+            <ul class="global-footer__links">
+              <li>
+                <a href="https://www.fandom.com/" class="global-footer__link" data-tracking-label="explore.fandom"
+                  aria-label="">
+                  Fandom </a>
+              </li>
+              <li>
+                <a href="https://www.cortexrpg.com/" class="global-footer__link" data-tracking-label="explore.cortexrpg"
+                  aria-label="">
+                  Cortex RPG </a>
+              </li>
+              <li>
+                <a href="https://www.muthead.com/" class="global-footer__link" data-tracking-label="explore.muthead"
+                  aria-label="">
+                  Muthead </a>
+              </li>
+              <li>
+                <a href="https://www.futhead.com/" class="global-footer__link" data-tracking-label="explore.futhead"
+                  aria-label="">
+                  Futhead </a>
+              </li>
+              <li>
+                <a href="https://www.fanatical.com/" class="global-footer__link" data-tracking-label="explore.fanatical"
+                  aria-label="">
+                  Fanatical </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <div>
+          <section class="global-footer__section global-footer__section-site-overview">
+            <h3 class="global-footer__section-header">Overview</h3>
+
+
+
+            <ul class="global-footer__links">
+              <li>
+                <a href="https://www.fandom.com/what-is-fandom" class="global-footer__link"
+                  data-tracking-label="company-overview.what-is-fandom" aria-label="">
+                  What is Fandom? </a>
+              </li>
+              <li>
+                <a href="https://www.fandom.com/about" class="global-footer__link"
+                  data-tracking-label="company-overview.about" aria-label="">
+                  About </a>
+              </li>
+              <li>
+                <a href="https://www.fandom.com/careers" class="global-footer__link"
+                  data-tracking-label="company-overview.careers" aria-label="">
+                  Careers </a>
+              </li>
+              <li>
+                <a href="https://www.fandom.com/press" class="global-footer__link"
+                  data-tracking-label="company-overview.press" aria-label="">
+                  Press </a>
+              </li>
+              <li>
+                <a href="https://www.fandom.com/about#contact" class="global-footer__link"
+                  data-tracking-label="company-overview.contact" aria-label="">
+                  Contact </a>
+              </li>
+              <li>
+                <a href="https://www.fandom.com/terms-of-use" class="global-footer__link"
+                  data-tracking-label="site-overview.terms-of-use" aria-label="">
+                  Terms of Use </a>
+              </li>
+              <li>
+                <a href="https://www.fandom.com/privacy-policy" class="global-footer__link"
+                  data-tracking-label="site-overview.privacy-policy" aria-label="">
+                  Privacy Policy </a>
+              </li>
+              <li>
+                <a href="//community.fandom.com/Sitemap" class="global-footer__link"
+                  data-tracking-label="site-overview.global-sitemap" aria-label="">
+                  Global Sitemap </a>
+              </li>
+              <li>
+                <a href="/wiki/Local_Sitemap" class="global-footer__link"
+                  data-tracking-label="site-overview.local-sitemap" aria-label="">
+                  Local Sitemap </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <div>
+          <section class="global-footer__section global-footer__section-community">
+            <h3 class="global-footer__section-header">Community</h3>
+
+
+
+            <ul class="global-footer__links">
+              <li>
+                <a href="//community.fandom.com/wiki/Community_Central" class="global-footer__link"
+                  data-tracking-label="community.community-central" aria-label="">
+                  Community Central </a>
+              </li>
+              <li>
+                <a href="https://fandom.zendesk.com/" class="global-footer__link"
+                  data-tracking-label="community.support" aria-label="">
+                  Support </a>
+              </li>
+              <li>
+                <a href="//community.fandom.com/wiki/Help:Contents" class="global-footer__link"
+                  data-tracking-label="community.help" aria-label="">
+                  Help </a>
+              </li>
+              <li>
+                <a href="https://www.fandom.com/do-not-sell-my-info" class="global-footer__link"
+                  data-tracking-label="community.usp-do-not-sell" aria-label="">
+                  Do Not Sell My Info </a>
+              </li>
+            </ul>
+          </section>
+          <section class="global-footer__section global-footer__section-advertise">
+            <h3 class="global-footer__section-header">Advertise</h3>
+
+
+
+            <ul class="global-footer__links">
+              <li>
+                <a href="https://about.fandom.com/mediakit" class="global-footer__link"
+                  data-tracking-label="advertise.media-kit" aria-label="">
+                  Media Kit </a>
+              </li>
+              <li>
+                <a href="https://www.fandomatic.com" class="global-footer__link"
+                  data-tracking-label="advertise.fandomatic" aria-label="">
+                  Fandomatic </a>
+              </li>
+              <li>
+                <a href="https://about.fandom.com/mediakit#contact" class="global-footer__link"
+                  data-tracking-label="advertise.contact" aria-label="">
+                  Contact </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+        <div>
+          <section class="global-footer__section global-footer__section-fandom-apps">
+            <h3 class="global-footer__section-header">Fandom Apps</h3>
+
+            Take your favorite fandoms with you and never miss a beat.
+
+          </section>
+          <section class="global-footer__section global-footer__section-fandom-stores">
+
+
+            <svg class="global-footer__icon">
+              <use xlink:href="#wds-brand-fandom-logo-store"></use>
+            </svg>
+            <ul class="global-footer__links">
+              <li>
+                <a href="https://apps.apple.com/us/app/fandom-videos-news-reviews/id1230063803"
+                  class="global-footer__link" data-tracking-label="community-apps.app-store"
+                  aria-label="Fandom&#039;s Apple Store">
+                  <svg class="global-footer__link-icon wds-icon wds-icon-small">
+                    <use xlink:href="#wds-brand-other-appstore"></use>
+                  </svg> </a>
+              </li>
+              <li>
+                <a href="https://play.google.com/store/apps/details?id=com.fandom.app&referrer=utm_source%3Dwikia%26utm_medium%3Dglobalfooter"
+                  class="global-footer__link" data-tracking-label="community-apps.google-play"
+                  aria-label="Fandom&#039;s Google Play">
+                  <svg class="global-footer__link-icon wds-icon wds-icon-small">
+                    <use xlink:href="#wds-brand-other-googleplay"></use>
+                  </svg> </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <div class="global-footer__bottom">
+        <div>Genshin Impact Wiki is a FANDOM Games Community.</div>
+        <div>
+          <a href="https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon?title=Hilichurlian%2FLexicon&mobileaction=toggle_view_mobile"
+            class="global-footer__switch-view global-footer__switch-to-mobile">
+            View Mobile Site </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+</body>
+
+</html>
