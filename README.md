@@ -32,6 +32,10 @@ The following requirements were used for this project. Feel free to use other de
 Download, scrape and format hilichurlian words from the `HILICHURLIAN_TEXT_URL` .env variable.
 Writes the extracted and formatted words into `/hilichurlianDB.json`
 
+### `npm run hipsum`
+
+Generates a random non-sensical Hilichurlian sentence (max 15 words).
+
 ### `npm run lint`
 
 Lint JavaScript source codes.
