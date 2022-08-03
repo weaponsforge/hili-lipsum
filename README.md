@@ -27,7 +27,7 @@ The following requirements were used for this project. Feel free to use other de
 
 ## Available Scripts
 
-### npm run scrape
+### `npm run scrape`
 
 Download, scrape and format hilichurlian words from the `HILICHURLIAN_TEXT_URL` .env variable.
 Writes the extracted and formatted words into `/hilichurlianDB.json`

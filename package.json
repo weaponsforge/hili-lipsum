@@ -4,7 +4,9 @@
   "description": "Non-sensical hilichurlian sentence generator.",
   "main": "index.js",
   "scripts": {
-    "scrape": "node src/scripts/scrape.js"
+    "scrape": "node src/scripts/scrape.js",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,12 @@
     "axios": "^0.27.2",
     "cheerio": "^1.0.0-rc.12",
     "dotenv": "^16.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.21.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0"
   }
 }
