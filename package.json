@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "scrape": "node src/scripts/scrape.js",
+    "hipsum": "node src/index.js",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix"
   },
