@@ -5,9 +5,7 @@ const main = () => {
   // Load the scraped and pre-processed words
   const hilichurldb = path.resolve(__dirname, '..', 'data', 'hilichurlianDB.json')
   const hilichurl = new Hilichurl(hilichurldb)
-
-
-  console.log(hilichurldb)
+  console.log(hilichurl.lipsum())
 }
 
 main()

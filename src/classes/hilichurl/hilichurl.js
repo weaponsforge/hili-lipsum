@@ -31,7 +31,7 @@ class Hilichurl {
       const that = this
 
       $('table > tbody > tr').each(function () {
-        let rowObject = {
+        const rowObject = {
           word: '',
           eng: '',
           notes: ''
@@ -41,18 +41,18 @@ class Hilichurl {
         $(this).find('td').each(function (i, elem) {
           const string = $(this).text()
 
-          switch(i) {
-            case 0:
-              rowObject.word = removeSpecialChars({ string })
-              break
-            case 1:
-              rowObject.eng = removeSpecialChars({ string })
-              break
-            case 2:
-              rowObject.notes = removeSpecialChars({ string })
-              break
-            default:
-              break
+          switch (i) {
+          case 0:
+            rowObject.word = removeSpecialChars({ string })
+            break
+          case 1:
+            rowObject.eng = removeSpecialChars({ string })
+            break
+          case 2:
+            rowObject.notes = removeSpecialChars({ string })
+            break
+          default:
+            break
           }
         })
 
@@ -62,7 +62,7 @@ class Hilichurl {
       console.log('[SCRAPING LOGS] ----------')
       console.log(`downloaded and scraped ${this.hilichurlianRAW.length} items\n`)
     } catch (err) {
-      throw new Error (err.message)
+      throw new Error(err.message)
     }
   }
 
@@ -141,6 +141,51 @@ class Hilichurl {
     } catch (err) {
       throw new Error(err.message)
     }
+  }
+
+  /**
+   * Generate a Hilichurlian sentence made up of non-sensical Hilichurlian words
+   * @param {Number} wordCount - Maximum number of words to include in the sentence
+   * @returns {String} Random Hilichurlian words
+   */
+  lipsum (wordCount = 0) {
+    const minw = 5
+    const maxw = 15
+
+    // Set a specified word length or use a random max (15) word length
+    const maxWords = (wordCount > 0)
+      ? wordCount
+      : Math.floor(Math.random() * (maxw - minw + 1) + minw)
+
+    // Generate random unique word indices
+    const wordIndex = []
+
+    while (wordIndex.length < maxWords) {
+      const min = 0
+      const max = this.hilichurlianDB.length - 1
+
+      // Random word index
+      const index = Math.floor(Math.random() * (max - min + 1) + min)
+
+      if (maxWords < max) {
+        // Generate unique indices if the total words required
+        // is less than the total word entries in DB
+        if (!wordIndex.includes(index)) {
+          wordIndex.push(index)
+        }
+      } else {
+        // Use repeating words
+        wordIndex.push(index)
+      }
+    }
+
+    // Construct the random-word sentence
+    const sentence = wordIndex.reduce((acc, curr) => {
+      acc += this.hilichurlianDB[curr].word + ' '
+      return acc
+    }, '')
+
+    return sentence
   }
 }
 
