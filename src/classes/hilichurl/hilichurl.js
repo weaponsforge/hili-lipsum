@@ -31,7 +31,7 @@ class Hilichurl {
       const that = this
 
       $('table > tbody > tr').each(function () {
-        let rowObject = {
+        const rowObject = {
           word: '',
           eng: '',
           notes: ''
@@ -41,18 +41,18 @@ class Hilichurl {
         $(this).find('td').each(function (i, elem) {
           const string = $(this).text()
 
-          switch(i) {
-            case 0:
-              rowObject.word = removeSpecialChars({ string })
-              break
-            case 1:
-              rowObject.eng = removeSpecialChars({ string })
-              break
-            case 2:
-              rowObject.notes = removeSpecialChars({ string })
-              break
-            default:
-              break
+          switch (i) {
+          case 0:
+            rowObject.word = removeSpecialChars({ string })
+            break
+          case 1:
+            rowObject.eng = removeSpecialChars({ string })
+            break
+          case 2:
+            rowObject.notes = removeSpecialChars({ string })
+            break
+          default:
+            break
           }
         })
 
@@ -62,7 +62,7 @@ class Hilichurl {
       console.log('[SCRAPING LOGS] ----------')
       console.log(`downloaded and scraped ${this.hilichurlianRAW.length} items\n`)
     } catch (err) {
-      throw new Error (err.message)
+      throw new Error(err.message)
     }
   }
 
