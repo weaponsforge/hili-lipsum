@@ -2,8 +2,8 @@ name: Lint Files
 
 on:
   push:
-    branches-ignore:
-      - dev
+    branches:
+      - '*'
 
 jobs:
   lint-app:
