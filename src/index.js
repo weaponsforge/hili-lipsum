@@ -1,5 +1,5 @@
 const path = require('path')
-const { Hilichurl } = require('./classes/hilichurl')
+const { Hilichurl } = require('./lib/classes/hilichurl')
 
 const main = () => {
   // Load the scraped and pre-processed words

@@ -1,7 +1,7 @@
 const axios = require('axios')
 const cheerio = require('cheerio')
 const fs = require('fs')
-const { removeSpecialChars } = require('../../lib/utils')
+const { removeSpecialChars } = require('../../utils')
 
 // Manages hilichurl words-related data processing and formatting
 class Hilichurl {

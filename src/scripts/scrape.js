@@ -1,6 +1,6 @@
 require('dotenv').config()
 const path = require('path')
-const { Hilichurl } = require('../classes/hilichurl')
+const { Hilichurl } = require('../lib/classes/hilichurl')
 const { saveToJSON } = require('../lib/utils')
 
 const main = async () => {
