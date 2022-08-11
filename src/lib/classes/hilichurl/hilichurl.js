@@ -144,6 +144,30 @@ class Hilichurl {
   }
 
   /**
+   * Refresh the in-memory hilichurlian dictionaries by scraping data
+   * from HILICHURLIAN_TEXT_URL into:
+   *  - this.hilichurlianRAW
+   *  - this.hilichurlianDB
+   */
+  async refreshrecords () {
+    this.hilichurlianRAW = []
+
+    try {
+      await this.scrapewords()
+    } catch (err) {
+      throw new Error(err.message)
+    }
+
+    if (this.hilichurlianRAW.length > 0) {
+      try {
+        this.formatwords()
+      } catch (err) {
+        throw new Error(err.message)
+      }
+    }
+  }
+
+  /**
    * Generate a Hilichurlian sentence made up of non-sensical Hilichurlian words
    * @param {Number} wordCount - Maximum number of words to include in the sentence
    * @returns {String} Random Hilichurlian words
