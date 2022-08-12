@@ -1,7 +1,11 @@
 const axios = require('axios')
 const cheerio = require('cheerio')
 const fs = require('fs')
-const { removeSpecialChars } = require('../../utils')
+const path = require('path')
+const {
+  removeSpecialChars,
+  saveToJSON
+} = require('../../utils')
 
 // Manages hilichurl words-related data processing and formatting
 class Hilichurl {
@@ -144,12 +148,31 @@ class Hilichurl {
   }
 
   /**
+   * Write the contents of "this.hilichurlianDB" into a JSON file
+   * @param {String} filePath
+   *    - (Optional) Full directory path minus the filename where to save the JSON file
+   *    - Will write the JSON file to the project's root directory if ommitted
+   */
+  writerecords (directory) {
+    const dirName = (directory) || path.join(__dirname, '..', '..', '..', '..')
+
+    try {
+      saveToJSON({
+        object: this.hilichurlianDB,
+        filename: path.join(dirName, `hilichurlDB-${Math.floor((new Date()).getTime() / 1000)}.json`)
+      })
+    } catch (err) {
+      throw new Error(err.message)
+    }
+  }
+
+  /**
    * Refresh the in-memory hilichurlian dictionaries by scraping data
    * from HILICHURLIAN_TEXT_URL into:
    *  - this.hilichurlianRAW
    *  - this.hilichurlianDB
    */
-  async refreshrecords () {
+  async fetchrecords () {
     this.hilichurlianRAW = []
 
     try {
