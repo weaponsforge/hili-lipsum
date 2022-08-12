@@ -1,8 +1,11 @@
 {
   "name": "hili-lipsum",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Non-sensical hilichurlian sentence generator.",
   "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
   "scripts": {
     "start": "npm run hipsum",
     "scrape": "node src/scripts/scrape.js",
@@ -15,8 +18,19 @@
     "type": "git",
     "url": "git+https://github.com/weaponsforge/hili-lipsum.git"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "hilichurl",
+    "hilichurlian",
+    "hilichurlian-lorem-ipsum",
+    "hilichurlian-loremipsum",
+    "lorem-ipsum",
+    "lorem-ipsum-generator",
+    "genshin",
+    "genshin-impact",
+    "genshinimpact"
+  ],
+  "author": "weaponsforge",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/weaponsforge/hili-lipsum/issues"
   },
