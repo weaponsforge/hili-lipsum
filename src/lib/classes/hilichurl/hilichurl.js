@@ -154,7 +154,7 @@ class Hilichurl {
    *    - Will write the JSON file to the project's root directory if ommitted
    */
   writerecords (directory) {
-    const dirName = (directory) || path.join(__dirname, '..', '..', '..', '..')
+    const dirName = (directory) || process.cwd()
 
     try {
       saveToJSON({
