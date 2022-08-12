@@ -3,3 +3,6 @@ node_modules/
 .vscode
 *.json
 *.zip
+.github/
+data/hilichurlian_lexicon.html
+!data/hilichurlianDB.json
