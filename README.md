@@ -10,6 +10,21 @@ The following requirements were used for this project. Feel free to use other de
 1. Windows 10 OS
 2. NodeJS v16.14.2
 
+## Content
+
+- [hili-lipsum](#hili-lipsum)
+- [Requirements](#requirements)
+- [Content](#content)
+- [Installation](#installation)
+- [Available Scripts](#available-scripts)
+  - [`npm run scrape`](#npm-run-scrape)
+  - [`npm run hipsum`](#npm-run-hipsum)
+  - [`npm run lint`](#npm-run-lint)
+  - [`npm run lint:fix`](#npm-run-lintfix)
+- [Class Usage](#class-usage)
+  - [`Hilichurl` Class](#hilichurl-class)
+  - [`Hilipsum` Class](#hilipsum-class)
+
 ## Installation
 
 1. Clone this repository.<br>
@@ -43,6 +58,61 @@ Lint JavaScript source codes.
 ### `npm run lint:fix`
 
 Fix JavaScript lint errors.
+
+## Class Usage
+
+### `Hilichurl` Class
+
+The `Hilichurl` Class allows to specify a local JSON file to use as a word dictionary. The JSON file should follow the format in `/data/hilichurlianDB.json`
+
+```
+const { Hilichurl } = require('./src/lib/classes/hilichurl')
+const path = require('path')
+
+// Use the the following if installed via npm
+// const { Hhilichurl } = require('hili-lipsum')
+
+const main = async () => {
+  try {
+    // Instantiate a new Hilichurl class with local JSON data
+    const dataPath = path.join(__dirname, 'data', 'hilichurlianDB.json')
+    const hilichurl = new Hilichurl(dataPath)
+
+    // Load new local JSON data
+    hilichurl.loadrecords(dataPath)
+
+    // Generate a random-word sentence
+    const sentence = hilichurl.lipsum(40)
+    console.log(sentence)
+
+    // Download and replace the current word dictionary
+    await hilichurl.fetchrecords()
+
+    // Write the word dictionary to a JSON file
+    hilichurl.writerecords()
+  } catch (err) {
+    console.log(err.message)
+  }
+}
+
+main()
+```
+
+### `Hilipsum` Class
+
+The `Hilipsum` class is a sub-class of `Hilichurl`. It automatically loads the local JSON word dictionary (`/data/hilichurlianDB.json`) on initialization.
+
+```
+const { Hilipsum } = require('./src/lib/classes/hilipsum')
+
+// Use the the following if installed via npm
+// const { Hilipsum } = require('hili-lipsum')
+
+const hiLipsum = new Hilipsum()
+
+// Generate a random hilichurlian sentence
+console.log(hiLipsum.lipsum())
+```
 
 @weaponsforge<br>
 20220805
