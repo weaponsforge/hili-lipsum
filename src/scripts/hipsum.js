@@ -1,4 +1,3 @@
-const path = require('path')
 const { Hilipsum } = require('../lib/classes/hilipsum')
 
 const main = () => {
