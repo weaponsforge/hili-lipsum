@@ -105,7 +105,9 @@ The `Hilipsum` class is a sub-class of `Hilichurl`. It automatically loads the l
 ```
 const { Hilipsum } = require('./src/lib/classes/hilipsum')
 
-// Example usage of the Hilipsum class
+// Use the the following if installed via npm
+// const { Hilipsum } = require('hili-lipsum')
+
 const hiLipsum = new Hilipsum()
 
 // Generate a random hilichurlian sentence
