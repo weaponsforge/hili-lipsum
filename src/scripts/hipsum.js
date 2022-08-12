@@ -1,10 +1,9 @@
 const path = require('path')
-const { Hilichurl } = require('../lib/classes/hilichurl')
+const { Hilipsum } = require('../lib/classes/hilipsum')
 
 const main = () => {
-  // Load the scraped and pre-processed words
-  const hilichurldb = path.join(__dirname, '..', '..', 'data', 'hilichurlianDB.json')
-  const hilichurl = new Hilichurl(hilichurldb)
+  // Loads the scraped and pre-processed words on /data/hilichurlianDB.json
+  const hilichurl = new Hilipsum()
   console.log(hilichurl.lipsum())
 }
 
