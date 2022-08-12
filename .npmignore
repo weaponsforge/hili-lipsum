@@ -3,6 +3,3 @@ node_modules/
 .vscode
 *.json
 *.zip
-
-!package.json
-!package-lock.json
