@@ -15,6 +15,7 @@
     "scrape": "node src/scripts/scrape.js",
     "hipsum": "node src/scripts/hipsum.js",
     "example:hilipsum": "node examples/example-hilipsum",
+    "scrape:debug": "export IS_DOCKER=true && node --inspect=0.0.0.0:9229 src/scripts/scrape.js",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix"
   },

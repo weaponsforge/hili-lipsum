@@ -62,6 +62,12 @@ Lint JavaScript source codes.
 
 Fix JavaScript lint errors.
 
+### `npm run scrape:debug`
+
+Sets the `IS_DOCKER=true` environment variable before running the `npm run scrape` script to enable debugging with VSCode inside a container.
+
+> This command runs only in a Linux environment.
+
 ## Usage with Docker
 
 ### Preparing the Local Image
