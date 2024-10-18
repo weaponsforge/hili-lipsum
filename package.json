@@ -1,6 +1,6 @@
 {
   "name": "hili-lipsum",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Non-sensical hilichurlian sentence generator.",
   "main": "index.js",
   "engines": {
