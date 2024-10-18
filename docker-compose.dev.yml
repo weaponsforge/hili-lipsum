@@ -1,0 +1,17 @@
+services:
+  weaponsforge.hili-lipsum:
+    container_name: weaponsforge-hili-lipsum
+    image: weaponsforge/hili-lipsum:latest
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    volumes:
+      - .:/opt/app
+      - /opt/app/node_modules
+    ports:
+      - "9229:9229"
+    stdin_open: true
+    tty: true

@@ -42,7 +42,20 @@ const saveToJSON = ({ object, filename }) => {
   )
 }
 
+/**
+ * Stalls function execution by `timeout` milliseconds
+ * @param {Function} callback - Callback function to execute after `timeout` milliseconds
+ * @param {Number} timeout - Milliseconds timeout delay
+ */
+const delayProcess = (callback, timeout = 1000) => {
+  setTimeout(() => {
+    console.log(`Delay ${timeout} finished. Running callback...`)
+    callback()
+  }, timeout)
+}
+
 module.exports = {
   removeSpecialChars,
-  saveToJSON
+  saveToJSON,
+  delayProcess
 }

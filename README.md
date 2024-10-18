@@ -21,6 +21,9 @@ The following requirements were used for this project. Feel free to use other de
   - [`npm run hipsum`](#npm-run-hipsum)
   - [`npm run lint`](#npm-run-lint)
   - [`npm run lint:fix`](#npm-run-lintfix)
+- [Usage with Docker](#usage-with-docker)
+   - [Preparing the Local Image](#preparing-the-local-image)
+   - [Using the Docker Image](#using-the-docker-image)
 - [Class Usage](#class-usage)
   - [`Hilichurl` Class](#hilichurl-class)
   - [`Hilipsum` Class](#hilipsum-class)
@@ -58,6 +61,27 @@ Lint JavaScript source codes.
 ### `npm run lint:fix`
 
 Fix JavaScript lint errors.
+
+### `npm run scrape:debug`
+
+Sets the `IS_DOCKER=true` environment variable before running the `npm run scrape` script to enable debugging with VSCode inside a container.
+
+> This command runs only in a Linux environment.
+
+## Usage with Docker
+
+### Preparing the Local Image
+
+- **Build the Local Image**: Navigate to the repository's root directory using a terminal, then run:<br>
+`docker compose -f docker-compose.dev.yml build`
+
+### Using the Docker Image
+
+1. Run the development container.<br>
+`docker compose -f docker-compose.dev.yml up`
+
+2. Run the [Available Scripts](#available-scripts) using the container. For example:<br>
+`docker run exec -it weaponsforge-hili-lipsum npm run scrape`
 
 ## Class Usage
 

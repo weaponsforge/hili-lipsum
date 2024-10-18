@@ -4,5 +4,6 @@ node_modules/
 *.json
 *.zip
 .github/
+.git/
 data/hilichurlian_lexicon.html
 !data/hilichurlianDB.json
