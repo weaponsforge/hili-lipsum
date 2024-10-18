@@ -1,0 +1,16 @@
+node_modules/
+.vscode
+.git
+.github
+.gitignore
+.dockerignore
+Dockerfile
+*.zip
+*.rar
+*.txt
+*.yml
+*.json
+*.env
+
+!package.json
+!package-lock.json
