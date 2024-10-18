@@ -21,9 +21,13 @@ The following requirements were used for this project. Feel free to use other de
   - [`npm run hipsum`](#npm-run-hipsum)
   - [`npm run lint`](#npm-run-lint)
   - [`npm run lint:fix`](#npm-run-lintfix)
+- [Usage with Docker](#usage-with-docker)
+   - [Preparing the Local Image](#preparing-the-local-image)
+   - [Using the Docker Image](#using-the-docker-image)
 - [Class Usage](#class-usage)
   - [`Hilichurl` Class](#hilichurl-class)
   - [`Hilipsum` Class](#hilipsum-class)
+- [Deployment with GitHub Actions](#deployment-with-gitHub-actions)
 
 ## Installation
 
@@ -35,8 +39,8 @@ The following requirements were used for this project. Feel free to use other de
 
 3. Create a `.env` file from the `.env.example` file. Use the default value for `HILICHURLIAN_TEXT_URL`.
 
-   | Variable Name         | Description                                                                                                                                                                                                                                                                                           |
-   | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | Variable Name | Description |
+   | --- | --- |
    | HILICHURLIAN_TEXT_URL | Target web page to scrape, containing Hilichurilian words definition. <br><br> You can reference other Hilichurlian words wiki or web page to scrape, but be be sure to make the necessary adjustments on the web scraping logic on `/src/classes/hilichurl/hilichurl.js` - **scrapewords()** method. |
 
 
@@ -59,13 +63,39 @@ Lint JavaScript source codes.
 
 Fix JavaScript lint errors.
 
+### `npm run scrape:debug`
+
+Sets the `IS_DOCKER=true` environment variable before running the `npm run scrape` script to enable debugging with VSCode inside a container.
+
+> This command runs only in a Linux environment.
+
+## Usage with Docker
+
+### Preparing the Local Image
+
+Obtain the development Docker image using any of the two (2) options. Navigate to the repository's root directory using a terminal, then run:
+
+- **Pull the Pre-Built Docker Image**<br>
+`docker compose -f docker-compose.dev.yml pull`
+
+- **Build the Local Image**<br>
+`docker compose -f docker-compose.dev.yml build`
+
+### Using the Docker Image
+
+1. Run the development container.<br>
+`docker compose -f docker-compose.dev.yml up`
+
+2. Run the [Available Scripts](#available-scripts) using the container. For example:<br>
+`docker run exec -it weaponsforge-hili-lipsum npm run scrape`
+
 ## Class Usage
 
 ### `Hilichurl` Class
 
 The `Hilichurl` Class allows to specify a local JSON file to use as a word dictionary. The JSON file should follow the format in `/data/hilichurlianDB.json`
 
-```
+```javascript
 const { Hilichurl } = require('./src/lib/classes/hilichurl')
 const path = require('path')
 
@@ -102,7 +132,7 @@ main()
 
 The `Hilipsum` class is a sub-class of `Hilichurl`. It automatically loads the local JSON word dictionary (`/data/hilichurlianDB.json`) on initialization.
 
-```
+```javascript
 const { Hilipsum } = require('./src/lib/classes/hilipsum')
 
 // Use the the following if installed via npm
@@ -114,5 +144,34 @@ const hiLipsum = new Hilipsum()
 console.log(hiLipsum.lipsum())
 ```
 
+## Deployment with GitHub Actions
+
+This repository deploys the **local development** Docker image to Docker Hub. It publishes the latest tag version to the NPM registry on the creation of new Release/Tags from the `master` branch.
+
+Add the following GitHub Secrets and Variables to enable deployment to Docker Hub and the NPM registry.
+
+**Docker Hub**<br>
+https://hub.docker.com/r/weaponsforge/hili-lipsum
+
+**NPM Registry**<br>
+https://www.npmjs.com/package/hili-lipsum
+
+#### GitHub Secrets
+
+| GitHub Secret | Description |
+| --- | --- |
+| DOCKERHUB_USERNAME | (Optional) Docker Hub username. Required to enable pushing the development image to Docker Hub. |
+| DOCKERHUB_TOKEN | (Optional) Deploy token for the Docker Hub account. Required to enable pushing the development image to Docker Hub. |
+| NPM_TOKEN | NPM registry deployment token. |
+
+#### GitHub Variables
+
+| GitHub Variable | Description |
+| --- | --- |
+| DOCKERHUB_USERNAME | (Optional) Docker Hub username. Required to enable pushing the development image to Docker Hub. |
+
+<br>
+
 @weaponsforge<br>
-20220805
+20220805<br>
+20241018

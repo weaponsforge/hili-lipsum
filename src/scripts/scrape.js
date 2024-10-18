@@ -1,6 +1,7 @@
 require('dotenv').config()
 const path = require('path')
 const { Hilichurl } = require('../lib/classes/hilichurl')
+const { delayProcess } = require('../lib/utils')
 
 const main = async () => {
   const hilichurl = new Hilichurl()
@@ -18,4 +19,8 @@ const main = async () => {
   }
 }
 
-main()
+if (process.env.IS_DOCKER) {
+  delayProcess(main, 5000)
+} else {
+  main()
+}

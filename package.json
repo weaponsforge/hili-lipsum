@@ -3,6 +3,10 @@
   "version": "2.0.1",
   "description": "Non-sensical hilichurlian sentence generator.",
   "main": "index.js",
+  "engines": {
+    "node": "20.15.0",
+    "npm": "10.7.0"
+  },
   "directories": {
     "example": "examples"
   },
@@ -11,6 +15,7 @@
     "scrape": "node src/scripts/scrape.js",
     "hipsum": "node src/scripts/hipsum.js",
     "example:hilipsum": "node examples/example-hilipsum",
+    "scrape:debug": "export IS_DOCKER=true && node --inspect=0.0.0.0:9229 src/scripts/scrape.js",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix"
   },
@@ -36,9 +41,9 @@
   },
   "homepage": "https://github.com/weaponsforge/hili-lipsum#readme",
   "dependencies": {
-    "axios": "^0.27.2",
-    "cheerio": "^1.0.0-rc.12",
-    "dotenv": "^16.0.1"
+    "axios": "^1.7.7",
+    "cheerio": "^1.0.0",
+    "dotenv": "^16.4.5"
   },
   "devDependencies": {
     "eslint": "^8.21.0",
