@@ -1,4 +1,5 @@
 node_modules/
+__tests__/
 .github/
 .git/
 .env
@@ -6,9 +7,12 @@ node_modules/
 *.json
 *.zip
 *.rar
+*.tgz
 *.yml
+*.md
 .dockerignore
 .eslintrc.js
+jest.config.js
 .env.example
 Dockerfile
 data/hilichurlian_lexicon.html
