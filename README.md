@@ -18,7 +18,7 @@ It has the following format and structure:
 
 ### Example
 
-```json
+```
 {
   "metadata": {
     "source": "https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon",
@@ -40,6 +40,10 @@ It has the following format and structure:
 
 Checkout the full web-scraped data in the `/data/hilichurlianDB.json` file for more information.
 
+## Contributing
+
+We welcome contributions! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
+
 ## Requirements
 
 The following requirements were used for this project. Feel free to use other dependencies and versions as needed.
@@ -52,6 +56,7 @@ The following requirements were used for this project. Feel free to use other de
 
 - [hili-lipsum](#hili-lipsum)
 - [Data Structure](#data-structure)
+- [Contributing](#contributing)
 - [Requirements](#requirements)
 - [Content](#content)
 - [Installation](#installation)
@@ -80,7 +85,7 @@ The following requirements were used for this project. Feel free to use other de
 
    | Variable Name | Description |
    | --- | --- |
-   | HILICHURLIAN_TEXT_URL | Target web page to scrape, containing Hilichurilian words definition.<br>Default value is: https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon <br><br> You can reference other Hilichurlian words wiki or web page to scrape, but be be sure to make the necessary adjustments on the web scraping logic on `/src/classes/hilichurl/hilichurl.js` - **scrapewords()** method. |
+   | HILICHURLIAN_TEXT_URL | Target web page to scrape, containing Hilichurilian words definition.<br>Default value is: https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon <br><br> You can reference other Hilichurlian words wiki or web page to scrape, but be be sure to make the necessary adjustments on the web scraping logic on `/src/classes/hilichurl/hilichurl.js` - **scrapewords()** and **formatwords()** methods. |
 
 
 ## Available Scripts
@@ -88,7 +93,7 @@ The following requirements were used for this project. Feel free to use other de
 ### `npm run scrape`
 
 Download, scrape and format hilichurlian words from the `HILICHURLIAN_TEXT_URL` .env variable.
-Writes the extracted and formatted words into `/hilichurlianDB.json`
+Writes the extracted and formatted words into a `/hilichurlianDB-<TIMESTAMP>.json` file.
 
 ### `npm run hipsum`
 
