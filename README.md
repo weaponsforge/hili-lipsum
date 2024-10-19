@@ -1,6 +1,48 @@
 ## hili-lipsum
 
-Non-sensical hilichurlian sentence generator.
+Hilichurlian language lorem ipsum generator and web scraper using data from the Genshin Impact Fandom Wiki at https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon.
+
+
+### Data Structure
+
+The `"npm run scrape"` web scraper script extracts Hilichurlian language data from https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon into an array of JSON Objects under the `"data"` key.
+
+It has the following format and structure:
+
+| Key | Type | Description |
+| --- | --- | --- |
+| `word` | string | Hilichurlian (singular or plural) word |
+| `eng` | string | English translation of the Hilichurlian word |
+| `cn` | string | Chinese player analysis translation of the Hilichurlian word |
+| `notes` | string | Notes and additional information about the Hilichurlian word |
+
+### Example
+
+```
+{
+  "metadata": {
+    "source": "https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon",
+    "title": "Hilichurlian Language Dictionary",
+    "description": "Dictionary of Hilichurlian words and their English translations exctracted from the source URL.",
+    "date_created": "2024-10-19T08:11:48.917Z"
+  },
+  "data": [
+    {
+      "word": "da",
+      "eng": "good/very good, affirmation, very (emphasis)",
+      "cn": "",
+      "notes": "Can be used as praise"
+    },
+    ...
+  ]
+}
+```
+
+Checkout the full web-scraped data in the `/data/hilichurlianDB.json` file for more information.
+
+## Contributing
+
+We welcome contributions! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
 ## Requirements
 
@@ -8,11 +50,13 @@ The following requirements were used for this project. Feel free to use other de
 
 
 1. Windows 10 OS
-2. NodeJS v16.14.2
+2. NodeJS v20.15.0
 
 ## Content
 
 - [hili-lipsum](#hili-lipsum)
+- [Data Structure](#data-structure)
+- [Contributing](#contributing)
 - [Requirements](#requirements)
 - [Content](#content)
 - [Installation](#installation)
@@ -41,7 +85,7 @@ The following requirements were used for this project. Feel free to use other de
 
    | Variable Name | Description |
    | --- | --- |
-   | HILICHURLIAN_TEXT_URL | Target web page to scrape, containing Hilichurilian words definition. <br><br> You can reference other Hilichurlian words wiki or web page to scrape, but be be sure to make the necessary adjustments on the web scraping logic on `/src/classes/hilichurl/hilichurl.js` - **scrapewords()** method. |
+   | HILICHURLIAN_TEXT_URL | Target web page to scrape, containing Hilichurilian words definition.<br>Default value is: https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon <br><br> You can reference other Hilichurlian words wiki or web page to scrape, but be be sure to make the necessary adjustments on the web scraping logic on `/src/classes/hilichurl/hilichurl.js` - **scrapewords()** and **formatwords()** methods. |
 
 
 ## Available Scripts
@@ -49,7 +93,7 @@ The following requirements were used for this project. Feel free to use other de
 ### `npm run scrape`
 
 Download, scrape and format hilichurlian words from the `HILICHURLIAN_TEXT_URL` .env variable.
-Writes the extracted and formatted words into `/hilichurlianDB.json`
+Writes the extracted and formatted words into a `/hilichurlianDB-<TIMESTAMP>.json` file.
 
 ### `npm run hipsum`
 
