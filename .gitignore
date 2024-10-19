@@ -3,6 +3,9 @@ node_modules/
 .vscode
 *.json
 *.zip
+*.rar
+*.tgz
+*.txt
 
 !package.json
 !package-lock.json

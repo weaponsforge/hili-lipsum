@@ -1,9 +1,15 @@
 node_modules/
+.github/
+.git/
 .env
 .vscode
 *.json
 *.zip
-.github/
-.git/
+*.rar
+*.yml
+.dockerignore
+.eslintrc.js
+.env.example
+Dockerfile
 data/hilichurlian_lexicon.html
 !data/hilichurlianDB.json

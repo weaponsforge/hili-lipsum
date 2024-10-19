@@ -3,14 +3,12 @@ const fs = require('fs')
 
 /**
  * Remove special characters and special patterns on a string
- * @param {String} string - String to process and format
- * @param {Bool} removePlural - Flag to remove the string pattern "(plural: <any_word>)" from the string
- * @returns {String} formatted string
+ * @param {string} string - String to process and format
+ * @param {bool} removePlural - Flag to remove the string pattern "(plural: <any_word>)" from the string
+ * @returns {string|undefined} Formatted string or undefined
  */
 const removeSpecialChars = ({ string, removePlural = false }) => {
-  if (string === undefined) {
-    return ''
-  }
+  if (typeof string !== 'string') return
 
   // Replace all newlines and tabs
   let str = string.replace(/(\r\n|\n|\r)/gm, '')
@@ -26,6 +24,54 @@ const removeSpecialChars = ({ string, removePlural = false }) => {
   }
 
   return str
+}
+
+/**
+ * Retrieves words enclosed in a parenthesis from strings following a _"I, me (plural: mimi)"_ format.
+ * Optionally removes words in the `excludes[]` array.
+ * @param {Object} param - Input parameters
+ * @param {string} param.string - Input string
+ * @param {string[]} param.excludes - String array of word/s to exclude from the result
+ * @returns {string|undefined} Extracted words or the original string. Returns undefined if string input is invalid.
+ */
+const getParenthesisWords = ({ string, excludes = [] }) => {
+  if (typeof string !== 'string') return
+
+  const regex = /\(\s*([^)]*)\)/
+  const match = string.match(regex)
+  let result = string
+
+  if (match) {
+    result = match[1].trim()
+
+    excludes.forEach(word => {
+      if (typeof word === 'string') {
+        result = result.replaceAll(word, '').trim()
+      }
+    })
+  }
+
+  return result
+}
+
+/**
+ * Retrives words that go before an openning parenthesis character
+ * @param {Object} param - Input parameters
+ * @param {string} param.string - Input string
+ * @returns {string|undefined} Extracted words or the original string. Returns undefined if string input is invalid.
+ */
+const getParenthesisStartWords = ({ string }) => {
+  if (typeof string !== 'string') return
+
+  const regex = /([^()]+)\s*\(/
+  const match = string.match(regex)
+  let result = string
+
+  if (match) {
+    result = match[1].trim()
+  }
+
+  return result
 }
 
 /**
@@ -56,6 +102,8 @@ const delayProcess = (callback, timeout = 1000) => {
 
 module.exports = {
   removeSpecialChars,
+  getParenthesisWords,
+  getParenthesisStartWords,
   saveToJSON,
   delayProcess
 }

@@ -2,8 +2,11 @@ const axios = require('axios')
 const cheerio = require('cheerio')
 const fs = require('fs')
 const path = require('path')
+
 const {
   removeSpecialChars,
+  getParenthesisWords,
+  getParenthesisStartWords,
   saveToJSON
 } = require('../../utils')
 
@@ -34,25 +37,35 @@ class Hilichurl {
       const $ = cheerio.load(data)
       const that = this
 
+      // HTML column table indices
+      const COL_HILIHURLIAN_INDEX = 0
+      const COL_ENG_INDEX = 1
+      const COL_CN_INDEX = 2
+      const COL_NOTES_INDEX = 3
+
       $('table > tbody > tr').each(function () {
         const rowObject = {
-          word: '',
-          eng: '',
-          notes: ''
+          word: '', // Hilichurlian word(s)
+          eng: '', // English definition
+          cn: '', // Chinese-translated definition
+          notes: '' // Additional notes
         }
 
         // Extract words while removing special characters
-        $(this).find('td').each(function (i, elem) {
+        $(this).find('td').each(function (columnIndex, elem) {
           const string = $(this).text()
 
-          switch (i) {
-          case 0:
+          switch (columnIndex) {
+          case COL_HILIHURLIAN_INDEX:
             rowObject.word = removeSpecialChars({ string })
             break
-          case 1:
+          case COL_ENG_INDEX:
             rowObject.eng = removeSpecialChars({ string })
             break
-          case 2:
+          case COL_CN_INDEX:
+            rowObject.cn = removeSpecialChars({ string })
+            break
+          case COL_NOTES_INDEX:
             rowObject.notes = removeSpecialChars({ string })
             break
           default:
@@ -91,19 +104,23 @@ class Hilichurl {
 
         // Split words with plural counterparts
         const isPlural = hiliWord.match(/plural:(.+[^)])/)
+
         if (isPlural) {
-          // Insert the extracted plural word
+          // Insert the extracted plural word and en/cn definitions
           const pluralWord = { ...item }
+
           pluralWord.word = isPlural[1].trim()
+          pluralWord.eng = getParenthesisWords({ string: pluralWord.eng, excludes: ['plural:'] })
+          pluralWord.cn = getParenthesisWords({ string: pluralWord.cn, excludes: ['plural:'] })
+
           this.hilichurlianDB.push(pluralWord)
           pluralCount += 1
 
-          // Insert the original word minus the plural word
-          // i.e., "(plural: mimi)"
-          item.word = removeSpecialChars({
-            string: item.word,
-            removePlural: true
-          })
+          // Insert the original (singular) word minus the plural word and singular en/cn definitions
+          // i.e., "I, me (plural: mimi)"
+          item.word = removeSpecialChars({ string: item.word, removePlural: true })
+          item.eng = getParenthesisStartWords({ string: item.eng }) ?? ''
+          item.cn = getParenthesisStartWords({ string: item.cn }) ?? ''
         }
 
         // Split words with slash "/" divisor
@@ -116,6 +133,7 @@ class Hilichurl {
             this.hilichurlianDB.push({
               word: word.trim(),
               eng: item.eng,
+              cn: item.cn,
               notes: item.notes
             })
           })
@@ -141,7 +159,7 @@ class Hilichurl {
   loadrecords (jsonFile) {
     try {
       const json = fs.readFileSync(jsonFile, 'utf-8')
-      this.hilichurlianDB = JSON.parse(json)
+      this.hilichurlianDB = JSON.parse(json)?.data
     } catch (err) {
       throw new Error(err.message)
     }
@@ -156,10 +174,20 @@ class Hilichurl {
   writerecords (directory) {
     const dirName = (directory) || process.cwd()
 
+    const metadata = {
+      source: process.env.HILICHURLIAN_TEXT_URL || '',
+      title: 'Hilichurlian Language Dictionary',
+      description: 'Dictionary of Hilichurlian words and their English translations exctracted from the source URL.',
+      date_created: new Date().toISOString()
+    }
+
     try {
       saveToJSON({
-        object: this.hilichurlianDB,
-        filename: path.join(dirName, `hilichurlDB-${Math.floor((new Date()).getTime() / 1000)}.json`)
+        filename: path.join(dirName, `hilichurlDB-${Math.floor((new Date()).getTime() / 1000)}.json`),
+        object: {
+          metadata,
+          data: this.hilichurlianDB
+        }
       })
     } catch (err) {
       throw new Error(err.message)
@@ -174,6 +202,7 @@ class Hilichurl {
    */
   async fetchrecords () {
     this.hilichurlianRAW = []
+    this.hilichurlianDB = []
 
     try {
       await this.scrapewords()
