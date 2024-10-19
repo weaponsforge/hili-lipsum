@@ -2,6 +2,44 @@
 
 Hilichurlian language lorem ipsum generator and web scraper using data from the Genshin Impact Fandom Wiki at https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon.
 
+
+### Data Structure
+
+The `"npm run scrape"` web scraper script extracts Hilichurlian language data from https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon into an array of JSON Objects under the `"data"` key.
+
+It has the following format and structure:
+
+| Key | Type | Description |
+| --- | --- | --- |
+| `word` | string | Hilichurlian (singular or plural) word |
+| `eng` | string | English translation of the Hilichurlian word |
+| `cn` | string | Chinese player analysis translation of the Hilichurlian word |
+| `notes` | string | Notes and additional information about the Hilichurlian word |
+
+### Example
+
+```json
+{
+  "metadata": {
+    "source": "https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon",
+    "title": "Hilichurlian Language Dictionary",
+    "description": "Dictionary of Hilichurlian words and their English translations exctracted from the source URL.",
+    "date_created": "2024-10-19T08:11:48.917Z"
+  },
+  "data": [
+    {
+      "word": "da",
+      "eng": "good/very good, affirmation, very (emphasis)",
+      "cn": "",
+      "notes": "Can be used as praise"
+    },
+    ...
+  ]
+}
+```
+
+Checkout the full web-scraped data in the `/data/hilichurlianDB.json` file for more information.
+
 ## Requirements
 
 The following requirements were used for this project. Feel free to use other dependencies and versions as needed.
@@ -13,6 +51,7 @@ The following requirements were used for this project. Feel free to use other de
 ## Content
 
 - [hili-lipsum](#hili-lipsum)
+- [Data Structure](#data-structure)
 - [Requirements](#requirements)
 - [Content](#content)
 - [Installation](#installation)
@@ -24,7 +63,6 @@ The following requirements were used for this project. Feel free to use other de
 - [Usage with Docker](#usage-with-docker)
    - [Preparing the Local Image](#preparing-the-local-image)
    - [Using the Docker Image](#using-the-docker-image)
-- [Data Structure](#data-structure)
 - [Class Usage](#class-usage)
   - [`Hilichurl` Class](#hilichurl-class)
   - [`Hilipsum` Class](#hilipsum-class)
@@ -89,33 +127,6 @@ Obtain the development Docker image using any of the two (2) options. Navigate t
 
 2. Run the [Available Scripts](#available-scripts) using the container. For example:<br>
 `docker run exec -it weaponsforge-hili-lipsum npm run scrape`
-
-## Data Structure
-
-The `"npm run scrape"` web scraper script extracts Hilichurlian language data from https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon into an array of JSON Objects.
-
-It has the following format and structure:
-
-| Key | Type | Description |
-| --- | --- | --- |
-| `word` | string | Hilichurlian (singular or plural) word |
-| `eng` | string | English translation of the Hilichurlian word |
-| `cn` | string | Chinese player analysis translation of the Hilichurlian word |
-| `notes` | string | Notes and additional information about the Hilichurlian word |
-
-### Example
-
-```
-[
-  {
-    "word": "da",
-    "eng": "good/very good, affirmation, very (emphasis)",
-    "cn": "",
-    "notes": "Can be used as praise"
-  },
-  ...
-]
-```
 
 ## Class Usage
 

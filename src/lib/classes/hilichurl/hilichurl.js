@@ -159,7 +159,7 @@ class Hilichurl {
   loadrecords (jsonFile) {
     try {
       const json = fs.readFileSync(jsonFile, 'utf-8')
-      this.hilichurlianDB = JSON.parse(json)
+      this.hilichurlianDB = JSON.parse(json)?.data
     } catch (err) {
       throw new Error(err.message)
     }
@@ -174,10 +174,20 @@ class Hilichurl {
   writerecords (directory) {
     const dirName = (directory) || process.cwd()
 
+    const metadata = {
+      source: process.env.HILICHURLIAN_TEXT_URL || '',
+      title: 'Hilichurlian Language Dictionary',
+      description: 'Dictionary of Hilichurlian words and their English translations exctracted from the source URL.',
+      date_created: new Date().toISOString()
+    }
+
     try {
       saveToJSON({
-        object: this.hilichurlianDB,
-        filename: path.join(dirName, `hilichurlDB-${Math.floor((new Date()).getTime() / 1000)}.json`)
+        filename: path.join(dirName, `hilichurlDB-${Math.floor((new Date()).getTime() / 1000)}.json`),
+        object: {
+          metadata,
+          data: this.hilichurlianDB
+        }
       })
     } catch (err) {
       throw new Error(err.message)
