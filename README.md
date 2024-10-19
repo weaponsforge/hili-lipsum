@@ -24,6 +24,7 @@ The following requirements were used for this project. Feel free to use other de
 - [Usage with Docker](#usage-with-docker)
    - [Preparing the Local Image](#preparing-the-local-image)
    - [Using the Docker Image](#using-the-docker-image)
+- [Data Structure](#data-structure)
 - [Class Usage](#class-usage)
   - [`Hilichurl` Class](#hilichurl-class)
   - [`Hilipsum` Class](#hilipsum-class)
@@ -41,7 +42,7 @@ The following requirements were used for this project. Feel free to use other de
 
    | Variable Name | Description |
    | --- | --- |
-   | HILICHURLIAN_TEXT_URL | Target web page to scrape, containing Hilichurilian words definition. <br><br> You can reference other Hilichurlian words wiki or web page to scrape, but be be sure to make the necessary adjustments on the web scraping logic on `/src/classes/hilichurl/hilichurl.js` - **scrapewords()** method. |
+   | HILICHURLIAN_TEXT_URL | Target web page to scrape, containing Hilichurilian words definition. Default value is: https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon <br><br> You can reference other Hilichurlian words wiki or web page to scrape, but be be sure to make the necessary adjustments on the web scraping logic on `/src/classes/hilichurl/hilichurl.js` - **scrapewords()** method. |
 
 
 ## Available Scripts
@@ -88,6 +89,33 @@ Obtain the development Docker image using any of the two (2) options. Navigate t
 
 2. Run the [Available Scripts](#available-scripts) using the container. For example:<br>
 `docker run exec -it weaponsforge-hili-lipsum npm run scrape`
+
+## Data Structure
+
+The `"npm run scrape"` web scraper script extracts Hilichurlian language data from https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon into an array of JSON Objects.
+
+It has the following format and structure:
+
+| Key | Type | Description |
+| --- | --- | --- |
+| `word` | string | Hilichurlian (singular or plural) word |
+| `eng` | string | English translation of the Hilichurlian word |
+| `cn` | string | Chinese player analysis translation of the Hilichurlian word |
+| `notes` | string | Notes and additional information about the Hilichurlian word |
+
+### Example
+
+```json
+[
+  {
+    "word": "da",
+    "eng": "good/very good, affirmation, very (emphasis)",
+    "cn": "",
+    "notes": "Can be used as praise"
+  },
+  ...
+]
+```
 
 ## Class Usage
 

@@ -2,8 +2,11 @@ const axios = require('axios')
 const cheerio = require('cheerio')
 const fs = require('fs')
 const path = require('path')
+
 const {
   removeSpecialChars,
+  getParenthesisWords,
+  getParenthesisStartWords,
   saveToJSON
 } = require('../../utils')
 
@@ -34,25 +37,35 @@ class Hilichurl {
       const $ = cheerio.load(data)
       const that = this
 
+      // HTML column table indices
+      const COL_HILIHURLIAN_INDEX = 0
+      const COL_ENG_INDEX = 1
+      const COL_CN_INDEX = 2
+      const COL_NOTES_INDEX = 3
+
       $('table > tbody > tr').each(function () {
         const rowObject = {
-          word: '',
-          eng: '',
-          notes: ''
+          word: '', // Hilichurlian word(s)
+          eng: '', // English definition
+          cn: '', // Chinese-translated definition
+          notes: '' // Additional notes
         }
 
         // Extract words while removing special characters
-        $(this).find('td').each(function (i, elem) {
+        $(this).find('td').each(function (columnIndex, elem) {
           const string = $(this).text()
 
-          switch (i) {
-          case 0:
+          switch (columnIndex) {
+          case COL_HILIHURLIAN_INDEX:
             rowObject.word = removeSpecialChars({ string })
             break
-          case 1:
+          case COL_ENG_INDEX:
             rowObject.eng = removeSpecialChars({ string })
             break
-          case 2:
+          case COL_CN_INDEX:
+            rowObject.cn = removeSpecialChars({ string })
+            break
+          case COL_NOTES_INDEX:
             rowObject.notes = removeSpecialChars({ string })
             break
           default:
@@ -91,19 +104,23 @@ class Hilichurl {
 
         // Split words with plural counterparts
         const isPlural = hiliWord.match(/plural:(.+[^)])/)
+
         if (isPlural) {
-          // Insert the extracted plural word
+          // Insert the extracted plural word and en/cn definitions
           const pluralWord = { ...item }
+
           pluralWord.word = isPlural[1].trim()
+          pluralWord.eng = getParenthesisWords({ string: pluralWord.eng, excludes: ['plural:'] })
+          pluralWord.cn = getParenthesisWords({ string: pluralWord.cn, excludes: ['plural:'] })
+
           this.hilichurlianDB.push(pluralWord)
           pluralCount += 1
 
-          // Insert the original word minus the plural word
-          // i.e., "(plural: mimi)"
-          item.word = removeSpecialChars({
-            string: item.word,
-            removePlural: true
-          })
+          // Insert the original (singular) word minus the plural word and singular en/cn definitions
+          // i.e., "I, me (plural: mimi)"
+          item.word = removeSpecialChars({ string: item.word, removePlural: true })
+          item.eng = getParenthesisStartWords({ string: item.eng }) ?? ''
+          item.cn = getParenthesisStartWords({ string: item.cn }) ?? ''
         }
 
         // Split words with slash "/" divisor
@@ -116,6 +133,7 @@ class Hilichurl {
             this.hilichurlianDB.push({
               word: word.trim(),
               eng: item.eng,
+              cn: item.cn,
               notes: item.notes
             })
           })
@@ -174,6 +192,7 @@ class Hilichurl {
    */
   async fetchrecords () {
     this.hilichurlianRAW = []
+    this.hilichurlianDB = []
 
     try {
       await this.scrapewords()
