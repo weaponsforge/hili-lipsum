@@ -2,8 +2,8 @@ name: Lint Files
 
 on:
   push:
-    branches:
-      - '**'
+    branches-ignore:
+      - 'master'
 
 jobs:
   lint-app:
@@ -12,11 +12,18 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v3
-      - name: Use NodeJS v16.14.2
+
+      - name: Use NodeJS v20
         uses: actions/setup-node@v3
         with:
-          node-version: 16.14.2
-      - name: Install Dependencies and lint
-        run: |
-          npm install
-          npm run lint
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Run Tests
+        run: npm test
