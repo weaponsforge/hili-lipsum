@@ -10,16 +10,33 @@ const {
   saveToJSON
 } = require('../../utils')
 
-// Manages hilichurl words-related data processing and formatting
+/**
+ * Manages hilichurl words-related data processing and formatting
+ */
 class Hilichurl {
+  /**
+   * Array of Objects containing the raw extracted data items.
+   * @type {Object[]}
+   */
+  hilichurlianRAW = []
+
+  /**
+   * Array of Objects containing processed and formatted data. items
+   * @type {Object[]}
+   */
+  hilichurlianDB = []
+
+  /**
+   * Number of columns in the HTML table. Default value should be 4 (as of 20241018).
+   * @type {number}
+   */
+  COLUMN_LENGTH = 0
+
   /**
    * Initialize the Hilichurl class with JSON data from "jsonFile"
    * @param {String} jsonFile - Full file path to a target JSON file containing Object[] object arrays
    */
   constructor (jsonFile) {
-    this.hilichurlianDB = []
-    this.hilichurlianRAW = []
-
     if (jsonFile) {
       this.loadrecords(jsonFile)
     }
@@ -52,8 +69,14 @@ class Hilichurl {
         }
 
         // Extract words while removing special characters
+        const columsLength = $(this).find('td').length
+
         $(this).find('td').each(function (columnIndex, elem) {
           const string = $(this).text()
+
+          if (that.COLUMN_LENGTH === 0) {
+            that.COLUMN_LENGTH = columsLength
+          }
 
           switch (columnIndex) {
           case COL_HILIHURLIAN_INDEX:
@@ -167,12 +190,14 @@ class Hilichurl {
 
   /**
    * Write the contents of "this.hilichurlianDB" into a JSON file
-   * @param {String} filePath
+   * @param {String} directory
    *    - (Optional) Full directory path minus the filename where to save the JSON file
    *    - Will write the JSON file to the project's root directory if ommitted
+   * @returns {String} Random-generated file name
    */
   writerecords (directory) {
     const dirName = (directory) || process.cwd()
+    const filename = path.join(dirName, `hilichurlDB-${Math.floor((new Date()).getTime() / 1000)}.json`)
 
     const metadata = {
       source: process.env.HILICHURLIAN_TEXT_URL || '',
@@ -183,12 +208,14 @@ class Hilichurl {
 
     try {
       saveToJSON({
-        filename: path.join(dirName, `hilichurlDB-${Math.floor((new Date()).getTime() / 1000)}.json`),
+        filename,
         object: {
           metadata,
           data: this.hilichurlianDB
         }
       })
+
+      return filename
     } catch (err) {
       throw new Error(err.message)
     }

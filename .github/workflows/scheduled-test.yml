@@ -1,0 +1,39 @@
+name: Lint Files on Schedule
+
+on:
+  schedule:
+    # Runs "At 00:00 on day-of-month 1 in every month."
+    - cron: '0 0 1 */1 *'
+
+jobs:
+  lint-app:
+    name: Test App
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Fetch and check out latest tag
+        run: |
+          git fetch --tags
+          LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+          echo "Checking out latest tag: $LATEST_TAG"
+          git checkout $LATEST_TAG
+          echo "LATEST_TAG=$LATEST_TAG" >> $GITHUB_ENV
+
+      - name: Use NodeJS v20.15.0
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.15.0
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Run Tests
+        run: |
+          cp .env.example .env
+          npm test
