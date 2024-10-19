@@ -13,13 +13,14 @@ module.exports = {
     SharedArrayBuffer: 'readonly'
   },
   parserOptions: {
-    ecmaVersion: 2020 //2018
+    ecmaVersion: 2022 //2018
   },
   rules: {
     'indent': ['error', 2],
     'linebreak-style': ['error', 'unix'],
     'quotes': ['error', 'single'],
     'semi': ['error', 'never'],
+    'no-trailing-spaces': 'error',
     // 'no-unused-vars': 'off',
     // 'no-undef': 'off'
   }
