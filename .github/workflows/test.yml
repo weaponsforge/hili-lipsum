@@ -7,7 +7,7 @@ on:
 
 jobs:
   lint-app:
-    name: Lint App
+    name: Test App
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
@@ -26,4 +26,6 @@ jobs:
         run: npm run lint
 
       - name: Run Tests
-        run: npm test
+        run: |
+          cp .env.example .env
+          npm test
