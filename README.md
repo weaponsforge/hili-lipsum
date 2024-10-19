@@ -1,6 +1,6 @@
 ## hili-lipsum
 
-Non-sensical hilichurlian sentence generator.
+Hilichurlian language lorem ipsum generator and web scraper using data from the Genshin Impact Fandom Wiki at https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon.
 
 ## Requirements
 
@@ -8,7 +8,7 @@ The following requirements were used for this project. Feel free to use other de
 
 
 1. Windows 10 OS
-2. NodeJS v16.14.2
+2. NodeJS v20.15.0
 
 ## Content
 
@@ -42,7 +42,7 @@ The following requirements were used for this project. Feel free to use other de
 
    | Variable Name | Description |
    | --- | --- |
-   | HILICHURLIAN_TEXT_URL | Target web page to scrape, containing Hilichurilian words definition. Default value is: https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon <br><br> You can reference other Hilichurlian words wiki or web page to scrape, but be be sure to make the necessary adjustments on the web scraping logic on `/src/classes/hilichurl/hilichurl.js` - **scrapewords()** method. |
+   | HILICHURLIAN_TEXT_URL | Target web page to scrape, containing Hilichurilian words definition.<br>Default value is: https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon <br><br> You can reference other Hilichurlian words wiki or web page to scrape, but be be sure to make the necessary adjustments on the web scraping logic on `/src/classes/hilichurl/hilichurl.js` - **scrapewords()** method. |
 
 
 ## Available Scripts
@@ -105,7 +105,7 @@ It has the following format and structure:
 
 ### Example
 
-```json
+```
 [
   {
     "word": "da",
