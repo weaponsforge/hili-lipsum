@@ -1,4 +1,4 @@
-name: Lint Files on Schedule
+name: Run Tests on Schedule
 
 on:
   schedule:
