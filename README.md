@@ -97,7 +97,7 @@ Writes the extracted and formatted words into a `/hilichurlianDB-<TIMESTAMP>.jso
 
 ### `npm run hipsum`
 
-Generates a random non-sensical Hilichurlian sentence (max 15 words).
+Generates a random ipsum-like Hilichurlian sentence (max 15 words).
 
 ### `npm run lint`
 
@@ -113,7 +113,13 @@ Sets the `IS_DOCKER=true` environment variable before running the `npm run scrap
 
 > This command runs only in a Linux environment.
 
+### `npm test`
+
+Run tests defined in the `__tests__` directory.
+
 ## Usage with Docker
+
+Pulling and using the Docker image requires a `.env` variable before proceeding. Create a `.env` first from the `.env.example` file as instructed in the [Installation](#installation) section.
 
 ### Preparing the Local Image
 
@@ -190,7 +196,7 @@ console.log(hiLipsum.lipsum())
 
 ## Deployment with GitHub Actions
 
-This repository deploys the **local development** Docker image to Docker Hub. It publishes the latest tag version to the NPM registry on the creation of new Release/Tags from the `master` branch.
+This repository deploys the latest **local development** Docker image to Docker Hub. It publishes the latest tag version to the NPM registry on the creation of new Release/Tags from the `master` branch.
 
 Add the following GitHub Secrets and Variables to enable deployment to Docker Hub and the NPM registry.
 

@@ -168,11 +168,13 @@ class Hilichurl {
       }
     })
 
-    console.log('[FORMATTING LOGS] ----------')
-    console.log(`processed ${validRawsCount} rows`)
-    console.log(`created and formatted ${this.hilichurlianDB.length} entries`)
-    console.log(`plural words: ${pluralCount}`)
-    console.log(`split words: ${splitWordsCount}`)
+    let formatLog = '[FORMATTING LOGS] ----------'
+    formatLog += ` - processed ${validRawsCount} rows\n`
+    formatLog += ` - created and formatted ${this.hilichurlianDB.length} entries\n`
+    formatLog += ` - plural words: ${pluralCount}\n`
+    formatLog += ` - split words: ${splitWordsCount}`
+
+    console.log(formatLog)
   }
 
   /**

@@ -1,6 +1,6 @@
 {
   "name": "hili-lipsum",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "Hilichurlian language lorem ipsum generator and web scraper",
   "main": "index.js",
   "engines": {
