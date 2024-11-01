@@ -23,7 +23,9 @@ jobs:
           echo "LATEST_TAG=$LATEST_TAG" >> $GITHUB_ENV
 
       - name: Pull Development Image
-        run: docker compose -f docker-compose.dev.yml pull
+        run: |
+          cp .env.example .env
+          docker compose -f docker-compose.dev.yml pull
 
       - name: Pull Tagged Image
         run: |
