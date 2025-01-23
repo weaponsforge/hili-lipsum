@@ -97,7 +97,12 @@ Writes the extracted and formatted words into a `/hilichurlianDB-<TIMESTAMP>.jso
 
 ### `npm run hipsum`
 
-Generates a random ipsum-like Hilichurlian sentence (max 15 words).
+- Generates a random ipsum-like Hilichurlian sentence consisting of 15 words by default.
+- Generates a random Hilichurlian sentence consisting of `N` words if provided with the `--wordcount` flag:<br>
+
+   ```
+   npm run hipsum --wordcount=100
+   ```
 
 ### `npm run lint`
 
@@ -137,7 +142,7 @@ Obtain the development Docker image using any of the two (2) options. Navigate t
 `docker compose -f docker-compose.dev.yml up`
 
 2. Run the [Available Scripts](#available-scripts) using the container. For example:<br>
-`docker run exec -it weaponsforge-hili-lipsum npm run scrape`
+`docker exec -it weaponsforge-hili-lipsum npm run scrape`
 
 ## Class Usage
 
