@@ -168,7 +168,7 @@ class Hilichurl {
       }
     })
 
-    let formatLog = '[FORMATTING LOGS] ----------'
+    let formatLog = '[FORMATTING LOGS] ----------\n'
     formatLog += ` - processed ${validRawsCount} rows\n`
     formatLog += ` - created and formatted ${this.hilichurlianDB.length} entries\n`
     formatLog += ` - plural words: ${pluralCount}\n`
