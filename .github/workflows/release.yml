@@ -6,9 +6,6 @@ name: Publish to NPM
 on:
   release:
     types: [published]
-  push:
-    branches-ignore:
-      - 'master'
 
 jobs:
   run-tests:
