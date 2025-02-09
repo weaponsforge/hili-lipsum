@@ -3,9 +3,9 @@
   "version": "3.2.0",
   "description": "Hilichurlian language lorem ipsum generator and web scraper",
   "main": "index.js",
+  "types": "types/index.d.ts",
   "engines": {
-    "node": "20.15.0",
-    "npm": "10.7.0"
+    "node": ">=20"
   },
   "directories": {
     "example": "examples"
@@ -18,7 +18,9 @@
     "scrape:debug": "export IS_DOCKER=true && node --inspect=0.0.0.0:9229 src/scripts/scrape.js",
     "lint": "eslint src __tests__",
     "lint:fix": "eslint src __tests__ --fix",
-    "test": "jest"
+    "create:declaration": "tsc",
+    "test": "jest",
+    "prepublishOnly": "npm run create:declaration"
   },
   "repository": {
     "type": "git",
@@ -52,6 +54,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.0",
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "typescript": "^5.7.3"
   }
 }
