@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "types",
+    "module": "CommonJS",
+    "target": "ES6",
+    "strict": true
+  },
+  "include": ["src/**/*.js"],
+  "exclude": ["node_modules", "dist", "__tests__", "src/scripts/**/*.js"]
+}

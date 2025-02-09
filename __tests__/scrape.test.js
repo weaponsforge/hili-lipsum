@@ -36,7 +36,7 @@ describe('Hilichurlian Wiki Web Scraper', () => {
 })
 
 describe('Hilichurl Data Dictionary', () => {
-  it('should be an non-empty Object[] array', () => {
+  it('should be an non-empty object[] array', () => {
     expect(hilichurl.hilichurlianDB).toBeDefined()
     expect(Array.isArray(hilichurl.hilichurlianDB)).toBe(true)
     expect(hilichurl.hilichurlianDB.length).toBeGreaterThan(0)

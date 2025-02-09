@@ -3,8 +3,9 @@ const fs = require('fs')
 
 /**
  * Remove special characters and special patterns on a string
- * @param {string} string - String to process and format
- * @param {bool} removePlural - Flag to remove the string pattern "(plural: <any_word>)" from the string
+ * @param {object} param - Input parameters
+ * @param {string} param.string - String to process and format
+ * @param {boolean} param.removePlural - Flag to remove the string pattern "(plural: <any_word>)" from the string
  * @returns {string|undefined} Formatted string or undefined
  */
 const removeSpecialChars = ({ string, removePlural = false }) => {
@@ -29,7 +30,7 @@ const removeSpecialChars = ({ string, removePlural = false }) => {
 /**
  * Retrieves words enclosed in a parenthesis from strings following a _"I, me (plural: mimi)"_ format.
  * Optionally removes words in the `excludes[]` array.
- * @param {Object} param - Input parameters
+ * @param {object} param - Input parameters
  * @param {string} param.string - Input string
  * @param {string[]} param.excludes - String array of word/s to exclude from the result
  * @returns {string|undefined} Extracted words or the original string. Returns undefined if string input is invalid.
@@ -56,7 +57,7 @@ const getParenthesisWords = ({ string, excludes = [] }) => {
 
 /**
  * Retrives words that go before an openning parenthesis character
- * @param {Object} param - Input parameters
+ * @param {object} param - Input parameters
  * @param {string} param.string - Input string
  * @returns {string|undefined} Extracted words or the original string. Returns undefined if string input is invalid.
  */
@@ -75,23 +76,26 @@ const getParenthesisStartWords = ({ string }) => {
 }
 
 /**
- * Write a single or array of JavaScript objects to a JSON file
- * @param {Object[]} object - Array of simple JavaScript objects
- * @param {String} filename - Full file path to the target destination file
- * @returns Creates a JSON file on the specified filename location
+ * Write a single or array of JavaScript objects to a JSON file.
+ * Creates a JSON file on the specified filename location.
+ * @param {object} param - Input parameters
+ * @param {object[]} param.data - Array of simple JavaScript objects
+ * @param {string} param.filename - Full file path to the target destination file
+ * @returns {void}
  */
-const saveToJSON = ({ object, filename }) => {
+const saveToJSON = ({ data, filename }) => {
   fs.writeFileSync(
     filename,
-    JSON.stringify(object, null, 2),
+    JSON.stringify(data, null, 2),
     'utf-8'
   )
 }
 
 /**
  * Stalls function execution by `timeout` milliseconds
- * @param {Function} callback - Callback function to execute after `timeout` milliseconds
- * @param {Number} timeout - Milliseconds timeout delay
+ * @param {() => void} callback - Callback function to execute after `timeout` milliseconds
+ * @param {number} timeout - Milliseconds timeout delay
+ * @returns {void}
  */
 const delayProcess = (callback, timeout = 1000) => {
   setTimeout(() => {

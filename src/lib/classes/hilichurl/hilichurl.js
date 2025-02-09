@@ -15,26 +15,26 @@ const {
  */
 class Hilichurl {
   /**
-   * Array of Objects containing the raw extracted data items.
-   * @type {Object[]}
+   * Array of Objects containing the raw Hilichurlian data extracted from web-scraped data.
+   * @type {object[]}
    */
   hilichurlianRAW = []
 
   /**
-   * Array of Objects containing processed and formatted data. items
-   * @type {Object[]}
+   * Array of Objects containing processed and formatted Hilichurlian data.
+   * @type {object[]}
    */
   hilichurlianDB = []
 
   /**
-   * Number of columns in the HTML table. Default value should be 4 (as of 20241018).
+   * Number of columns in the Hilichurlian Lexicon website's HTML table. Default value should be 4 (as of 20241018).
    * @type {number}
    */
   COLUMN_LENGTH = 0
 
   /**
-   * Initialize the Hilichurl class with JSON data from "jsonFile"
-   * @param {String} jsonFile - Full file path to a target JSON file containing Object[] object arrays
+   * Initializes the Hilichurl class with Hilichurlian JSON data from `jsonFile`
+   * @param {string} jsonFile - Full file path to a target JSON file containing object[] object arrays
    */
   constructor (jsonFile) {
     if (jsonFile) {
@@ -43,9 +43,9 @@ class Hilichurl {
   }
 
   /**
-   * Scrape hilichurlian words and definition from .env.example "HILICHURLIAN_TEXT_URL" variable
+   * Scrapes Hilichurlian words and definitions from the Hilichurl Lexicon website whose URL is defined in the .env.example "HILICHURLIAN_TEXT_URL" variable
    * and remove special chars on the scraped content
-   * @returns {Object[]} Stores an array of raw sraped hilichurlian words minus special characters in this.hilichurlianRAW[]
+   * @returns {Promise<void>} Stores an array of raw sraped Hilichurlian words minus special characters in this.hilichurlianRAW[]
    *    [{ word: String, eng: String, notes: String },...]
    */
   async scrapewords () {
@@ -107,11 +107,12 @@ class Hilichurl {
   }
 
   /**
-   * Post-processing and extra formating of the raw-scraped hilichurlian words from this.hilichurlianRAW[]
-   * Stores the formatted words in this.hilichurlianDB
-   * @param {Object[]} data
+   * Post-processing and extra formating of raw-scraped Hilichurlian words from `this.hilichurlianRAW[]`.
+   * Stores the formatted words in `this.hilichurlianDB[]`.
+   * @param {object[]} [data] - (Optional) Array of objects containing raw Hilichurlian data. Uses the `this.hilichurlianRAW[]` data if not provided.
+   * @returns {void}
    */
-  async formatwords (data = []) {
+  formatwords (data = []) {
     let pluralCount = 0
     let validRawsCount = 0
     let splitWordsCount = 0
@@ -178,8 +179,9 @@ class Hilichurl {
   }
 
   /**
-   * Loads the contents of a JSON file to this.hilichurlianDB[] for further processing
-   * @param {String} jsonFile - Full file path to a target JSON file containing Object[] object arrays
+   * Loads the contents of a JSON file containing Hilichulian-like data items to `this.hilichurlianDB[]` for further processing
+   * @param {string} jsonFile - Full file path to a target JSON file containing object[] object arrays
+   * @returns {void}
    */
   loadrecords (jsonFile) {
     try {
@@ -191,11 +193,11 @@ class Hilichurl {
   }
 
   /**
-   * Write the contents of "this.hilichurlianDB" into a JSON file
-   * @param {String} directory
+   * Writes the contents of `this.hilichurlianDB[]` into a JSON file
+   * @param {string} directory
    *    - (Optional) Full directory path minus the filename where to save the JSON file
    *    - Will write the JSON file to the project's root directory if ommitted
-   * @returns {String} Random-generated file name
+   * @returns {string} Random-generated file name
    */
   writerecords (directory) {
     const dirName = (directory) || process.cwd()
@@ -211,7 +213,7 @@ class Hilichurl {
     try {
       saveToJSON({
         filename,
-        object: {
+        data: {
           metadata,
           data: this.hilichurlianDB
         }
@@ -224,10 +226,11 @@ class Hilichurl {
   }
 
   /**
-   * Refresh the in-memory hilichurlian dictionaries by scraping data
-   * from HILICHURLIAN_TEXT_URL into:
-   *  - this.hilichurlianRAW
-   *  - this.hilichurlianDB
+   * Refreshes the in-memory Hilichurlian dictionaries by scraping data
+   * from the `HILICHURLIAN_TEXT_URL` environment variable into:
+   *  - `this.hilichurlianRAW[]`
+   *  - `this.hilichurlianDB[]`
+   * @returns {Promise<void>}
    */
   async fetchrecords () {
     this.hilichurlianRAW = []
@@ -249,9 +252,9 @@ class Hilichurl {
   }
 
   /**
-   * Generate a Hilichurlian sentence made up of non-sensical Hilichurlian words
-   * @param {Number} wordCount - Maximum number of words to include in the sentence
-   * @returns {String} Random Hilichurlian words
+   * Generates a Hilichurlian sentence made up of non-sensical Hilichurlian words
+   * @param {number} wordCount - Maximum number of words to include in the sentence
+   * @returns {string} Random Hilichurlian words
    */
   lipsum (wordCount = 0) {
     const minw = 5

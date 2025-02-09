@@ -1,4 +1,5 @@
 node_modules/
+types/
 .env
 .vscode
 *.json
@@ -7,5 +8,6 @@ node_modules/
 *.tgz
 *.txt
 
+!tsconfig.json
 !package.json
 !package-lock.json
