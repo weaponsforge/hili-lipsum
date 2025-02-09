@@ -50,7 +50,12 @@ The following requirements were used for this project. Feel free to use other de
 
 
 1. Windows 10 OS
-2. NodeJS v20.15.0
+2. NodeJS LTS v20 or higher
+   ```
+   Recommended:
+   node: v20.15.0
+   npm: v10.7.0
+   ```
 
 ## Content
 
@@ -117,6 +122,10 @@ Fix JavaScript lint errors.
 Sets the `IS_DOCKER=true` environment variable before running the `npm run scrape` script to enable debugging with VSCode inside a container.
 
 > This command runs only in a Linux environment.
+
+### `npm run create:declaration`
+
+Generates TypeScript declaration `.d.ts` files from the CommonJS JavaScript classes and scripts.
 
 ### `npm test`
 
