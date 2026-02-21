@@ -68,15 +68,15 @@ jobs:
           ref: ${{ github.event.release.tag_name }}
 
       - name: Set release version number
-        run: sed -i -e "s/latest/${{ github.event.release.tag_name }}/g" docker-compose.dev.yml
+        run: sed -i -e "s/latest/${{ github.event.release.tag_name }}/g" docker-compose.yml
 
       - name: Build Image
         run: |
           cp .env.example .env
-          docker compose -f docker-compose.dev.yml build
+          docker compose build
 
       - name: Push Image to Docker Hub
-        run: docker compose -f docker-compose.dev.yml push
+        run: docker compose push
 
   docker-build-push:
     name: Push Development Image
@@ -98,7 +98,7 @@ jobs:
       - name: Build Image
         run: |
           cp .env.example .env
-          docker compose -f docker-compose.dev.yml build
+          docker compose build
 
       - name: Push Image to Docker Hub
-        run: docker compose -f docker-compose.dev.yml push
+        run: docker compose push

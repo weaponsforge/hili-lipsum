@@ -140,15 +140,15 @@ Pulling and using the Docker image requires a `.env` variable before proceeding.
 Obtain the development Docker image using any of the two (2) options. Navigate to the repository's root directory using a terminal, then run:
 
 - **Pull the Pre-Built Docker Image**<br>
-`docker compose -f docker-compose.dev.yml pull`
+`docker compose pull`
 
 - **Build the Local Image**<br>
-`docker compose -f docker-compose.dev.yml build`
+`docker compose build`
 
 ### Using the Docker Image
 
 1. Run the development container.<br>
-`docker compose -f docker-compose.dev.yml up`
+`docker compose up`
 
 2. Run the [Available Scripts](#available-scripts) using the container. For example:<br>
 `docker exec -it weaponsforge-hili-lipsum npm run scrape`

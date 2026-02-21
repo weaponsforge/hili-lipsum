@@ -25,9 +25,9 @@ jobs:
       - name: Pull Development Image
         run: |
           cp .env.example .env
-          docker compose -f docker-compose.dev.yml pull
+          docker compose pull
 
       - name: Pull Tagged Image
         run: |
-          sed -i -e "s/latest/${{ env.LATEST_TAG }}/g" docker-compose.dev.yml
-          docker compose -f docker-compose.dev.yml pull
+          sed -i -e "s/latest/${{ env.LATEST_TAG }}/g" docker-compose.yml
+          docker compose pull
