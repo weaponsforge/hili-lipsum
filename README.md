@@ -51,7 +51,7 @@ The following requirements were used for this project. Feel free to use other de
 
 1. Windows 10 OS
 2. NodeJS LTS v24 or higher
-   ```
+   ```text
    Recommended:
    node: v24.11.0
    npm: v11.6.1
