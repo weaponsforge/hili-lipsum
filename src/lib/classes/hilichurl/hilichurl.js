@@ -116,6 +116,7 @@ class Hilichurl {
     let pluralCount = 0
     let validRawsCount = 0
     let splitWordsCount = 0
+    let allNullCount = 0
 
     const toProcess = data.length > 0
       ? data
@@ -147,6 +148,13 @@ class Hilichurl {
           item.cn = getParenthesisStartWords({ string: item.cn }) ?? ''
         }
 
+        if (item.eng.length === 0) item.eng = null
+        if (item.cn.length === 0) item.cn = null
+        if (item.notes.length === 0) item.notes = null
+
+        // Count items without EN translation or CN player analysis
+        if (item.eng === null && item.cn === null) allNullCount += 1
+
         // Split words with slash "/" divisor
         const orWords = hiliWord.split('/')
 
@@ -173,7 +181,8 @@ class Hilichurl {
     formatLog += ` - processed ${validRawsCount} rows\n`
     formatLog += ` - created and formatted ${this.hilichurlianDB.length} entries\n`
     formatLog += ` - plural words: ${pluralCount}\n`
-    formatLog += ` - split words: ${splitWordsCount}`
+    formatLog += ` - split words: ${splitWordsCount}\n`
+    formatLog += ` - no CN/EN translations: ${allNullCount}`
 
     console.log(formatLog)
   }
