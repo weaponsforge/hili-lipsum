@@ -27,6 +27,12 @@ class Hilichurl {
   hilichurlianDB = []
 
   /**
+   * Array of Objects containing invalid Hilichurlian data - items without a Hilichurlian word.
+   * @type {object[]}
+   */
+  invalidItems = []
+
+  /**
    * Number of columns in the Hilichurlian Lexicon website's HTML table. Default value should be 4 (as of 20241018).
    * @type {number}
    */
@@ -96,7 +102,10 @@ class Hilichurl {
           }
         })
 
-        that.hilichurlianRAW.push(rowObject)
+        // At least 1 or more columns (keys) should have a value
+        if (Object.values(rowObject).some(item => item !== '')) {
+          that.hilichurlianRAW.push(rowObject)
+        }
       })
 
       console.log('[SCRAPING LOGS] ----------')
@@ -116,6 +125,7 @@ class Hilichurl {
     let pluralCount = 0
     let validRawsCount = 0
     let splitWordsCount = 0
+    let allNullCount = 0
 
     const toProcess = data.length > 0
       ? data
@@ -147,6 +157,13 @@ class Hilichurl {
           item.cn = getParenthesisStartWords({ string: item.cn }) ?? ''
         }
 
+        if (!item.eng) item.eng = null
+        if (!item.cn) item.cn = null
+        if (!item.notes) item.notes = null
+
+        // Count items without EN translation or CN player analysis
+        if (item.eng === null && item.cn === null) allNullCount += 1
+
         // Split words with slash "/" divisor
         const orWords = hiliWord.split('/')
 
@@ -166,14 +183,19 @@ class Hilichurl {
         if (orWords.length < 2) {
           this.hilichurlianDB.push(item)
         }
+      } else {
+        // Invalid data - no Hilichurlian word
+        this.invalidItems.push(item)
       }
     })
 
     let formatLog = '[FORMATTING LOGS] ----------\n'
     formatLog += ` - processed ${validRawsCount} rows\n`
-    formatLog += ` - created and formatted ${this.hilichurlianDB.length} entries\n`
+    formatLog += ` - created and formatted ${this.hilichurlianDB.length} valid entries\n`
+    formatLog += ` - invalid data: ${this.invalidItems.length}\n`
     formatLog += ` - plural words: ${pluralCount}\n`
-    formatLog += ` - split words: ${splitWordsCount}`
+    formatLog += ` - split words: ${splitWordsCount}\n`
+    formatLog += ` - no CN/EN translations: ${allNullCount}\n`
 
     console.log(formatLog)
   }
@@ -235,6 +257,7 @@ class Hilichurl {
   async fetchrecords () {
     this.hilichurlianRAW = []
     this.hilichurlianDB = []
+    this.invalidItems = []
 
     try {
       await this.scrapewords()
