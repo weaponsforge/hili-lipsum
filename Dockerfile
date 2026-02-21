@@ -7,7 +7,7 @@ COPY package*.json ./
 
 # DEVELOPMENT APP PROFILE
 FROM base AS development
-RUN npm install && npm cache clean --force
+RUN npm ci && npm cache clean --force
 COPY . ./
 USER user
 EXPOSE 9229
