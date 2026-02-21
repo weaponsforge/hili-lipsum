@@ -7,6 +7,9 @@ on:
   release:
     types: [published]
 
+permissions:
+  contents: read
+
 jobs:
   run-tests:
     name: Run Tests
@@ -48,8 +51,6 @@ jobs:
           node-version: 24.11.0
           registry-url: https://registry.npmjs.org/
       - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
   docker-build-push-tag:
     name: Push Tagged Image
