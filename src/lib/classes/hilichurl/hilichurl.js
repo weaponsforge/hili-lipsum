@@ -287,6 +287,10 @@ class Hilichurl {
     try {
       await this.scrapewords()
     } catch (err) {
+      if (err.name === 'AbortError') {
+        throw err
+      }
+
       throw new Error(err.message, { cause: err })
     }
 
