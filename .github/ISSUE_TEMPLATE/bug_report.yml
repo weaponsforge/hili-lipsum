@@ -35,7 +35,7 @@ body:
       description: Please run `npm run info` in the root directory of your project and paste the results.
       render: bash
       placeholder: |
-        Node version: v20.15.0
+        Node version: v24.11.0
         Platform: linux
         Arch: x64
         V8 version: 11.3.244.8-node.23

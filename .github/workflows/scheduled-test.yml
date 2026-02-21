@@ -21,10 +21,10 @@ jobs:
           git checkout $LATEST_TAG
           echo "LATEST_TAG=$LATEST_TAG" >> $GITHUB_ENV
 
-      - name: Use NodeJS v20.15.0
+      - name: Use NodeJS v24.11.0
         uses: actions/setup-node@v6
         with:
-          node-version: 20.15.0
+          node-version: 24.11.0
           registry-url: https://registry.npmjs.org/
 
       - name: Install Dependencies

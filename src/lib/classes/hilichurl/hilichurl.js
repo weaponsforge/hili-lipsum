@@ -1,4 +1,3 @@
-const axios = require('axios')
 const cheerio = require('cheerio')
 const fs = require('fs')
 const path = require('path')
@@ -56,7 +55,21 @@ class Hilichurl {
    */
   async scrapewords () {
     try {
-      const { data } = await axios.get(process.env.HILICHURLIAN_TEXT_URL)
+      const res = await fetch(process.env.HILICHURLIAN_TEXT_URL, {
+        method: "GET"
+      })
+
+      if (!res.ok) {
+        console.error("HTTP", res.status)
+        console.error("Headers:", Object.fromEntries(res.headers.entries()))
+
+        const body = await res.text()
+        console.error(body.slice(0, 800))
+
+        throw new Error(`Request failed with status ${res.status}`)
+      }
+
+      const data = await res.text()
       const $ = cheerio.load(data)
       const that = this
 

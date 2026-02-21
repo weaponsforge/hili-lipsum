@@ -50,11 +50,11 @@ The following requirements were used for this project. Feel free to use other de
 
 
 1. Windows 10 OS
-2. NodeJS LTS v20 or higher
+2. NodeJS LTS v24 or higher
    ```
    Recommended:
-   node: v20.15.0
-   npm: v10.7.0
+   node: v24.11.0
+   npm: v11.6.1
    ```
 
 ## Content
