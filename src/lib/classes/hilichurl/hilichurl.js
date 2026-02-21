@@ -50,13 +50,19 @@ class Hilichurl {
   /**
    * Scrapes Hilichurlian words and definitions from the Hilichurl Lexicon website whose URL is defined in the .env.example "HILICHURLIAN_TEXT_URL" variable
    * and remove special chars on the scraped content
-   * @returns {Promise<void>} Stores an array of raw sraped Hilichurlian words minus special characters in this.hilichurlianRAW[]
+   * @returns {Promise<void>} Stores an array of raw scraped Hilichurlian words minus special characters in this.hilichurlianRAW[]
    *    [{ word: String, eng: String, notes: String },...]
    */
   async scrapewords () {
+    let timeoutId
+    const abortController = new AbortController()
+
     try {
+      timeoutId = setTimeout(() => abortController.abort(), 30_000) // 30 secs
+
       const res = await fetch(process.env.HILICHURLIAN_TEXT_URL, {
-        method: 'GET'
+        method: 'GET',
+        signal: abortController.signal
       })
 
       if (!res.ok) {
@@ -86,13 +92,13 @@ class Hilichurl {
         }
 
         // Extract words while removing special characters
-        const columsLength = $(this).find('td').length
+        const columnsLength = $(this).find('td').length
 
         $(this).find('td').each(function (columnIndex) {
           const string = $(this).text()
 
           if (that.COLUMN_LENGTH === 0) {
-            that.COLUMN_LENGTH = columsLength
+            that.COLUMN_LENGTH = columnsLength
           }
 
           switch (columnIndex) {
@@ -122,7 +128,15 @@ class Hilichurl {
       console.log('[SCRAPING LOGS] ----------')
       console.log(`downloaded and scraped ${this.hilichurlianRAW.length} items\n`)
     } catch (err) {
+      if (err.name === 'AbortError') {
+        throw err
+      }
+
       throw new Error(err.message, { cause: err })
+    } finally {
+      if (timeoutId) {
+        clearTimeout(timeoutId)
+      }
     }
   }
 
