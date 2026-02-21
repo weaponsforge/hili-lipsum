@@ -260,6 +260,7 @@ class Hilichurl {
   async fetchrecords () {
     this.hilichurlianRAW = []
     this.hilichurlianDB = []
+    this.invalidItems = []
 
     try {
       await this.scrapewords()
