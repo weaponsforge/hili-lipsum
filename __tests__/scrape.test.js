@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config({ quiet: true })
 const fs = require('fs')
 const { Hilichurl } = require('../src/lib/classes/hilichurl')
 
@@ -49,18 +49,18 @@ describe('Hilichurl Data Dictionary', () => {
 
       // Key-values should be strings
       expect(typeof item.word).toBe('string')
-      expect(typeof item.eng).toBe('string')
-      expect(typeof item.cn).toBe('string')
-      expect(typeof item.notes).toBe('string')
+
+      // Items should be null or string
+      const isValidEn = typeof item.eng === 'string' || item.eng === null
+      const isValidCn = typeof item.cn === 'string' || item.cn === null
+      const isValidNotes = typeof item.notes === 'string' || item.notes === null
+
+      expect(isValidEn).toBe(true)
+      expect(isValidCn).toBe(true)
+      expect(isValidNotes).toBe(true)
 
       // Hilichurlian word should have a value
       expect(item.word.length).toBeGreaterThan(0)
-
-      // At least the English or Chinese definition should have a value
-      const isEngNonEmpty = item.eng.length > 0
-      const isCnNonEmpty = item.cn.length > 0
-
-      expect(isEngNonEmpty || isCnNonEmpty).toBe(true)
     })
   })
 })

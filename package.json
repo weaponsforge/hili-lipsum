@@ -1,11 +1,11 @@
 {
   "name": "hili-lipsum",
-  "version": "3.2.1",
+  "version": "4.0.0",
   "description": "Hilichurlian language lorem ipsum generator and web scraper",
   "main": "index.js",
   "types": "types/index.d.ts",
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
   },
   "directories": {
     "example": "examples"
@@ -14,10 +14,11 @@
     "start": "npm run hipsum",
     "scrape": "node src/scripts/scrape.js",
     "hipsum": "node src/scripts/hipsum.js",
+    "info": "node src/scripts/envinfo.js",
     "example:hilipsum": "node examples/example-hilipsum",
     "scrape:debug": "export IS_DOCKER=true && node --inspect=0.0.0.0:9229 src/scripts/scrape.js",
-    "lint": "eslint src __tests__",
-    "lint:fix": "eslint src __tests__ --fix",
+    "lint": "eslint src __tests__ eslint.config.mjs",
+    "lint:fix": "eslint src __tests__ eslint.config.mjs --fix",
     "create:declaration": "tsc",
     "test": "jest",
     "prepublishOnly": "npm run create:declaration"
@@ -44,17 +45,14 @@
   },
   "homepage": "https://github.com/weaponsforge/hili-lipsum#readme",
   "dependencies": {
-    "axios": "^1.7.9",
-    "cheerio": "^1.0.0",
-    "dotenv": "^16.4.7"
+    "cheerio": "^1.2.0",
+    "dotenv": "^17.3.1"
   },
   "devDependencies": {
-    "eslint": "^8.21.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "jest": "^29.7.0",
-    "typescript": "^5.7.3"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.1",
+    "globals": "^17.3.0",
+    "jest": "^30.2.0",
+    "typescript": "^5.9.3"
   }
 }

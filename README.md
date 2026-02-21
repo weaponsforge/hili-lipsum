@@ -50,11 +50,11 @@ The following requirements were used for this project. Feel free to use other de
 
 
 1. Windows 10 OS
-2. NodeJS LTS v20 or higher
-   ```
+2. NodeJS LTS v24 or higher
+   ```text
    Recommended:
-   node: v20.15.0
-   npm: v10.7.0
+   node: v24.11.0
+   npm: v11.6.1
    ```
 
 ## Content
@@ -140,15 +140,15 @@ Pulling and using the Docker image requires a `.env` variable before proceeding.
 Obtain the development Docker image using any of the two (2) options. Navigate to the repository's root directory using a terminal, then run:
 
 - **Pull the Pre-Built Docker Image**<br>
-`docker compose -f docker-compose.dev.yml pull`
+`docker compose pull`
 
 - **Build the Local Image**<br>
-`docker compose -f docker-compose.dev.yml build`
+`docker compose build`
 
 ### Using the Docker Image
 
 1. Run the development container.<br>
-`docker compose -f docker-compose.dev.yml up`
+`docker compose up`
 
 2. Run the [Available Scripts](#available-scripts) using the container. For example:<br>
 `docker exec -it weaponsforge-hili-lipsum npm run scrape`

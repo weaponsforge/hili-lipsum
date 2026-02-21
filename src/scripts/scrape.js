@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config({ quiet: true })
 const path = require('path')
 const { Hilichurl } = require('../lib/classes/hilichurl')
 const { delayProcess } = require('../lib/utils')

@@ -1,4 +1,3 @@
-const axios = require('axios')
 const cheerio = require('cheerio')
 const fs = require('fs')
 const path = require('path')
@@ -27,6 +26,12 @@ class Hilichurl {
   hilichurlianDB = []
 
   /**
+   * Array of Objects containing invalid Hilichurlian data - items without a Hilichurlian word.
+   * @type {object[]}
+   */
+  invalidItems = []
+
+  /**
    * Number of columns in the Hilichurlian Lexicon website's HTML table. Default value should be 4 (as of 20241018).
    * @type {number}
    */
@@ -45,12 +50,30 @@ class Hilichurl {
   /**
    * Scrapes Hilichurlian words and definitions from the Hilichurl Lexicon website whose URL is defined in the .env.example "HILICHURLIAN_TEXT_URL" variable
    * and remove special chars on the scraped content
-   * @returns {Promise<void>} Stores an array of raw sraped Hilichurlian words minus special characters in this.hilichurlianRAW[]
+   * @returns {Promise<void>} Stores an array of raw scraped Hilichurlian words minus special characters in this.hilichurlianRAW[]
    *    [{ word: String, eng: String, notes: String },...]
    */
   async scrapewords () {
+    let timeoutId
+    const abortController = new AbortController()
+
     try {
-      const { data } = await axios.get(process.env.HILICHURLIAN_TEXT_URL)
+      timeoutId = setTimeout(() => abortController.abort(), 30_000) // 30 secs
+
+      const res = await fetch(process.env.HILICHURLIAN_TEXT_URL, {
+        method: 'GET',
+        signal: abortController.signal
+      })
+
+      if (!res.ok) {
+        const body = await res.text()
+        console.error('HTTP', res.status)
+        console.error(body.slice(0, 800))
+
+        throw new Error(`Request failed with status ${res.status}`)
+      }
+
+      const data = await res.text()
       const $ = cheerio.load(data)
       const that = this
 
@@ -69,13 +92,13 @@ class Hilichurl {
         }
 
         // Extract words while removing special characters
-        const columsLength = $(this).find('td').length
+        const columnsLength = $(this).find('td').length
 
-        $(this).find('td').each(function (columnIndex, elem) {
+        $(this).find('td').each(function (columnIndex) {
           const string = $(this).text()
 
           if (that.COLUMN_LENGTH === 0) {
-            that.COLUMN_LENGTH = columsLength
+            that.COLUMN_LENGTH = columnsLength
           }
 
           switch (columnIndex) {
@@ -96,13 +119,24 @@ class Hilichurl {
           }
         })
 
-        that.hilichurlianRAW.push(rowObject)
+        // At least 1 or more columns (keys) should have a value
+        if (Object.values(rowObject).some(item => item !== '')) {
+          that.hilichurlianRAW.push(rowObject)
+        }
       })
 
       console.log('[SCRAPING LOGS] ----------')
       console.log(`downloaded and scraped ${this.hilichurlianRAW.length} items\n`)
     } catch (err) {
-      throw new Error(err.message)
+      if (err.name === 'AbortError') {
+        throw err
+      }
+
+      throw new Error(err.message, { cause: err })
+    } finally {
+      if (timeoutId) {
+        clearTimeout(timeoutId)
+      }
     }
   }
 
@@ -116,6 +150,7 @@ class Hilichurl {
     let pluralCount = 0
     let validRawsCount = 0
     let splitWordsCount = 0
+    let allNullCount = 0
 
     const toProcess = data.length > 0
       ? data
@@ -147,6 +182,13 @@ class Hilichurl {
           item.cn = getParenthesisStartWords({ string: item.cn }) ?? ''
         }
 
+        if (!item.eng) item.eng = null
+        if (!item.cn) item.cn = null
+        if (!item.notes) item.notes = null
+
+        // Count items without EN translation or CN player analysis
+        if (item.eng === null && item.cn === null) allNullCount += 1
+
         // Split words with slash "/" divisor
         const orWords = hiliWord.split('/')
 
@@ -166,14 +208,19 @@ class Hilichurl {
         if (orWords.length < 2) {
           this.hilichurlianDB.push(item)
         }
+      } else {
+        // Invalid data - no Hilichurlian word
+        this.invalidItems.push(item)
       }
     })
 
     let formatLog = '[FORMATTING LOGS] ----------\n'
     formatLog += ` - processed ${validRawsCount} rows\n`
-    formatLog += ` - created and formatted ${this.hilichurlianDB.length} entries\n`
+    formatLog += ` - created and formatted ${this.hilichurlianDB.length} valid entries\n`
+    formatLog += ` - invalid data: ${this.invalidItems.length}\n`
     formatLog += ` - plural words: ${pluralCount}\n`
-    formatLog += ` - split words: ${splitWordsCount}`
+    formatLog += ` - split words: ${splitWordsCount}\n`
+    formatLog += ` - no CN/EN translations: ${allNullCount}\n`
 
     console.log(formatLog)
   }
@@ -188,7 +235,7 @@ class Hilichurl {
       const json = fs.readFileSync(jsonFile, 'utf-8')
       this.hilichurlianDB = JSON.parse(json)?.data
     } catch (err) {
-      throw new Error(err.message)
+      throw new Error(err.message, { cause: err })
     }
   }
 
@@ -221,7 +268,7 @@ class Hilichurl {
 
       return filename
     } catch (err) {
-      throw new Error(err.message)
+      throw new Error(err.message, { cause: err })
     }
   }
 
@@ -235,18 +282,23 @@ class Hilichurl {
   async fetchrecords () {
     this.hilichurlianRAW = []
     this.hilichurlianDB = []
+    this.invalidItems = []
 
     try {
       await this.scrapewords()
     } catch (err) {
-      throw new Error(err.message)
+      if (err.name === 'AbortError') {
+        throw err
+      }
+
+      throw new Error(err.message, { cause: err })
     }
 
     if (this.hilichurlianRAW.length > 0) {
       try {
         this.formatwords()
       } catch (err) {
-        throw new Error(err.message)
+        throw new Error(err.message, { cause: err })
       }
     }
   }
