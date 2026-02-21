@@ -14,6 +14,7 @@
     "start": "npm run hipsum",
     "scrape": "node src/scripts/scrape.js",
     "hipsum": "node src/scripts/hipsum.js",
+    "info": "node src/scripts/envinfo.js",
     "example:hilipsum": "node examples/example-hilipsum",
     "scrape:debug": "export IS_DOCKER=true && node --inspect=0.0.0.0:9229 src/scripts/scrape.js",
     "lint": "eslint src __tests__",
