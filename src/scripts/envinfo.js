@@ -8,7 +8,7 @@ const main = () => {
 
   try {
     console.log('npm version:', execSync('npm -v').toString().trim())
-  } catch (err) {
+  } catch {
     console.log('npm version: unavailable')
   }
 }

@@ -17,8 +17,8 @@
     "info": "node src/scripts/envinfo.js",
     "example:hilipsum": "node examples/example-hilipsum",
     "scrape:debug": "export IS_DOCKER=true && node --inspect=0.0.0.0:9229 src/scripts/scrape.js",
-    "lint": "eslint src __tests__",
-    "lint:fix": "eslint src __tests__ --fix",
+    "lint": "eslint src __tests__ eslint.config.mjs",
+    "lint:fix": "eslint src __tests__ eslint.config.mjs --fix",
     "create:declaration": "tsc",
     "test": "jest",
     "prepublishOnly": "npm run create:declaration"
@@ -49,6 +49,9 @@
     "dotenv": "^17.3.1"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.1",
+    "globals": "^17.3.0",
     "jest": "^30.2.0",
     "typescript": "^5.9.3"
   }

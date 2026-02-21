@@ -56,12 +56,12 @@ class Hilichurl {
   async scrapewords () {
     try {
       const res = await fetch(process.env.HILICHURLIAN_TEXT_URL, {
-        method: "GET"
+        method: 'GET'
       })
 
       if (!res.ok) {
-        console.error("HTTP", res.status)
-        console.error("Headers:", Object.fromEntries(res.headers.entries()))
+        console.error('HTTP', res.status)
+        console.error('Headers:', Object.fromEntries(res.headers.entries()))
 
         const body = await res.text()
         console.error(body.slice(0, 800))
@@ -90,7 +90,7 @@ class Hilichurl {
         // Extract words while removing special characters
         const columsLength = $(this).find('td').length
 
-        $(this).find('td').each(function (columnIndex, elem) {
+        $(this).find('td').each(function (columnIndex) {
           const string = $(this).text()
 
           if (that.COLUMN_LENGTH === 0) {
@@ -124,7 +124,7 @@ class Hilichurl {
       console.log('[SCRAPING LOGS] ----------')
       console.log(`downloaded and scraped ${this.hilichurlianRAW.length} items\n`)
     } catch (err) {
-      throw new Error(err.message)
+      throw new Error(err.message, { cause: err })
     }
   }
 
@@ -223,7 +223,7 @@ class Hilichurl {
       const json = fs.readFileSync(jsonFile, 'utf-8')
       this.hilichurlianDB = JSON.parse(json)?.data
     } catch (err) {
-      throw new Error(err.message)
+      throw new Error(err.message, { cause: err })
     }
   }
 
@@ -256,7 +256,7 @@ class Hilichurl {
 
       return filename
     } catch (err) {
-      throw new Error(err.message)
+      throw new Error(err.message, { cause: err })
     }
   }
 
@@ -275,14 +275,14 @@ class Hilichurl {
     try {
       await this.scrapewords()
     } catch (err) {
-      throw new Error(err.message)
+      throw new Error(err.message, { cause: err })
     }
 
     if (this.hilichurlianRAW.length > 0) {
       try {
         this.formatwords()
       } catch (err) {
-        throw new Error(err.message)
+        throw new Error(err.message, { cause: err })
       }
     }
   }
