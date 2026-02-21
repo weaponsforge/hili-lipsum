@@ -4,7 +4,7 @@ name: Pull Docker Images
 on:
   schedule:
     # Runs "At 00:00 on day-of-month 1 in every 2nd month."
-    - cron: '0 0 1 */2 *'
+    - cron: '0 0 1 */1 *'
 
 jobs:
   pull-images:
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
 
       - name: Fetch and check out latest tag
         run: |
