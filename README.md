@@ -226,7 +226,6 @@ https://www.npmjs.com/package/hili-lipsum
 | --- | --- |
 | DOCKERHUB_USERNAME | (Optional) Docker Hub username. Required to enable pushing the development image to Docker Hub. |
 | DOCKERHUB_TOKEN | (Optional) Deploy token for the Docker Hub account. Required to enable pushing the development image to Docker Hub. |
-| NPM_TOKEN | NPM registry deployment token. |
 
 #### GitHub Variables
 
