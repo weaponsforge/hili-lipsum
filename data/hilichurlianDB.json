@@ -3,25 +3,25 @@
     "source": "https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon",
     "title": "Hilichurlian Language Dictionary",
     "description": "Dictionary of Hilichurlian words and their English translations exctracted from the source URL.",
-    "date_created": "2024-10-19T08:17:00.756Z"
+    "date_created": "2026-02-21T11:42:31.570Z"
   },
   "data": [
     {
       "word": "mosi",
       "eng": "to eat",
-      "cn": "",
-      "notes": ""
+      "cn": null,
+      "notes": null
     },
     {
       "word": "mita",
       "eng": "meat",
-      "cn": "",
+      "cn": null,
       "notes": "Has positive connotations."
     },
     {
       "word": "gusha",
       "eng": "vegetables",
-      "cn": "",
+      "cn": null,
       "notes": "Has negative connotations. The color of gusha is green."
     },
     {
@@ -32,19 +32,19 @@
     },
     {
       "word": "mi",
-      "eng": "",
+      "eng": null,
       "cn": "I, me",
-      "notes": ""
+      "notes": null
     },
     {
       "word": "muhe",
       "eng": "like, want",
       "cn": "triumph",
-      "notes": ""
+      "notes": null
     },
     {
       "word": "biat",
-      "eng": "",
+      "eng": null,
       "cn": "to hit, to curse",
       "notes": "May be used for emphasis (e.g., very)."
     },
@@ -56,7 +56,7 @@
     },
     {
       "word": "ye",
-      "eng": "",
+      "eng": null,
       "cn": "you, your",
       "notes": "May be similar to Japanese お前 or Korean 너 where it does not express pure condescension, but can imply closeness to the addressee. However, it still connotes condescension by implying that the addressee is of a lower social standing and socially impermissible usages of the pronoun should be understood as a sign of contempt."
     },
@@ -68,31 +68,31 @@
     },
     {
       "word": "yo",
-      "eng": "",
+      "eng": null,
       "cn": "you, your",
-      "notes": ""
+      "notes": null
     },
     {
       "word": "da",
       "eng": "good/very good, affirmation, very (emphasis)",
-      "cn": "",
+      "cn": null,
       "notes": "Can be used as praise"
     },
     {
       "word": "dada",
       "eng": "good/very good, affirmation, very (emphasis)",
-      "cn": "",
+      "cn": null,
       "notes": "Can be used as praise"
     },
     {
       "word": "domu",
-      "eng": "",
+      "eng": null,
       "cn": "to dance",
-      "notes": ""
+      "notes": null
     },
     {
       "word": "eleka",
-      "eng": "",
+      "eng": null,
       "cn": "now",
       "notes": "Meaning uncertain"
     },
@@ -104,62 +104,62 @@
     },
     {
       "word": "nye",
-      "eng": "",
+      "eng": null,
       "cn": "not, un-",
       "notes": "Can be used for negation"
     },
     {
       "word": "nunu",
       "eng": "to sleep",
-      "cn": "",
+      "cn": null,
       "notes": "The color of nunu is black. This may refer to nighttime."
     },
     {
       "word": "nini",
-      "eng": "",
+      "eng": null,
       "cn": "storm, wind, Anemo",
       "notes": "Meaning uncertain. The color of nini is white.Conveys the concept of ephemerality, or to disappear (as a verb)"
     },
     {
       "word": "zido",
-      "eng": "",
+      "eng": null,
       "cn": "here, this",
       "notes": "May also mean nothing in some contexts. May also mean to mark, to go or be used to otherwise indicate a specific thing. Possibly deictic."
     },
     {
       "word": "movo",
-      "eng": "",
+      "eng": null,
       "cn": "to move, to bring, to come",
       "notes": "Meaning uncertain. Movo lata is water. (Since lata may mean cold or ice, movo lata literally means moving ice, indicating water)"
     },
     {
       "word": "kuzi",
-      "eng": "",
+      "eng": null,
       "cn": "mighty, strong",
-      "notes": ""
+      "notes": null
     },
     {
       "word": "celi",
-      "eng": "heat; Pyro, fire; the sun (typically celi upa)",
-      "cn": "",
+      "eng": "heat; fire; the sun (also celi upa)",
+      "cn": null,
       "notes": "The color of celi is red. The phrase celi lata (literally hot cold or possibly fire cold) refers to things that emit light, but not heat, such as Small Lamp Grass, fireflies, stars, and the moon."
     },
     {
       "word": "upa",
-      "eng": "",
+      "eng": null,
       "cn": "to combine, to merge, to gather",
       "notes": "Meaning uncertain, but upa possily meant something far ahead and cannot be grasped. In some context, upa indicates the spirit. Dada upa means very tall/large mountain. Celi upa means the sun. Upa sada means that you are prepared to do something."
     },
     {
       "word": "shato",
-      "eng": "",
+      "eng": null,
       "cn": "like, alike, similar",
-      "notes": ""
+      "notes": null
     },
     {
       "word": "lata",
-      "eng": "Cryo, ice, cold",
-      "cn": "",
+      "eng": "cold",
+      "cn": null,
       "notes": "The color of lata is blue. Movo lata is water."
     },
     {
@@ -171,19 +171,19 @@
     {
       "word": "du",
       "eng": "two",
-      "cn": "",
-      "notes": ""
+      "cn": null,
+      "notes": null
     },
     {
       "word": "unu du",
       "eng": "three",
-      "cn": "",
+      "cn": null,
       "notes": "Literally one two."
     },
     {
       "word": "dudu",
       "eng": "four",
-      "cn": "",
+      "cn": null,
       "notes": "Literally two-two."
     },
     {
@@ -194,51 +194,51 @@
     },
     {
       "word": "ya",
-      "eng": "",
+      "eng": null,
       "cn": "human",
       "notes": "Can also mean person or people"
     },
     {
       "word": "ika",
-      "eng": "enemy, bad people",
+      "eng": null,
       "cn": "enemy",
-      "notes": ""
+      "notes": "Mentioned in the Handy Handbook of Hilichurlian as part of the phrases Ya ika/yaya ika/ika ya/ika yaya, meaning A bad person/bad people."
     },
     {
       "word": "kundala",
-      "eng": "",
+      "eng": null,
       "cn": "to kill, to fight",
-      "notes": "May also mean enemy as a noun"
+      "notes": null
     },
     {
       "word": "dala",
-      "eng": "",
+      "eng": null,
       "cn": "what?",
-      "notes": ""
+      "notes": null
     },
     {
       "word": "si",
-      "eng": "",
+      "eng": null,
       "cn": "thing",
-      "notes": ""
+      "notes": null
     },
     {
       "word": "valo",
-      "eng": "",
+      "eng": null,
       "cn": "thank you",
-      "notes": ""
+      "notes": null
     },
     {
       "word": "buka",
-      "eng": "",
+      "eng": null,
       "cn": "stomach",
-      "notes": "May possibly indicate hunger."
+      "notes": null
     },
     {
       "word": "guru-guru",
-      "eng": "",
+      "eng": null,
       "cn": "hungry",
-      "notes": ""
+      "notes": null
     },
     {
       "word": "kucha",
@@ -248,51 +248,39 @@
     },
     {
       "word": "odomu",
-      "eng": "",
+      "eng": null,
       "cn": "friend",
-      "notes": "Meaning currently under review."
+      "notes": null
     },
     {
       "word": "tiga",
-      "eng": "",
+      "eng": null,
       "cn": "stone, Geo",
-      "notes": ""
+      "notes": null
     },
     {
       "word": "plata",
-      "eng": "",
+      "eng": null,
       "cn": "shield",
-      "notes": ""
+      "notes": null
     },
     {
       "word": "vin",
-      "eng": "",
+      "eng": null,
       "cn": "wine",
-      "notes": ""
+      "notes": null
     },
     {
       "word": "pupu",
-      "eng": "",
+      "eng": null,
       "cn": "grass",
       "notes": "Meaning uncertain, may be used insultingly"
     },
     {
       "word": "beru si",
-      "eng": "",
+      "eng": null,
       "cn": "what are you doing?",
       "notes": "Meaning of individual words uncertain"
-    },
-    {
-      "word": "beru nye",
-      "eng": "stop talking or be quiet",
-      "cn": "",
-      "notes": ""
-    },
-    {
-      "word": "beru nya",
-      "eng": "stop talking or be quiet",
-      "cn": "",
-      "notes": ""
     },
     {
       "word": "mani",
@@ -303,86 +291,86 @@
     {
       "word": "olah",
       "eng": "hello",
-      "cn": "",
-      "notes": ""
+      "cn": null,
+      "notes": null
     },
     {
       "word": "tomo",
-      "eng": "unique, unusual; help;Note ",
+      "eng": null,
       "cn": "ally",
-      "notes": "Mentioned many times in the Mutual Exchange and Hilichurl Justice quests in the Mimi Tomo event. No direct translation given. Meaning currently under review."
+      "notes": "Mentioned many times in the Mutual Exchange and Hilichurl Justice quests in the Mimi Tomo event. No direct translation given."
     },
     {
       "word": "aba",
-      "eng": "before",
-      "cn": "",
-      "notes": "Used by Ella Musk in Language Exchange, and by hilichurl in Poetry Exchange. Possibly means before. Possibly means want."
+      "eng": null,
+      "cn": null,
+      "notes": "Used by Ella Musk in Language Exchange, and by hilichurl in Poetry Exchange. Possibly means before."
     },
     {
       "word": "ka",
-      "eng": "unknown",
-      "cn": "",
+      "eng": null,
+      "cn": null,
       "notes": "Used by Ella Musk in Language Exchange."
     },
     {
       "word": "todo",
-      "eng": "unknown",
-      "cn": "",
+      "eng": null,
+      "cn": null,
       "notes": "Used by Hilichurl in Language Exchange. May mean give."
     },
     {
       "word": "biadam",
-      "eng": "bad",
-      "cn": "",
+      "eng": null,
+      "cn": null,
       "notes": "Exact meaning unknown, always strong negative. May be rude."
     },
     {
       "word": "boya",
       "eng": "color",
-      "cn": "",
+      "cn": null,
       "notes": "Used as a suffix for colors. Celi boya (lit. fire color) is red, gusha boya (lit. grass color) is green, lata boya (lit. ice color) is blue, nini boya is white, nunu boya (lit. sleep color) and sama boya are black, and unu boya (lit. God's color/one color) is yellow."
     },
     {
       "word": "mito",
-      "eng": "know",
-      "cn": "",
-      "notes": ""
+      "eng": null,
+      "cn": null,
+      "notes": "Used by Hilichurl in Poetry Exchange. May mean know."
     },
     {
       "word": "lawa",
       "eng": "king or chief",
-      "cn": "",
+      "cn": null,
       "notes": "As in Lawachurl."
     },
     {
       "word": "sama",
-      "eng": "unknown",
-      "cn": "",
+      "eng": null,
+      "cn": null,
       "notes": "As in Samachurl. The color of sama is black."
     },
     {
       "word": "hili",
-      "eng": "unknown",
-      "cn": "",
+      "eng": null,
+      "cn": null,
       "notes": "As in Hilichurl."
     },
     {
       "word": "in",
       "eng": "in",
-      "cn": "",
-      "notes": "Meaning uncertain."
+      "cn": null,
+      "notes": null
     },
     {
       "word": "unta",
-      "eng": "unknown",
-      "cn": "",
+      "eng": null,
+      "cn": null,
       "notes": "Mentioned in Handy Handbook of Hilichurlian. Possibly means after."
     },
     {
       "word": "Du ya zido dala?",
-      "eng": "Where did this thing go?",
-      "cn": "",
-      "notes": "Mentioned in Handy Handbook of Hilichurlian. Meaning of du uncertain. Inconsistent with other translations. Possibly idiomatic."
+      "eng": "Where did this thing go? ",
+      "cn": null,
+      "notes": "Meaning of du irregular and may be contextual."
     }
   ]
 }
