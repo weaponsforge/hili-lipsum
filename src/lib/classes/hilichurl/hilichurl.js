@@ -134,7 +134,7 @@ class Hilichurl {
       ? data
       : this.hilichurlianRAW
 
-    toProcess.forEach((item, index) => {
+    toProcess.forEach((item) => {
       if (item.word !== '') {
         const hiliWord = item.word
         validRawsCount += 1
@@ -160,9 +160,9 @@ class Hilichurl {
           item.cn = getParenthesisStartWords({ string: item.cn }) ?? ''
         }
 
-        if (item.eng.length === 0) item.eng = null
-        if (item.cn.length === 0) item.cn = null
-        if (item.notes.length === 0) item.notes = null
+        if (!item.eng) item.eng = null
+        if (!item.cn) item.cn = null
+        if (!item.notes) item.notes = null
 
         // Count items without EN translation or CN player analysis
         if (item.eng === null && item.cn === null) allNullCount += 1
