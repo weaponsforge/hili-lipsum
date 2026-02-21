@@ -103,10 +103,7 @@ class Hilichurl {
         })
 
         // At least 1 or more columns (keys) should have a value
-        const blankWordCount = Object.values(rowObject)
-          .reduce((count, item) => item === '' ? count + 1 : count, 0)
-
-        if (blankWordCount < Object.keys(rowObject).length) {
+        if (Object.values(rowObject).some(item => item !== '')) {
           that.hilichurlianRAW.push(rowObject)
         }
       })
