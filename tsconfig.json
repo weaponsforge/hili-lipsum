@@ -4,6 +4,7 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "outDir": "types",
+    "rootDir": "src",
     "module": "CommonJS",
     "target": "ES6",
     "strict": true
