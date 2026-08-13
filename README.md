@@ -28,10 +28,10 @@ It has the following format and structure:
 ```
 {
   "metadata": {
-    "source": "https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon",
+    "source": "https://genshin-impact.fandom.com/api.php?action=parse&format=json&formatversion=2&prop=text&page=Hilichurlian%2FLexicon",
     "title": "Hilichurlian Language Dictionary",
     "description": "Dictionary of Hilichurlian words and their English translations exctracted from the source URL.",
-    "date_created": "2024-10-19T08:11:48.917Z"
+    "date_created": "2026-08-13T12:20:02.351Z"
   },
   "data": [
     {

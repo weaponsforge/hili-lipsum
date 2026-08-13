@@ -41,6 +41,12 @@ class Hilichurl {
   COLUMN_LENGTH = 0
 
   /**
+   * Hilichurlian words data full API URL source
+   * @type {string}
+   */
+  apiUrl = ''
+
+  /**
    * Initializes the Hilichurl class with Hilichurlian JSON data from `jsonFile`
    * @param {string} jsonFile - Full file path to a target JSON file containing object[] object arrays
    */
@@ -238,7 +244,10 @@ class Hilichurl {
   loadrecords (jsonFile) {
     try {
       const json = fs.readFileSync(jsonFile, 'utf-8')
-      this.hilichurlianDB = JSON.parse(json)?.data
+      const dbData = JSON.parse(json)
+
+      this.hilichurlianDB = dbData?.data ?? []
+      this.apiUrl = dbData?.metadata?.source ?? ''
     } catch (err) {
       throw new Error(err.message, { cause: err })
     }
@@ -256,7 +265,7 @@ class Hilichurl {
     const filename = path.join(dirName, `hilichurlDB-${Math.floor((new Date()).getTime() / 1000)}.json`)
 
     const metadata = {
-      source: API_ROOT,
+      source: this.apiUrl,
       title: 'Hilichurlian Language Dictionary',
       description: 'Dictionary of Hilichurlian words and their English translations exctracted from the source URL.',
       date_created: new Date().toISOString()
@@ -284,20 +293,22 @@ class Hilichurl {
    *  - `this.hilichurlianDB[]`
    * @returns {Promise<void>}
    */
-  async fetchrecords () {
+  async fetchrecords (url, options) {
     this.hilichurlianRAW = []
     this.hilichurlianDB = []
     this.invalidItems = []
 
-    try {
-      const queryUrl = buildQuery(API_ROOT, {
-        action: 'parse',
-        format: 'json',
-        formatversion: 2,
-        prop: 'text',
-        page: PAGE_NAME
-      })
+    const apiRootUrl = url ?? API_ROOT
 
+    const queryUrl = buildQuery(apiRootUrl, options ?? {
+      action: 'parse',
+      format: 'json',
+      formatversion: 2,
+      prop: 'text',
+      page: PAGE_NAME
+    })
+
+    try {
       await this.scrapewords(queryUrl)
     } catch (err) {
       if (err.name === 'AbortError') {
@@ -310,6 +321,7 @@ class Hilichurl {
     if (this.hilichurlianRAW.length > 0) {
       try {
         this.formatwords()
+        this.apiUrl = queryUrl?.href ?? API_ROOT
       } catch (err) {
         throw new Error(err.message, { cause: err })
       }
