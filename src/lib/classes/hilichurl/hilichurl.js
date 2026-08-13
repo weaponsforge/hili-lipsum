@@ -67,10 +67,8 @@ class Hilichurl {
 
       if (!res.ok) {
         const body = await res.text()
-        console.error('HTTP', res.status)
-        console.error(body.slice(0, 800))
-
-        throw new Error(`Request failed with status ${res.status}`)
+        const errMsg = `Request failed with status ${res.status}`
+        throw new Error(errMsg, { cause: new Error(body.slice(0, 800)) })
       }
 
       const data = await res.text()

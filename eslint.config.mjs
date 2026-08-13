@@ -14,6 +14,10 @@ export default defineConfig([
       'quotes': ['error', 'single'],
       'semi': ['error', 'never'],
       'no-trailing-spaces': 'error',
+      'comma-dangle': ['error', 'never'],
+      'eol-last': ['error', 'always'],
+      'keyword-spacing': ['error', { before: true, after: true }],
+      'object-curly-spacing': ['error', 'always']
       // 'no-unused-vars': 'off',
       // 'no-undef': 'off'
     }
@@ -21,5 +25,5 @@ export default defineConfig([
   {
     files: ['**/*.js'],
     languageOptions: { sourceType: 'commonjs' }
-  },
+  }
 ])

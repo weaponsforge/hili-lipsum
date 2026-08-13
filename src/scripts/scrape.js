@@ -14,7 +14,8 @@ const main = async () => {
     hilichurl.writerecords(path.resolve(__dirname, '..', '..'))
     process.exit(0)
   } catch (err) {
-    console.log(err.message)
+    console.error(err.message)
+    console.error(err.cause)
     process.exit(1)
   }
 }
