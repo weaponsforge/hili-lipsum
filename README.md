@@ -11,7 +11,7 @@ or fetch the currently available Hilichurlian vocabulary from the [Genshin Impac
 
 - Generate random Hilichurlian lorem ipsum text
 - Generate Hilichurlian sentences with a configurable word count
-- Fetch Hilichurlian vocabulary from the [Genshin Impact Fandom MediaWiki API](https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon)
+- Fetch Hilichurlian vocabulary from the [Genshin Impact Fandom MediaWiki API](https://www.mediawiki.org/wiki/API:Action_API)
 - Scrape Hilichurlian vocabulary from web pages similar to https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon if allowed
 - Save scraped vocabulary as JSON
 - Use a local JSON dictionary without network access
@@ -25,7 +25,9 @@ or fetch the currently available Hilichurlian vocabulary from the [Genshin Impac
 > [!TIP]
 > - **Run via npx (no installation required)**
 >   - Requirements: NodeJS LTS v24 or later
->   - Run `npx hili-lipsum --help`<br><br>
+>   - Run `npx hili-lipsum --help`<br>
+>   - Generate Hilichurlian sentence: `npx hili-lipsum hipsum -w 25`<br>
+>   - Download current data: `npx hili-lipsum scrape`<br><br>
 > - **Docker image**
 >   - A Docker image is available at https://hub.docker.com/r/weaponsforge/hili-lipsum
 
@@ -67,7 +69,7 @@ Hilichurlian data has the following format and structure:
 | --- | --- | --- |
 | `word` | string | Hilichurlian (singular or plural) word |
 | `eng` | string | English translation of the Hilichurlian word |
-| `cn` | string | Chinese player analysis translation of the Hilichurlian word |
+| `cn` | string | null | Chinese player analysis translation of the Hilichurlian word |
 | `notes` | string | Notes and additional information about the Hilichurlian word |
 
 ### Example
@@ -279,13 +281,13 @@ const sentence: string = hiLipsum.lipsum(40)
 ```
 
 Type declarations are generated from JSDoc annotations in the source and are kept
-in sync automatically via the `create:declaration` script (see [Available Scripts](#available-scripts)).
+in sync automatically via the `create:declaration` script (see [Available Scripts](#-available-scripts)).
 
 <br>
 
 ## 🐳 Usage with Docker
 
-The project includes a Docker Compose configuration for development. Before starting the container, create a `.env` file from `.env.example` as instructed in the [Installation](#installation) section.
+The project includes a Docker Compose configuration for development. Before starting the container, create a `.env` file from `.env.example` as instructed in the [Installation](#️-installation) section.
 
 ### Preparing the Local Image
 
