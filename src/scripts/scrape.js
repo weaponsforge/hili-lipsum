@@ -1,5 +1,6 @@
+#!/usr/bin/env node
+
 require('dotenv').config({ quiet: true })
-const path = require('path')
 const { Hilichurl } = require('../lib/classes/hilichurl')
 const { delayProcess } = require('../lib/utils')
 
@@ -10,11 +11,16 @@ const main = async () => {
     // Scrape and format hilichurlian words
     await hilichurl.fetchrecords()
 
-    // Write scraped and formatted data to a JSON file in the project's root directory
-    hilichurl.writerecords(path.resolve(__dirname, '..', '..'))
+    // Write scraped and formatted data to a JSON file relative to the calling process
+    const writePath = hilichurl.writerecords(process.cwd())
+
+    console.log('Hilichurlian data dictionary written at:')
+    console.log(writePath)
+
     process.exit(0)
   } catch (err) {
-    console.log(err.message)
+    console.error(err.message)
+    console.error(err.cause)
     process.exit(1)
   }
 }

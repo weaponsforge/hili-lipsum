@@ -16,15 +16,22 @@ It has the following format and structure:
 | `cn` | string | Chinese player analysis translation of the Hilichurlian word |
 | `notes` | string | Notes and additional information about the Hilichurlian word |
 
+### CLI Available
+
+> **Run via npx (no installation required)**
+> - Requirements: NodeJS LTS v24.11.0 or later
+> - Run `npx hili-lipsum`<br>
+>   Fetches the latest Hilichurlian data and writes it to `hilichurlDB-<timestamp>.json`
+
 ### Example
 
-```
+```json
 {
   "metadata": {
-    "source": "https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon",
+    "source": "https://genshin-impact.fandom.com/api.php?action=parse&format=json&formatversion=2&prop=text&page=Hilichurlian%2FLexicon",
     "title": "Hilichurlian Language Dictionary",
-    "description": "Dictionary of Hilichurlian words and their English translations exctracted from the source URL.",
-    "date_created": "2024-10-19T08:11:48.917Z"
+    "description": "Dictionary of Hilichurlian words and their English translations extracted from the source URL.",
+    "date_created": "2026-08-13T12:20:02.351Z"
   },
   "data": [
     {
@@ -86,18 +93,19 @@ The following requirements were used for this project. Feel free to use other de
 2. Install dependencies.<br>
 `npm install`
 
-3. Create a `.env` file from the `.env.example` file. Use the default value for `HILICHURLIAN_TEXT_URL`.
+3. Create a `.env` file from the `.env.example` file. Use the default value for `MEDIAWIKI_API_ROOT`.
 
    | Variable Name | Description |
    | --- | --- |
-   | HILICHURLIAN_TEXT_URL | Target web page to scrape, containing Hilichurilian words definition.<br>Default value is: https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon <br><br> You can reference other Hilichurlian words wiki or web page to scrape, but be be sure to make the necessary adjustments on the web scraping logic on `/src/classes/hilichurl/hilichurl.js` - **scrapewords()** and **formatwords()** methods. |
+   | MEDIAWIKI_PAGE | Genshin Impact Fandom MediaWiki page name of the Hilichurlian word dictionary at https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon. Default value is `Hilichurlian/Lexicon`. |
+   | MEDIAWIKI_API_ROOT | Genshin Impact Fandom MediaWiki API root URL. It allows fetching wiki page data programmatically for non-web browsers.<br>Default value is: https://genshin-impact.fandom.com/api.php. <br><br> You can reference other Hilichurlian words wiki or web page to scrape using `MEDIAWIKI_PAGE`, but be sure to make the necessary adjustments on the web scraping logic on `/src/lib/classes/hilichurl/hilichurl.js` - **scrapewords()** and **formatwords()** methods. |
 
 
 ## Available Scripts
 
 ### `npm run scrape`
 
-Download, scrape and format hilichurlian words from the `HILICHURLIAN_TEXT_URL` .env variable.
+Download, scrape and format hilichurlian words from the `MEDIAWIKI_API_ROOT` .env variable.
 Writes the extracted and formatted words into a `/hilichurlianDB-<TIMESTAMP>.json` file.
 
 ### `npm run hipsum`
@@ -232,6 +240,18 @@ https://www.npmjs.com/package/hili-lipsum
 | GitHub Variable | Description |
 | --- | --- |
 | DOCKERHUB_USERNAME | (Optional) Docker Hub username. Required to enable pushing the development image to Docker Hub. |
+
+<br>
+
+## References
+
+**Genshin Impact Fandom Wiki**
+
+- Hilichurlian Lexicon Wiki <sup>[[1]](https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon)</sup>
+- MediaWiki API Docs <sup>[[2]](https://genshin-impact.fandom.com/api.php)</sup>
+- MediaWiki API - Action API <sup>[[3]](https://www.mediawiki.org/wiki/API:Action_API)</sup>
+- MediaWiki API - Parsing wikitext <sup>[[4]](https://www.mediawiki.org/wiki/API:Parsing_wikitext)</sup>
+- MediaWiki API Sandbox <sup>[[5]](https://genshin-impact.fandom.com/wiki/Special:ApiSandbox#action=parse)</sup>
 
 <br>
 

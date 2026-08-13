@@ -1,16 +1,25 @@
 const { execSync } = require('child_process')
+const packageJson = require('../../package.json')
 
 const main = () => {
-  console.log('Node version:', process.version)
-  console.log('Platform:', process.platform)
-  console.log('Arch:', process.arch)
-  console.log('V8 version:', process.versions.v8)
+  const info = {
+    'Node version': process?.version ?? '-',
+    'Platform': process?.platform ?? '-',
+    'Arch':  process?.arch ?? '-',
+    'V8 version': process?.versions.v8 ?? '-'
+  }
+
+  for (let key in info) {
+    console.log(`${key}: ${info[key]}`)
+  }
 
   try {
     console.log('npm version:', execSync('npm -v').toString().trim())
   } catch {
     console.log('npm version: unavailable')
   }
+
+  console.log('hili-lipsum version:', packageJson?.version ?? '0.0.0')
 }
 
 main()
