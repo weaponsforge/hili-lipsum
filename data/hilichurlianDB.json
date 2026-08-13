@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "source": "https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon",
+    "source": "https://genshin-impact.fandom.com/api.php?action=parse&format=json&formatversion=2&prop=text&page=Hilichurlian%2FLexicon",
     "title": "Hilichurlian Language Dictionary",
     "description": "Dictionary of Hilichurlian words and their English translations exctracted from the source URL.",
-    "date_created": "2026-02-21T11:42:31.570Z"
+    "date_created": "2026-08-13T12:39:57.792Z"
   },
   "data": [
     {
@@ -46,7 +46,7 @@
       "word": "biat",
       "eng": null,
       "cn": "to hit, to curse",
-      "notes": "May be used for emphasis (e.g., very)."
+      "notes": "May be used for emphasis (e.g., \"very\")."
     },
     {
       "word": "yeye",
@@ -124,13 +124,13 @@
       "word": "zido",
       "eng": null,
       "cn": "here, this",
-      "notes": "May also mean nothing in some contexts. May also mean to mark, to go or be used to otherwise indicate a specific thing. Possibly deictic."
+      "notes": "May also mean \"nothing\" in some contexts. May also mean \"to mark\", \"to go\" or be used to otherwise indicate a specific thing. Possibly deictic."
     },
     {
       "word": "movo",
       "eng": null,
       "cn": "to move, to bring, to come",
-      "notes": "Meaning uncertain. Movo lata is water. (Since lata may mean cold or ice, movo lata literally means moving ice, indicating water)"
+      "notes": "Meaning uncertain. Movo lata is water. (Since \"lata\" may mean cold or ice, \"movo lata\" literally means \"moving ice\", indicating water)"
     },
     {
       "word": "kuzi",
@@ -142,13 +142,13 @@
       "word": "celi",
       "eng": "heat; fire; the sun (also celi upa)",
       "cn": null,
-      "notes": "The color of celi is red. The phrase celi lata (literally hot cold or possibly fire cold) refers to things that emit light, but not heat, such as Small Lamp Grass, fireflies, stars, and the moon."
+      "notes": "The color of celi is red. The phrase celi lata (literally \"hot cold\" or possibly \"fire cold\") refers to things that emit light, but not heat, such as Small Lamp Grass, fireflies, stars, and the moon."
     },
     {
       "word": "upa",
       "eng": null,
       "cn": "to combine, to merge, to gather",
-      "notes": "Meaning uncertain, but upa possily meant something far ahead and cannot be grasped. In some context, upa indicates the spirit. Dada upa means very tall/large mountain. Celi upa means the sun. Upa sada means that you are prepared to do something."
+      "notes": "Meaning uncertain, but upa possily meant something far ahead and cannot be grasped. In some context, upa indicates the spirit. Dada upa means \"very tall/large mountain.\" Celi upa means \"the sun.\" Upa sada means that you are prepared to do something."
     },
     {
       "word": "shato",
@@ -178,31 +178,31 @@
       "word": "unu du",
       "eng": "three",
       "cn": null,
-      "notes": "Literally one two."
+      "notes": "Literally \"one two.\""
     },
     {
       "word": "dudu",
       "eng": "four",
       "cn": null,
-      "notes": "Literally two-two."
+      "notes": "Literally \"two-two.\""
     },
     {
       "word": "yaya",
       "eng": "",
       "cn": "human",
-      "notes": "Can also mean person or people"
+      "notes": "Can also mean \"person\" or \"people\""
     },
     {
       "word": "ya",
       "eng": null,
       "cn": "human",
-      "notes": "Can also mean person or people"
+      "notes": "Can also mean \"person\" or \"people\""
     },
     {
       "word": "ika",
       "eng": null,
       "cn": "enemy",
-      "notes": "Mentioned in the Handy Handbook of Hilichurlian as part of the phrases Ya ika/yaya ika/ika ya/ika yaya, meaning A bad person/bad people."
+      "notes": "Mentioned in the Handy Handbook of Hilichurlian as part of the phrases \"Ya ika/yaya ika/ika ya/ika yaya\", meaning \"A bad person/bad people\"."
     },
     {
       "word": "kundala",
@@ -244,7 +244,7 @@
       "word": "kucha",
       "eng": "small",
       "cn": "weak",
-      "notes": "Kucha gusha (lit. small grass) means seed. Slightly contemptuous connotation."
+      "notes": "Kucha gusha (lit. \"small grass\") means seed. Slightly contemptuous connotation."
     },
     {
       "word": "odomu",
@@ -286,7 +286,7 @@
       "word": "mani",
       "eng": "hands, physical labor; five",
       "cn": "to give",
-      "notes": "The meaning of five possibly comes from the number of fingers on a hand."
+      "notes": "The meaning of \"five\" possibly comes from the number of fingers on a hand."
     },
     {
       "word": "olah",
@@ -304,7 +304,7 @@
       "word": "aba",
       "eng": null,
       "cn": null,
-      "notes": "Used by Ella Musk in Language Exchange, and by hilichurl in Poetry Exchange. Possibly means before."
+      "notes": "Used by Ella Musk in Language Exchange, and by hilichurl in Poetry Exchange. Possibly means \"before.\""
     },
     {
       "word": "ka",
@@ -316,7 +316,7 @@
       "word": "todo",
       "eng": null,
       "cn": null,
-      "notes": "Used by Hilichurl in Language Exchange. May mean give."
+      "notes": "Used by Hilichurl in Language Exchange. May mean \"give.\""
     },
     {
       "word": "biadam",
@@ -328,13 +328,13 @@
       "word": "boya",
       "eng": "color",
       "cn": null,
-      "notes": "Used as a suffix for colors. Celi boya (lit. fire color) is red, gusha boya (lit. grass color) is green, lata boya (lit. ice color) is blue, nini boya is white, nunu boya (lit. sleep color) and sama boya are black, and unu boya (lit. God's color/one color) is yellow."
+      "notes": "Used as a suffix for colors. Celi boya (lit. \"fire color\") is red, gusha boya (lit. \"grass color\") is green, lata boya (lit. \"ice color\") is blue, nini boya is white, nunu boya (lit. \"sleep color\") and sama boya are black, and unu boya (lit. \"God's color/one color\") is yellow."
     },
     {
       "word": "mito",
       "eng": null,
       "cn": null,
-      "notes": "Used by Hilichurl in Poetry Exchange. May mean know."
+      "notes": "Used by Hilichurl in Poetry Exchange. May mean \"know\"."
     },
     {
       "word": "lawa",
@@ -364,7 +364,7 @@
       "word": "unta",
       "eng": null,
       "cn": null,
-      "notes": "Mentioned in Handy Handbook of Hilichurlian. Possibly means after."
+      "notes": "Mentioned in Handy Handbook of Hilichurlian. Possibly means \"after.\""
     },
     {
       "word": "Du ya zido dala?",
