@@ -4,10 +4,11 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "outDir": "types",
+    "rootDir": ".",
     "module": "CommonJS",
     "target": "ES6",
     "strict": true
   },
-  "include": ["src/**/*.js"],
-  "exclude": ["node_modules", "dist", "__tests__", "src/scripts/**/*.js"]
+  "include": ["**/*.js"],
+  "exclude": ["**/node_modules", "dist", "examples", "__tests__", "jest.config.js"]
 }

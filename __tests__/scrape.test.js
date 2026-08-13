@@ -8,7 +8,7 @@ const hilichurl = new Hilichurl()
 const EXPECTED_TABLE_COLUMNS = 4
 
 /* eslint-disable no-undef */
-// Fetch and scrape the latest data from HILICHURLIAN_TEXT_URL
+// Fetch and scrape the latest data from MEDIAWIKI_API_ROOT
 beforeAll(async () => {
   await hilichurl.fetchrecords()
 })

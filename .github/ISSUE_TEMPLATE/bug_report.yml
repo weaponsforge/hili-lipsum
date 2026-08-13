@@ -40,6 +40,7 @@ body:
         Arch: x64
         V8 version: 11.3.244.8-node.23
         npm version: 10.7.0
+        hili-lipsum version: 4.0.0
     validations:
       required: true
 
