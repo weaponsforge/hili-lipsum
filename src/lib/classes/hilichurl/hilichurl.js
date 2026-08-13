@@ -59,13 +59,17 @@ class Hilichurl {
   /**
    * Fetches Hilichurlian words and definitions from the Genshin Impact Fandom WikiMedia API whose URL is defined in the .env.example "MEDIAWIKI_API_ROOT" variable
    * and remove special chars on the scraped content
-   * @param {string} mediaWikiQueryUrl - Full Genshin Impact Fandom WikiMedia API URL
+   * @param {object} mediaWikiQueryUrl - Full Genshin Impact Fandom WikiMedia API `URL`ss Object
    * @returns {Promise<void>} Stores an array of raw scraped Hilichurlian words minus special characters in this.hilichurlianRAW[]
    *    [{ word: String, eng: String, notes: String },...]
    */
   async scrapewords (mediaWikiQueryUrl = '') {
     let timeoutId
     const abortController = new AbortController()
+
+    if (!(mediaWikiQueryUrl instanceof URL) || !('href' in mediaWikiQueryUrl)) {
+      throw new Error('Not a URL() object')
+    }
 
     try {
       timeoutId = setTimeout(() => abortController.abort(), 30_000) // 30 secs
@@ -81,7 +85,7 @@ class Hilichurl {
         throw new Error(errMsg, { cause: new Error(body.slice(0, 800)) })
       }
 
-      let data = mediaWikiQueryUrl.href.endsWith('api.php')
+      let data = this.isMediaWikiUrl(mediaWikiQueryUrl)
         ? await res.json()  // response from mediawiki API
         : await res.text()  // response from web page (older versions)
 
@@ -291,6 +295,8 @@ class Hilichurl {
    * from the `MEDIAWIKI_API_ROOT` environment variable into:
    *  - `this.hilichurlianRAW[]`
    *  - `this.hilichurlianDB[]`
+   * @param {string} url - API URL string
+   * @param {object} options - Genshin Impact Fandom MediaWiki API query parameters
    * @returns {Promise<void>}
    */
   async fetchrecords (url, options) {
@@ -321,7 +327,9 @@ class Hilichurl {
     if (this.hilichurlianRAW.length > 0) {
       try {
         this.formatwords()
-        this.apiUrl = queryUrl?.href ?? API_ROOT
+        this.apiUrl = this.isMediaWikiUrl(queryUrl)
+          ? queryUrl?.href
+          : API_ROOT
       } catch (err) {
         throw new Error(err.message, { cause: err })
       }
@@ -371,6 +379,15 @@ class Hilichurl {
     }, '')
 
     return sentence
+  }
+
+  /**
+   * Checks if the `pathname` in a `URL` object is a MediaWiki URL
+   * @param {object} url - URL() object
+   * @returns {boolean}
+   */
+  isMediaWikiUrl (url) {
+    return Boolean(url?.pathname?.endsWith('api.php'))
   }
 }
 

@@ -17,7 +17,7 @@ const removeSpecialChars = ({ string, removePlural = false }) => {
   // Replace all [1], [2], patterns
   str = str.replace(/[|[0-9]|]/g, '')
 
-  str = str.replace(/"/g, '')
+  str = str.replace(/\\/g, '')
 
   // Remove all plural word notes i.e., "(plural: mimi)"
   if (removePlural) {
