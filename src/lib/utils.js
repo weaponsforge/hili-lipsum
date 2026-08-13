@@ -137,6 +137,24 @@ const parseArgs = (args) => {
   return result
 }
 
+/**
+ * Logs the Error message and cause to screen
+ * @param {Error} error - Error object
+ */
+const logError = (error) => {
+  console.error(`[ERROR]: ${error.message}`)
+  console.error(`  Cause: ${error.cause}`)
+}
+
+/**
+ * logs a success message to screen
+ * @param {string} msg - log message content
+ */
+const logSuccess = (msg) => {
+  const message = msg ?? 'Success! Process finished.'
+  console.log(`[DONE]: ${message}`)
+}
+
 module.exports = {
   removeSpecialChars,
   getParenthesisWords,
@@ -144,5 +162,7 @@ module.exports = {
   saveToJSON,
   delayProcess,
   buildQuery,
+  logError,
+  logSuccess,
   parseArgs
 }

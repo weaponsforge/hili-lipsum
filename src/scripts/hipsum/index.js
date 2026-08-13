@@ -1,6 +1,10 @@
-const { parseArgs } = require('../../lib/utils')
+const { parseArgs, logError } = require('../../lib/utils')
 const { hipsum } = require('./hipsum')
-parseArgs
 
 const argv = parseArgs(process.argv.slice(2))
-hipsum(argv.wordcount)
+
+try {
+  hipsum(argv.wordcount)
+} catch (err) {
+  logError(err)
+}

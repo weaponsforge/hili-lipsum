@@ -1,3 +1,10 @@
+const { logError } = require('../../lib/utils')
 const { scrape } = require('./scrape')
 
-scrape()
+;(async () => {
+  try {
+    await scrape()
+  } catch (err) {
+    logError(err)
+  }
+})()

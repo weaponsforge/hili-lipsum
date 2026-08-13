@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const { Hilipsum } = require('../../lib/classes/hilipsum')
 
 /**
