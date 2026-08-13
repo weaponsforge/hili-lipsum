@@ -12,7 +12,7 @@ const removeSpecialChars = ({ string, removePlural = false }) => {
   if (typeof string !== 'string') return
 
   // Replace all newlines and tabs
-  let str = string.replace(/(\r\n|\n|\r)/gm, '')
+  let str = string.replace(/(\\r\\n|\\n|\n|\\r)/gm, '')
 
   // Replace all [1], [2], patterns
   str = str.replace(/[|[0-9]|]/g, '')
@@ -104,10 +104,27 @@ const delayProcess = (callback, timeout = 1000) => {
   }, timeout)
 }
 
+/**
+ * Builds a URL with GET query parameters
+ * @param {string} url - Base URL
+ * @param {object} params - key-value pairs to construct URL query parameters
+ * @returns {string}
+ */
+const buildQuery = (url = '', params = {}) => {
+  const newUrl = new URL(url)
+
+  for (let key in params) {
+    newUrl.searchParams.set(key, params[key])
+  }
+
+  return newUrl
+}
+
 module.exports = {
   removeSpecialChars,
   getParenthesisWords,
   getParenthesisStartWords,
   saveToJSON,
-  delayProcess
+  delayProcess,
+  buildQuery
 }

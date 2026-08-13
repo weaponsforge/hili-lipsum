@@ -6,7 +6,8 @@ const {
   removeSpecialChars,
   getParenthesisWords,
   getParenthesisStartWords,
-  saveToJSON
+  saveToJSON,
+  buildQuery
 } = require('../../utils')
 
 /**
@@ -48,19 +49,20 @@ class Hilichurl {
   }
 
   /**
-   * Scrapes Hilichurlian words and definitions from the Hilichurl Lexicon website whose URL is defined in the .env.example "HILICHURLIAN_TEXT_URL" variable
+   * Fetches Hilichurlian words and definitions from the Genshin Impact Fandom WikiMedia API whose URL is defined in the .env.example "MEDIAWIKI_API_ROOT" variable
    * and remove special chars on the scraped content
+   * @param {string} mediaWikiQueryUrl - Full Genshin Impact Fandom WikiMedia API URL
    * @returns {Promise<void>} Stores an array of raw scraped Hilichurlian words minus special characters in this.hilichurlianRAW[]
    *    [{ word: String, eng: String, notes: String },...]
    */
-  async scrapewords () {
+  async scrapewords (mediaWikiQueryUrl = '') {
     let timeoutId
     const abortController = new AbortController()
 
     try {
       timeoutId = setTimeout(() => abortController.abort(), 30_000) // 30 secs
 
-      const res = await fetch(process.env.HILICHURLIAN_TEXT_URL, {
+      const res = await fetch(mediaWikiQueryUrl, {
         method: 'GET',
         signal: abortController.signal
       })
@@ -71,8 +73,11 @@ class Hilichurl {
         throw new Error(errMsg, { cause: new Error(body.slice(0, 800)) })
       }
 
-      const data = await res.text()
-      const $ = cheerio.load(data)
+      let data = mediaWikiQueryUrl.href.endsWith('api.php')
+        ? await res.json()  // response from mediawiki API
+        : await res.text()  // response from web page (older versions)
+
+      const $ = cheerio.load(data?.parse?.text ?? data)
       const that = this
 
       // HTML column table indices
@@ -249,7 +254,7 @@ class Hilichurl {
     const filename = path.join(dirName, `hilichurlDB-${Math.floor((new Date()).getTime() / 1000)}.json`)
 
     const metadata = {
-      source: process.env.HILICHURLIAN_TEXT_URL || '',
+      source: process.env.MEDIAWIKI_API_ROOT || '',
       title: 'Hilichurlian Language Dictionary',
       description: 'Dictionary of Hilichurlian words and their English translations exctracted from the source URL.',
       date_created: new Date().toISOString()
@@ -272,7 +277,7 @@ class Hilichurl {
 
   /**
    * Refreshes the in-memory Hilichurlian dictionaries by scraping data
-   * from the `HILICHURLIAN_TEXT_URL` environment variable into:
+   * from the `MEDIAWIKI_API_ROOT` environment variable into:
    *  - `this.hilichurlianRAW[]`
    *  - `this.hilichurlianDB[]`
    * @returns {Promise<void>}
@@ -283,7 +288,15 @@ class Hilichurl {
     this.invalidItems = []
 
     try {
-      await this.scrapewords()
+      const queryUrl = buildQuery(process.env.MEDIAWIKI_API_ROOT, {
+        action: 'parse',
+        format: 'json',
+        formatversion: 2,
+        prop: 'text',
+        page: process?.env?.MEDIAWIKI_PAGE_NAME ?? ''
+      })
+
+      await this.scrapewords(queryUrl)
     } catch (err) {
       if (err.name === 'AbortError') {
         throw err

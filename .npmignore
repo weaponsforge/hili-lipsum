@@ -12,9 +12,9 @@ examples/
 *.yml
 *.md
 .dockerignore
-.eslintrc.js
+eslint.config.mjs
 jest.config.js
 .env.example
 Dockerfile
-data/hilichurlian_lexicon.html
+data/hilichurlian_lexicon.txt
 !data/hilichurlianDB.json
