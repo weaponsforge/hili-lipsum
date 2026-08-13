@@ -50,7 +50,10 @@ jobs:
         with:
           node-version: 24.11.0
           registry-url: https://registry.npmjs.org/
-      - run: npm publish --provenance --access public
+      - run: |
+          chmod u+x scripts/npm-publish.sh
+          ./scripts/npm-publish.sh
+          npm publish --provenance --access public
 
   docker-build-push-tag:
     name: Push Tagged Image

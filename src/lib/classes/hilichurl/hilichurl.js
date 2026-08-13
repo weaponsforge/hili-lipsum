@@ -76,6 +76,8 @@ class Hilichurl {
         signal: abortController.signal
       })
 
+      clearTimeout(timeoutId)
+
       if (!res.ok) {
         const body = await res.text()
         const errMsg = `Request failed with status ${res.status}`

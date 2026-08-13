@@ -120,11 +120,52 @@ const buildQuery = (url = '', params = {}) => {
   return newUrl
 }
 
+/**
+ * Tiny arg parser for `--key=value` style flags
+ * @param {string[]} args - Raw args, typically process.argv.slice(2)
+ * @returns {Object} Parsed key/value pairs
+ */
+const parseArgs = (args) => {
+  const result = {}
+
+  for (const arg of args) {
+    if (arg.startsWith('--')) {
+      const [key, value] = arg.slice(2).split('=')
+      result[key] = value ?? true // supports flags with no value, e.g. --verbose
+    }
+  }
+  return result
+}
+
+/**
+ * Logs the Error message and cause to screen
+ * @param {Error} error - Error object
+ */
+const logError = (error) => {
+  console.error(`[ERROR]: ${error.message}`)
+
+  if (error?.cause) {
+    console.error(`  Cause: ${error.cause}`)
+  }
+}
+
+/**
+ * logs a success message to screen
+ * @param {string} msg - log message content
+ */
+const logSuccess = (msg) => {
+  const message = msg ?? 'Success! Process finished.'
+  console.log(`[DONE]: ${message}`)
+}
+
 module.exports = {
   removeSpecialChars,
   getParenthesisWords,
   getParenthesisStartWords,
   saveToJSON,
   delayProcess,
-  buildQuery
+  buildQuery,
+  logError,
+  logSuccess,
+  parseArgs
 }
