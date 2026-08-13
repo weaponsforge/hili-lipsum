@@ -6,7 +6,7 @@ const CLI_META = {
   },
   CMD_SCRAPE: {
     NAME: 'scrape',
-    DESCRIPTION: 'Fetches the current available Hilichurlian words data from `MEDIAWIKI_PAGE_NAME` and writes it to a `"hilichurlDB-<timestamp>.json"` file relative to where this script is run'
+    DESCRIPTION: 'Fetches the current available Hilichurlian words data from `MEDIAWIKI_PAGE_NAME` and writes it to a "hilichurlDB-<timestamp>.json" file relative to where this script is run'
   },
   CMD_HIPSUM: {
     NAME: 'hipsum',

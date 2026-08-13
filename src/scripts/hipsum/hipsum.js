@@ -14,7 +14,10 @@ const hipsum = (wordCount = 10) => {
 
   // Loads the scraped and pre-processed words on /data/hilichurlianDB.json
   const hilichurl = new Hilipsum()
-  console.log(hilichurl.lipsum(finalCount ?? 0))
+  const sentence = hilichurl.lipsum(finalCount)
+  console.log(sentence)
+
+  return sentence
 }
 
 module.exports = {

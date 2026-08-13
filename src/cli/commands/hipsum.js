@@ -8,7 +8,7 @@ const hipsumCommand = new Command()
 hipsumCommand
   .name(CLI_META.CMD_HIPSUM.NAME)
   .description(CLI_META.CMD_HIPSUM.DESCRIPTION)
-  .option(CLI_ARGS.CMD_HIPSUM.WORDCOUNT.OPTION, CLI_ARGS.CMD_HIPSUM.DESCRIPTION, parseInt)
+  .option(CLI_ARGS.CMD_HIPSUM.WORDCOUNT.OPTION, CLI_ARGS.CMD_HIPSUM.WORDCOUNT.DESCRIPTION, parseInt)
   .action((options) => {
     const { wordcount } = options
 
