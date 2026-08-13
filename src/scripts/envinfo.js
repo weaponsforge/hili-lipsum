@@ -15,10 +15,11 @@ const main = () => {
 
   try {
     console.log('npm version:', execSync('npm -v').toString().trim())
-    console.log('hili-lipsum version:', packageJson?.version ?? '0.0.0')
   } catch {
     console.log('npm version: unavailable')
   }
+
+  console.log('hili-lipsum version:', packageJson?.version ?? '0.0.0')
 }
 
 main()

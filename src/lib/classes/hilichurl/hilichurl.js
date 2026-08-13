@@ -67,11 +67,8 @@ class Hilichurl {
     let timeoutId
     const abortController = new AbortController()
 
-    if (!(mediaWikiQueryUrl instanceof URL) || !('href' in mediaWikiQueryUrl)) {
-      throw new Error('Not a URL() object')
-    }
-
     try {
+      this.isURLObject()
       timeoutId = setTimeout(() => abortController.abort(), 30_000) // 30 secs
 
       const res = await fetch(mediaWikiQueryUrl, {
@@ -88,6 +85,12 @@ class Hilichurl {
       let data = this.isMediaWikiUrl(mediaWikiQueryUrl)
         ? await res.json()  // response from mediawiki API
         : await res.text()  // response from web page (older versions)
+
+      const htmlString = data?.parse?.text ?? data
+
+      if (typeof htmlString !== 'string') {
+        throw new Error('Extracted data is not a string')
+      }
 
       const $ = cheerio.load(data?.parse?.text ?? data)
       const that = this
@@ -271,7 +274,7 @@ class Hilichurl {
     const metadata = {
       source: this.apiUrl,
       title: 'Hilichurlian Language Dictionary',
-      description: 'Dictionary of Hilichurlian words and their English translations exctracted from the source URL.',
+      description: 'Dictionary of Hilichurlian words and their English translations extracted from the source URL.',
       date_created: new Date().toISOString()
     }
 
@@ -305,14 +308,17 @@ class Hilichurl {
     this.invalidItems = []
 
     const apiRootUrl = url ?? API_ROOT
+    const isMediaWiki = this.isMediaWikiUrl(new URL(apiRootUrl))
 
-    const queryUrl = buildQuery(apiRootUrl, options ?? {
-      action: 'parse',
-      format: 'json',
-      formatversion: 2,
-      prop: 'text',
-      page: PAGE_NAME
-    })
+    const queryUrl = isMediaWiki
+      ? buildQuery(apiRootUrl, options ?? {
+        action: 'parse',
+        format: 'json',
+        formatversion: 2,
+        prop: 'text',
+        page: PAGE_NAME
+      })
+      : buildQuery(apiRootUrl, options ?? {})
 
     try {
       await this.scrapewords(queryUrl)
@@ -327,9 +333,7 @@ class Hilichurl {
     if (this.hilichurlianRAW.length > 0) {
       try {
         this.formatwords()
-        this.apiUrl = this.isMediaWikiUrl(queryUrl)
-          ? queryUrl?.href
-          : API_ROOT
+        this.apiUrl = queryUrl?.href
       } catch (err) {
         throw new Error(err.message, { cause: err })
       }
@@ -382,11 +386,21 @@ class Hilichurl {
   }
 
   /**
+   * Partially checks if an Object is a URL Object
+   * @param {URL} url - URL() object
+   * @returns {boolean}
+   */
+  isURLObject (url) {
+    return !(url instanceof URL) || !('href' in url)
+  }
+
+  /**
    * Checks if the `pathname` in a `URL` object is a MediaWiki URL
-   * @param {object} url - URL() object
+   * @param {URL} url - URL() object
    * @returns {boolean}
    */
   isMediaWikiUrl (url) {
+    this.isURLObject()
     return Boolean(url?.pathname?.endsWith('api.php'))
   }
 }

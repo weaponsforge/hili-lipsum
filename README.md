@@ -19,18 +19,18 @@ It has the following format and structure:
 ### CLI Available
 
 > **Run via npx (no installation required)**
->   - Requirements: NodeJS LTS v24.11.0 or later
->   - Run `npx hili-lipsum`<br>
->     Fetches the latest Hilichurlian data and writes it to `hilichurlDB-<timestamp>.json`
+> - Requirements: NodeJS LTS v24.11.0 or later
+> - Run `npx hili-lipsum`<br>
+>   Fetches the latest Hilichurlian data and writes it to `hilichurlDB-<timestamp>.json`
 
 ### Example
 
-```
+```json
 {
   "metadata": {
     "source": "https://genshin-impact.fandom.com/api.php?action=parse&format=json&formatversion=2&prop=text&page=Hilichurlian%2FLexicon",
     "title": "Hilichurlian Language Dictionary",
-    "description": "Dictionary of Hilichurlian words and their English translations exctracted from the source URL.",
+    "description": "Dictionary of Hilichurlian words and their English translations extracted from the source URL.",
     "date_created": "2026-08-13T12:20:02.351Z"
   },
   "data": [
@@ -98,7 +98,7 @@ The following requirements were used for this project. Feel free to use other de
    | Variable Name | Description |
    | --- | --- |
    | MEDIAWIKI_PAGE | Genshin Impact Fandom MediaWiki page name of the Hilichurlian word dictionary at https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon. Default value is `Hilichurlian/Lexicon`. |
-   | MEDIAWIKI_API_ROOT | Genshin Impact Fandom MediaWiki API root URL. It allows fetching wiki page data programmatically for non-web browsers.<br>Default value is: https://genshin-impact.fandom.com/api.php. <br><br> You can reference other Hilichurlian words wiki or web page to scrape using `MEDIAWIKI_PAGE`, but be be sure to make the necessary adjustments on the web scraping logic on `/src/classes/hilichurl/hilichurl.js` - **scrapewords()** and **formatwords()** methods. |
+   | MEDIAWIKI_API_ROOT | Genshin Impact Fandom MediaWiki API root URL. It allows fetching wiki page data programmatically for non-web browsers.<br>Default value is: https://genshin-impact.fandom.com/api.php. <br><br> You can reference other Hilichurlian words wiki or web page to scrape using `MEDIAWIKI_PAGE`, but be sure to make the necessary adjustments on the web scraping logic on `/src/lib/classes/hilichurl/hilichurl.js` - **scrapewords()** and **formatwords()** methods. |
 
 
 ## Available Scripts
@@ -245,7 +245,7 @@ https://www.npmjs.com/package/hili-lipsum
 
 ## References
 
-#### Genshin Impact Fandom Wiki
+**Genshin Impact Fandom Wiki**
 
 - Hilichurlian Lexicon Wiki <sup>[[1]](https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon)</sup>
 - MediaWiki API Docs <sup>[[2]](https://genshin-impact.fandom.com/api.php)</sup>

@@ -15,7 +15,7 @@ const removeSpecialChars = ({ string, removePlural = false }) => {
   let str = string.replace(/(\\r\\n|\\n|\n|\\r)/gm, '')
 
   // Replace all [1], [2], patterns
-  str = str.replace(/[|[0-9]|]/g, '')
+  str = str.replace(/\[\d+\]/g, '')
 
   str = str.replace(/\\/g, '')
 
@@ -108,7 +108,7 @@ const delayProcess = (callback, timeout = 1000) => {
  * Builds a URL with GET query parameters
  * @param {string} url - Base URL
  * @param {object} params - key-value pairs to construct URL query parameters
- * @returns {string}
+ * @returns {URL}
  */
 const buildQuery = (url = '', params = {}) => {
   const newUrl = new URL(url)
