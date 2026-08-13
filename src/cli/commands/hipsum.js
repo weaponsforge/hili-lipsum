@@ -16,7 +16,6 @@ const handle = async (count = 0) => {
   }
 }
 
-
 hipsumCommand
   .name(CLI_META.CMD_HIPSUM.NAME)
   .description(CLI_META.CMD_HIPSUM.DESCRIPTION)
