@@ -21,7 +21,7 @@ scrapeCommand
   .description(CLI_META.CMD_SCRAPE.DESCRIPTION)
   .action(async () => {
     if (process.env.IS_DOCKER_DEBUG) {
-      delayProcess(async () => handle(), 5000)
+      delayProcess(async () => await handle(), 5000)
     } else {
       await handle()
     }

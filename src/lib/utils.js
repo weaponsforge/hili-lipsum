@@ -143,7 +143,10 @@ const parseArgs = (args) => {
  */
 const logError = (error) => {
   console.error(`[ERROR]: ${error.message}`)
-  console.error(`  Cause: ${error.cause}`)
+
+  if (error?.cause) {
+    console.error(`  Cause: ${error.cause}`)
+  }
 }
 
 /**

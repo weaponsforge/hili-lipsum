@@ -1,16 +1,13 @@
 const { Command } = require('commander')
 const { hipsum } = require('../../scripts/hipsum/hipsum')
 const { CLI_META, CLI_ARGS } = require('../meta')
-const {
-  delayProcess,
-  logError
-} = require('../../lib/utils')
+const { logError, delayProcess } = require('../../lib/utils')
 
 const hipsumCommand = new Command()
 
-const handle = async (count = 0) => {
+const handle = (count = 0) => {
   try {
-    await hipsum(count)
+    hipsum(count)
   } catch (err) {
     logError(err)
   }
@@ -24,9 +21,7 @@ hipsumCommand
     const { wordcount } = options
 
     if (process.env.IS_DOCKER_DEBUG) {
-      setTimeout(() => {
-        delayProcess(async () => await handle(wordcount), 5000)
-      }, 5000)
+      delayProcess(async () => handle(wordcount), 5000)
     } else {
       handle(wordcount)
     }
