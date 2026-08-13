@@ -25,5 +25,5 @@ const CLI_ARGS = {
 
 module.exports = {
   CLI_META,
-  CLI_ARGS,
+  CLI_ARGS
 }

@@ -18,11 +18,8 @@ or fetch the currently available Hilichurlian vocabulary from the [Genshin Impac
 - Use the library programmatically through `Hilichurl` and `Hilipsum`
 - Run through Node.js, npm, or Docker
 
-### 🆕 Quick Start
+### 🆕 CLI Available
 
-**CLI Available**
-
-> [!TIP]
 > - **Run via npx (no installation required)**
 >   - Requirements: NodeJS LTS v24 or later
 >   - Run `npx hili-lipsum --help`<br><br>
@@ -222,7 +219,6 @@ in sync automatically via the `create:declaration` script (see [Available Script
 
 ## 🔔 Disclaimer
 
-> [!NOTE]
 > `hili-lipsum` is an independent, fan-made project and is not<br>
 > affiliated with or endorsed by HoYoverse or the Genshin Impact Wiki.<br>
 > Hilichurlian vocabulary is sourced from the referenced public wiki/API.<br>
