@@ -38,11 +38,8 @@ or fetch the currently available Hilichurlian vocabulary from the [Genshin Impac
 - [Contributing](#-contributing)
 - [Requirements](#-requirements)
 - [Installation](#️-installation)
-- [Available Scripts](#-available-scripts)
 - [Class Usage](#️-class-usage)
 - [TypeScript](#-typescript)
-- [Usage with Docker](#-usage-with-docker)
-- [Deployment with GitHub Actions](#-deployment-with-github-actions)
 - [Disclaimer](#-disclaimer)
 
 ## 📊 Data Source
@@ -98,7 +95,7 @@ Checkout the full web-scraped data in the `/data/hilichurlianDB.json` file for m
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
+We welcome contributions! Please see [CONTRIBUTING.md](https://github.com/weaponsforge/hili-lipsum/blob/dev/CONTRIBUTING.md) for guidelines.
 
 <br>
 
@@ -113,13 +110,10 @@ The project is developed and tested with:
 
 ## 🛠️ Installation
 
-1. Clone this repository.<br>
-`git clone https://github.com/weaponsforge/hili-lipsum.git`
+1. Install the library.<br>
+`npm install hili-lipsum`
 
-2. Install dependencies.<br>
-`npm install`
-
-3. Create a `.env` file from the `.env.example` file. Use the default value for `MEDIAWIKI_API_ROOT`.
+2. Create a `.env` file from the `.env.example` file. Use the default value for `MEDIAWIKI_API_ROOT`.
 
    | Variable Name | Description |
    | --- | --- |
@@ -127,63 +121,6 @@ The project is developed and tested with:
    | MEDIAWIKI_API_ROOT | Genshin Impact Fandom MediaWiki API root URL. It allows fetching wiki page data programmatically for non-web browsers.<br>Default value is: https://genshin-impact.fandom.com/api.php. <br><br> You can reference other Hilichurlian words wiki or web page to scrape using `MEDIAWIKI_PAGE`, but be sure to make the necessary adjustments on the web scraping logic on `/src/lib/classes/hilichurl/hilichurl.js` - **scrapewords()** and **formatwords()** methods. |
 
 <br>
-
-## 📜 Available Scripts
-
-### `npm start`
-
-Runs the CLI. Shorthand for `node ./src/cli/main.js`
-
-**Usage**
-
-```sh
-npm start                   # shows help options
-npm start scrape            # CLI command for "npm run scrape"
-npm start hipsum            # CLI command for "npm run hipsum"
-npm start -- hipsum -w 25   # CLI for "npm run hipsum" with -w (wordcount) parameter
-```
-
-### `npm run scrape`
-
-Download, scrape and format hilichurlian words from the `MEDIAWIKI_API_ROOT` .env variable.
-Writes the extracted and formatted words into a `/hilichurlianDB-<TIMESTAMP>.json` file.
-
-### `npm run hipsum`
-
-- Generates a random ipsum-like Hilichurlian sentence consisting of 15 words by default.
-- Generates a random Hilichurlian sentence consisting of `N` words if provided with the `--wordcount` flag:<br>
-
-   ```
-   npm run hipsum -- --wordcount=100
-   ```
-
-### `npm run lint`
-
-Lint JavaScript source codes.
-
-### `npm run lint:fix`
-
-Fix JavaScript lint errors.
-
-### `npm run scrape:debug`
-
-Sets the `IS_DOCKER_DEBUG=true` environment variable before running the `npm run scrape` script to enable debugging with VSCode inside a container.
-
-> This command runs only in a Linux environment.
-
-### `npm run start:debug`
-
-Sets the `IS_DOCKER_DEBUG=true` environment variable before running the **CLI entry point** script to enable debugging with VSCode inside a container.
-
-> This command runs only in a Linux environment.
-
-### `npm run create:declaration`
-
-Generates TypeScript declaration `.d.ts` files from the CommonJS JavaScript classes and scripts.
-
-### `npm test`
-
-Run tests defined in the `__tests__` directory.
 
 ## 🏗️ Class Usage
 
@@ -279,63 +216,7 @@ const sentence: string = hiLipsum.lipsum(40)
 ```
 
 Type declarations are generated from JSDoc annotations in the source and are kept
-in sync automatically via the `create:declaration` script (see [Available Scripts](#available-scripts)).
-
-<br>
-
-## 🐳 Usage with Docker
-
-The project includes a Docker Compose configuration for development. Before starting the container, create a `.env` file from `.env.example` as instructed in the [Installation](#installation) section.
-
-### Preparing the Local Image
-
-Obtain the development Docker image using any of the two (2) options. Navigate to the repository's root directory using a terminal, then run:
-
-- **Pull the Pre-Built Docker Image**<br>
-`docker compose pull`
-
-- **Build the Local Image**<br>
-`docker compose build`
-
-### Using the Docker Image
-
-1. Run the development container.<br>
-`docker compose up`
-
-2. Run the [Available Scripts](#-available-scripts) using the container. For example:
-
-   ```sh
-   docker exec weaponsforge-hili-lipsum npm run scrape
-   docker exec weaponsforge-hili-lipsum npm start scrape
-   docker exec weaponsforge-hili-lipsum npm start -- hipsum --wordcount=40
-   ```
-
-<br>
-
-## 🚀 Deployment with GitHub Actions
-
-This repository publishes the **development** Docker image to Docker Hub. New npm versions are published when a Release/Tag is created from `master`.
-
-Add the following GitHub Secrets and Variables to enable deployment to Docker Hub and the NPM registry.
-
-**Docker Hub**<br>
-https://hub.docker.com/r/weaponsforge/hili-lipsum
-
-**NPM Registry**<br>
-https://www.npmjs.com/package/hili-lipsum
-
-#### GitHub Secrets
-
-| GitHub Secret | Description |
-| --- | --- |
-| DOCKERHUB_USERNAME | (Optional) Docker Hub username. Required to enable pushing the development image to Docker Hub. |
-| DOCKERHUB_TOKEN | (Optional) Deploy token for the Docker Hub account. Required to enable pushing the development image to Docker Hub. |
-
-#### GitHub Variables
-
-| GitHub Variable | Description |
-| --- | --- |
-| DOCKERHUB_USERNAME | (Optional) Docker Hub username. Required to enable pushing the development image to Docker Hub. |
+in sync automatically via the `create:declaration` script (see [Available Scripts](https://github.com/weaponsforge/hili-lipsum#npm-run-createdeclaration)).
 
 <br>
 
