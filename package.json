@@ -10,6 +10,13 @@
   "directories": {
     "example": "examples"
   },
+  "files": [
+    "data/*.json",
+    "src",
+    "types",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "start": "npm run hipsum",
     "scrape": "node src/scripts/scrape.js",
