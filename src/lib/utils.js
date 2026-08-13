@@ -120,11 +120,29 @@ const buildQuery = (url = '', params = {}) => {
   return newUrl
 }
 
+/**
+ * Tiny arg parser for `--key=value` style flags
+ * @param {string[]} args - Raw args, typically process.argv.slice(2)
+ * @returns {Object} Parsed key/value pairs
+ */
+const parseArgs = (args) => {
+  const result = {}
+
+  for (const arg of args) {
+    if (arg.startsWith('--')) {
+      const [key, value] = arg.slice(2).split('=')
+      result[key] = value ?? true // supports flags with no value, e.g. --verbose
+    }
+  }
+  return result
+}
+
 module.exports = {
   removeSpecialChars,
   getParenthesisWords,
   getParenthesisStartWords,
   saveToJSON,
   delayProcess,
-  buildQuery
+  buildQuery,
+  parseArgs
 }

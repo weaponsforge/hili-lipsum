@@ -11,7 +11,7 @@
     "example": "examples"
   },
   "bin": {
-    "hili-lipsum": "src/scripts/scrape.js"
+    "hili-lipsum": "./src/cli/main.js"
   },
   "exports": {
     ".": {
@@ -27,12 +27,13 @@
     "LICENSE"
   ],
   "scripts": {
-    "start": "npm run hipsum",
-    "scrape": "node src/scripts/scrape.js",
-    "hipsum": "node src/scripts/hipsum.js",
+    "start": "node src/cli/main.js",
+    "start:debug": "export IS_DOCKER_DEBUG=true && node --inspect=0.0.0.0:9229 src/cli/main.js",
+    "scrape": "node src/scripts/scrape",
+    "hipsum": "node src/scripts/hipsum",
     "info": "node src/scripts/envinfo.js",
     "example:hilipsum": "node examples/example-hilipsum",
-    "scrape:debug": "export IS_DOCKER=true && node --inspect=0.0.0.0:9229 src/scripts/scrape.js",
+    "scrape:debug": "export IS_DOCKER_DEBUG=true && node --inspect=0.0.0.0:9229 src/scripts/scrape.js",
     "lint": "eslint src __tests__ eslint.config.mjs",
     "lint:fix": "eslint src __tests__ eslint.config.mjs --fix",
     "create:declaration": "tsc",
@@ -62,6 +63,7 @@
   "homepage": "https://github.com/weaponsforge/hili-lipsum#readme",
   "dependencies": {
     "cheerio": "^1.2.0",
+    "commander": "^15.0.0",
     "dotenv": "^17.4.2"
   },
   "devDependencies": {

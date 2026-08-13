@@ -1,10 +1,14 @@
 #!/usr/bin/env node
 
 require('dotenv').config({ quiet: true })
-const { Hilichurl } = require('../lib/classes/hilichurl')
-const { delayProcess } = require('../lib/utils')
+const { Hilichurl } = require('../../lib/classes/hilichurl')
 
-const main = async () => {
+/**
+ * Fetches the current available Hilichurlian words data from `MEDIAWIKI_PAGE_NAME`
+ * and writes it to a `"hilichurlDB-<timestamp>.json"` file relative to where
+ * this script is run
+ */
+const scrape = async () => {
   const hilichurl = new Hilichurl()
 
   try {
@@ -25,8 +29,6 @@ const main = async () => {
   }
 }
 
-if (process.env.IS_DOCKER) {
-  delayProcess(main, 5000)
-} else {
-  main()
+module.exports = {
+  scrape
 }
