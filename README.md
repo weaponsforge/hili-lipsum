@@ -16,6 +16,13 @@ It has the following format and structure:
 | `cn` | string | Chinese player analysis translation of the Hilichurlian word |
 | `notes` | string | Notes and additional information about the Hilichurlian word |
 
+### CLI Available
+
+> **Run via npx (no installation required)**
+>   - Requirements: NodeJS LTS v24.11.0 or later
+>   - Run `npx hili-lipsum`<br>
+>     Fetches the latest Hilichurlian data and writes it to `hilichurlDB-<timestamp>.json`
+
 ### Example
 
 ```
@@ -90,8 +97,8 @@ The following requirements were used for this project. Feel free to use other de
 
    | Variable Name | Description |
    | --- | --- |
-   | MEDIAWIKI_PAGE_NAME | Genshin Impact Fandom MediaWiki page name of the Hilichurlian word dictionary at https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon. Default value is `Hilichurlian/Lexicon`. |
-   | MEDIAWIKI_API_ROOT | Genshin Impact Fandom MediaWiki API root URL. It allows fetching wiki page data programmatically for non-web browsers.<br>Default value is: https://genshin-impact.fandom.com/api.php. <br><br> You can reference other Hilichurlian words wiki or web page to scrape using `MEDIAWIKI_PAGE_NAME`, but be be sure to make the necessary adjustments on the web scraping logic on `/src/classes/hilichurl/hilichurl.js` - **scrapewords()** and **formatwords()** methods. |
+   | MEDIAWIKI_PAGE | Genshin Impact Fandom MediaWiki page name of the Hilichurlian word dictionary at https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon. Default value is `Hilichurlian/Lexicon`. |
+   | MEDIAWIKI_API_ROOT | Genshin Impact Fandom MediaWiki API root URL. It allows fetching wiki page data programmatically for non-web browsers.<br>Default value is: https://genshin-impact.fandom.com/api.php. <br><br> You can reference other Hilichurlian words wiki or web page to scrape using `MEDIAWIKI_PAGE`, but be be sure to make the necessary adjustments on the web scraping logic on `/src/classes/hilichurl/hilichurl.js` - **scrapewords()** and **formatwords()** methods. |
 
 
 ## Available Scripts

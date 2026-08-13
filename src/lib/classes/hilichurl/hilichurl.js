@@ -10,6 +10,8 @@ const {
   buildQuery
 } = require('../../utils')
 
+const { API_ROOT, PAGE_NAME } = require('../../constants')
+
 /**
  * Manages hilichurl words-related data processing and formatting
  */
@@ -254,7 +256,7 @@ class Hilichurl {
     const filename = path.join(dirName, `hilichurlDB-${Math.floor((new Date()).getTime() / 1000)}.json`)
 
     const metadata = {
-      source: process.env.MEDIAWIKI_API_ROOT || '',
+      source: API_ROOT,
       title: 'Hilichurlian Language Dictionary',
       description: 'Dictionary of Hilichurlian words and their English translations exctracted from the source URL.',
       date_created: new Date().toISOString()
@@ -288,12 +290,12 @@ class Hilichurl {
     this.invalidItems = []
 
     try {
-      const queryUrl = buildQuery(process.env.MEDIAWIKI_API_ROOT, {
+      const queryUrl = buildQuery(API_ROOT, {
         action: 'parse',
         format: 'json',
         formatversion: 2,
         prop: 'text',
-        page: process?.env?.MEDIAWIKI_PAGE_NAME ?? ''
+        page: PAGE_NAME
       })
 
       await this.scrapewords(queryUrl)

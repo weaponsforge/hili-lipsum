@@ -10,6 +10,15 @@
   "directories": {
     "example": "examples"
   },
+  "bin": {
+    "hili-lipsum": "src/scripts/scrape.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
+    }
+  },
   "files": [
     "data/*.json",
     "src",
