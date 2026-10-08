@@ -176,6 +176,13 @@ class Hilichurl {
       ? data
       : this.hilichurlianRAW
 
+    // Convert blank definitions and notes to null
+    const nullifyBlanks = (entry) => {
+      if (!entry.eng) entry.eng = null
+      if (!entry.cn) entry.cn = null
+      if (!entry.notes) entry.notes = null
+    }
+
     toProcess.forEach((item) => {
       if (item.word !== '') {
         const hiliWord = item.word
@@ -191,6 +198,7 @@ class Hilichurl {
           pluralWord.word = isPlural[1].trim()
           pluralWord.eng = getParenthesisWords({ string: pluralWord.eng, excludes: ['plural:'] })
           pluralWord.cn = getParenthesisWords({ string: pluralWord.cn, excludes: ['plural:'] })
+          nullifyBlanks(pluralWord)
 
           this.hilichurlianDB.push(pluralWord)
           pluralCount += 1
@@ -202,9 +210,7 @@ class Hilichurl {
           item.cn = getParenthesisStartWords({ string: item.cn }) ?? ''
         }
 
-        if (!item.eng) item.eng = null
-        if (!item.cn) item.cn = null
-        if (!item.notes) item.notes = null
+        nullifyBlanks(item)
 
         // Count items without EN translation or CN player analysis
         if (item.eng === null && item.cn === null) allNullCount += 1
