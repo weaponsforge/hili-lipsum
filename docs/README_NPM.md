@@ -41,7 +41,7 @@ or fetch the currently available Hilichurlian vocabulary from the [Genshin Impac
 - [TypeScript](#-typescript)
 - [Disclaimer](#-disclaimer)
 
-## 📊 Data Source
+### 📊 Data Source
 
 By default, `npm run scrape` retrieves the Hilichurlian Lexicon through
 the [Genshin Impact Fandom MediaWiki Action API](https://genshin-impact.fandom.com/api.php).
@@ -55,7 +55,7 @@ If the configured `MEDIAWIKI_API_ROOT` is not a MediaWiki API-compatible endpoin
 the scraper can also process HTML pages with a structure similar to the
 [Hilichurlian Lexicon](https://genshin-impact.fandom.com/wiki/Hilichurlian/Lexicon).
 
-## 🧩 Data Structure
+### 🧩 Data Structure
 
 Hilichurlian data has the following format and structure:
 
@@ -92,13 +92,13 @@ Checkout the full web-scraped data in the `/data/hilichurlianDB.json` file for m
 
 <br>
 
-## 🤝 Contributing
+### 🤝 Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](https://github.com/weaponsforge/hili-lipsum/blob/dev/CONTRIBUTING.md) for guidelines.
 
 <br>
 
-## 📋 Requirements
+### 📋 Requirements
 
 The project is developed and tested with:
 
@@ -107,7 +107,7 @@ The project is developed and tested with:
 
 <br>
 
-## 🛠️ Installation
+### 🛠️ Installation
 
 1. Install the library.<br>
 `npm install hili-lipsum`
@@ -121,7 +121,7 @@ The project is developed and tested with:
 
 <br>
 
-## 🏗️ Class Usage
+### 🏗️ Class Usage
 
 | Class| Purpose |
 | --- | --- |
@@ -134,11 +134,8 @@ The project is developed and tested with:
 The `Hilichurl` Class allows to specify a local JSON file to use as a word dictionary. The JSON file should follow the format in `/data/hilichurlianDB.json`
 
 ```javascript
-const { Hilichurl } = require('./src/lib/classes/hilichurl')
 const path = require('path')
-
-// Use the the following if installed via npm
-// const { Hilichurl } = require('hili-lipsum')
+const { Hilichurl } = require('hili-lipsum')
 
 const main = async () => {
   try {
@@ -171,10 +168,7 @@ main()
 The `Hilipsum` class is a sub-class of `Hilichurl`. It automatically loads the local JSON word dictionary (`/data/hilichurlianDB.json`) on initialization.
 
 ```javascript
-const { Hilipsum } = require('./src/lib/classes/hilipsum')
-
-// Use the the following if installed via npm
-// const { Hilipsum } = require('hili-lipsum')
+const { Hilipsum } = require('hili-lipsum')
 
 const hiLipsum = new Hilipsum()
 
@@ -187,11 +181,7 @@ console.log(hiLipsum.lipsum())
 The following codes demonstrates using the `hipsum()` and `scrape()` functions using internal-declared `Hilipsum` and `Hilichurl` classes.
 
 ```javascript
-const { hipsum } = require("../src/scripts/hipsum/hipsum")
-const { scrape } = require("../src/scripts/scrape/scrape")
-
-// Use the the following if installed via npm
-// const { hipsum, scrape } = require('hili-lipsum')
+const { hipsum, scrape } = require('hili-lipsum')
 
 // Generate a 58-word random Hilichurlian sentence
 hipsum(58)
@@ -203,7 +193,7 @@ scrape()
 
 <br>
 
-## 🔷 TypeScript
+### 🔷 TypeScript
 
 `hili-lipsum` ships with bundled type declarations — no `@types` package needed.
 
@@ -219,7 +209,7 @@ in sync automatically via the `create:declaration` script (see [Available Script
 
 <br>
 
-## 🔔 Disclaimer
+### 🔔 Disclaimer
 
 > `hili-lipsum` is an independent, fan-made project and is not<br>
 > affiliated with or endorsed by HoYoverse or the Genshin Impact Wiki.<br>
@@ -227,7 +217,7 @@ in sync automatically via the `create:declaration` script (see [Available Script
 
 <br>
 
-## 🔍 References
+### 🔍 References
 
 **Genshin Impact Fandom Wiki**
 

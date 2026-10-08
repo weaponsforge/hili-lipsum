@@ -21,7 +21,7 @@ hipsumCommand
     const { wordcount } = options
 
     if (process.env.IS_DOCKER_DEBUG) {
-      delayProcess(async () => handle(wordcount), 5000)
+      delayProcess(() => handle(wordcount), 5000)
     } else {
       handle(wordcount)
     }

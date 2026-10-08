@@ -3,7 +3,7 @@
     "source": "https://genshin-impact.fandom.com/api.php?action=parse&format=json&formatversion=2&prop=text&page=Hilichurlian%2FLexicon",
     "title": "Hilichurlian Language Dictionary",
     "description": "Dictionary of Hilichurlian words and their English translations extracted from the source URL.",
-    "date_created": "2026-08-13T14:45:22.626Z"
+    "date_created": "2026-10-08T09:38:28.995Z"
   },
   "data": [
     {
@@ -26,9 +26,9 @@
     },
     {
       "word": "mimi",
-      "eng": "",
+      "eng": null,
       "cn": "we, us",
-      "notes": ""
+      "notes": null
     },
     {
       "word": "mi",
@@ -50,7 +50,7 @@
     },
     {
       "word": "yeye",
-      "eng": "",
+      "eng": null,
       "cn": "register unknown, possibly condescending or informal",
       "notes": "May be similar to Japanese お前 or Korean 너 where it does not express pure condescension, but can imply closeness to the addressee. However, it still connotes condescension by implying that the addressee is of a lower social standing and socially impermissible usages of the pronoun should be understood as a sign of contempt."
     },
@@ -62,9 +62,9 @@
     },
     {
       "word": "yoyo",
-      "eng": "",
+      "eng": null,
       "cn": "register unknown, friendly or formal",
-      "notes": ""
+      "notes": null
     },
     {
       "word": "yo",
@@ -188,7 +188,7 @@
     },
     {
       "word": "yaya",
-      "eng": "",
+      "eng": null,
       "cn": "human",
       "notes": "Can also mean \"person\" or \"people\""
     },
