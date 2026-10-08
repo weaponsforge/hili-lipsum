@@ -153,10 +153,14 @@ Writes the extracted and formatted words into a `/hilichurlianDB-<TIMESTAMP>.jso
 ### `npm run hipsum`
 
 - Generates a random ipsum-like Hilichurlian sentence consisting of 15 words by default.
-- Generates a random Hilichurlian sentence consisting of `N` words if provided with the `--wordcount` flag:<br>
+- Generates a random Hilichurlian sentence consisting of `N` words if provided with the `--wordcount` or `-w` flags:<br>
 
    ```
-   npm run hipsum -- --wordcount=100
+   npm run hipsum -- --wordcount 100
+   ```
+
+   ```
+   npm run hipsum -- -w 30
    ```
 
 ### `npm run lint`

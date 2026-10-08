@@ -1,10 +1,21 @@
-const { parseArgs, logError } = require('../../lib/utils')
+const { parseArgs } = require('node:util')
+const { logError } = require('../../lib/utils')
 const { hipsum } = require('./hipsum')
 
-const argv = parseArgs(process.argv.slice(2))
+const { values } = parseArgs({
+  args: process.argv.slice(2),
+  options: {
+    wordcount: {
+      type: 'string',
+      short: 'w',
+      default: '10',
+      description: 'Number of words to generate'
+    }
+  }
+})
 
 try {
-  hipsum(argv.wordcount)
+  hipsum(values.wordcount)
 } catch (err) {
   logError(err)
 }
